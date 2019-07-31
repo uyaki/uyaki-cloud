@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: gknoone-cloud-plus-eureka
+  security:
+    user:
+      name: gknoone
+      password: gk123456

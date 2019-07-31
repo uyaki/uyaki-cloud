@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: @pom.artifactId@
+  security:
+    user:
+      name: gknoone
+      password: gk123456

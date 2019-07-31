@@ -1,0 +1,22 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+    healthcheck:
+      enabled: true
+---
+spring:
+  profiles: peer1
+server:
+  port: 8111
+eureka:
+  instance:
+    hostname: peer1
+---
+spring:
+  profiles: peer2
+server:
+  port: 8112
+eureka:
+  instance:
+    hostname: peer2
