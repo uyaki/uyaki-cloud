@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author gknoone
  */
 @SpringBootApplication
-public class GknooneCloudPlusProviderDemoApplication {
+public class ProviderDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GknooneCloudPlusProviderDemoApplication.class, args);
+        SpringApplication.run(ProviderDemoApplication.class, args);
     }
 
 }

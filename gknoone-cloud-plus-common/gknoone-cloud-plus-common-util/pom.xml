@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.gknoone</groupId>
-        <artifactId>gknoone-cloud-plus-common</artifactId>
+        <groupId>com.gknoone.cloud.plus</groupId>
+        <artifactId>common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gknoone-cloud-plus-common-util</artifactId>
+    <artifactId>common-util</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gknoone-cloud-plus-common-util</name>
     <description>util module</description>

@@ -1,4 +1,9 @@
 eureka:
+  server:
+    # 关闭自我保护（开发环境下关闭）
+    enable-self-preservation: false
+    # 清理间隔（开发环境下修改，默认60000毫秒）
+    eviction-interval-timer-in-ms: 5000
   client:
     service-url:
       defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/

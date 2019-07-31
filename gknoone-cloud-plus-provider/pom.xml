@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.gknoone</groupId>
+		<groupId>com.gknoone.cloud.plus</groupId>
 		<artifactId>gknoone-cloud-plus</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>gknoone-cloud-plus-provider</artifactId>
+	<artifactId>provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gknoone-cloud-plus-provider</name>
 	<description>provider</description>
@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>gknoone-cloud-plus-provider-demo</module>
+		<module>gknoone-cloud-plus-provider-user</module>
 	</modules>
 
 	<dependencies>
@@ -31,6 +32,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+		<dependency>
+			<groupId>com.gknoone.cloud.plus</groupId>
+			<artifactId>common-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -42,5 +48,6 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
+
 	</dependencyManagement>
 </project>

@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.provider.demo;
+package com.gknoone.cloud.plus.provider.user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GknooneCloudPlusProviderDemoApplicationTests {
+public class ProviderUserApplicationTests {
 
     @Test
     public void contextLoads() {

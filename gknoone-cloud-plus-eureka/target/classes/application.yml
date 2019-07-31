@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gknoone-cloud-plus-eureka
+    name: eureka
   security:
     user:
       name: gknoone

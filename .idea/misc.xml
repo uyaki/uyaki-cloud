@@ -9,6 +9,9 @@
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml" />
       </list>
     </option>
   </component>
