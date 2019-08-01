@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.gknoone.cloud.plus</groupId>
-        <artifactId>provider</artifactId>
+        <artifactId>common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>provider-article</artifactId>
+
+    <artifactId>common-feign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>gknoone-cloud-plus-provider-article</name>
-    <description>Demo project for Spring Boot</description>
+    <name>gknoone-cloud-plus-common-feign</name>
+    <description>feign通用配置</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -19,10 +19,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.gknoone.cloud.plus</groupId>
-            <artifactId>provider-user-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-oauth2</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
-
 </project>

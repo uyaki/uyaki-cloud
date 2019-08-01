@@ -10,6 +10,7 @@
 
     <artifactId>provider-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>gknoone-cloud-plus-provider-demo</name>
     <description>Demo project for Spring Boot</description>
 

@@ -10,6 +10,7 @@
 
     <artifactId>provider-user-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>gknoone-cloud-plus-provider-user-api</name>
     <description>Demo project for Spring Boot</description>
 
@@ -17,5 +18,8 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <dependencies>
+
+    </dependencies>
 
 </project>

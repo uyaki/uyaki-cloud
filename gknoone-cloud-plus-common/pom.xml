@@ -9,6 +9,7 @@
     </parent>
     <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>gknoone-cloud-plus-common</name>
 
     <description>Common Module</description>
@@ -21,10 +22,22 @@
     <modules>
         <module>gknoone-cloud-plus-common-util</module>
         <module>gknoone-cloud-plus-common-core</module>
+        <module>gknoone-cloud-plus-common-feign</module>
     </modules>
 
     <dependencies>
 
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

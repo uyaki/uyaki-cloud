@@ -11,6 +11,8 @@
 	<groupId>com.gknoone.cloud.plus</groupId>
 	<artifactId>gknoone-cloud-plus</artifactId>
 	<version>${gknoone-cloud-plus.version}</version>
+	<packaging>pom</packaging>
+
 	<name>gknoone-cloud-plus</name>
 	<description>总项目</description>
 

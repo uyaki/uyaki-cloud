@@ -10,6 +10,7 @@
 
     <artifactId>eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>gknoone-cloud-plus-eureka</name>
     <description>Eureka Server</description>
 

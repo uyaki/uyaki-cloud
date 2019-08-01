@@ -10,7 +10,7 @@
 
     <artifactId>provider-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>gknoone-cloud-plus-provider-api</name>
     <description>Demo project for Spring Boot</description>
@@ -34,6 +34,11 @@
         <dependency>
             <groupId>com.gknoone.cloud.plus</groupId>
             <artifactId>common-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.gknoone.cloud.plus</groupId>
+            <artifactId>common-feign</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
