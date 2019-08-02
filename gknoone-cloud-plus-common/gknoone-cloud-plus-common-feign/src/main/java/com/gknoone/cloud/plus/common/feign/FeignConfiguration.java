@@ -1,7 +1,6 @@
 package com.gknoone.cloud.plus.common.feign;
 
 import feign.Logger;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,5 +24,4 @@ public class FeignConfiguration {
     Logger.Level feignLoggerLevel(){
         return Logger.Level.FULL;
     }
-
 }

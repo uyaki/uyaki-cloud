@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.provider.web;
+package com.gknoone.cloud.plus.provider.web.rpc;
 
 import com.gknoone.cloud.plus.common.core.wrapper.WrapMapper;
 import com.gknoone.cloud.plus.common.core.wrapper.Wrapper;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HiFeignClient implements HiFactoryFeignApi {
-
     @Override
     public Wrapper<String> sayHi(String somebody) {
         return WrapMapper.ok("hi"+somebody);

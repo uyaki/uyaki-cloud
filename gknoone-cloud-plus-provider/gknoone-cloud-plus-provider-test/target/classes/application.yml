@@ -34,4 +34,5 @@ logging:
 
 feign:
   hystrix:
+    # 开启熔断
     enabled: true

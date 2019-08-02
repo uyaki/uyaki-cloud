@@ -22,11 +22,6 @@ public class HiFactoryFeignApiHystrix implements FallbackFactory<HiFactoryFeignA
     @Override
     public HiFactoryFeignApi create(Throwable throwable) {
         logger.error("fallback reason: ",throwable);
-        return new HiFactoryFeignApi() {
-            @Override
-            public Wrapper<String> sayHi(String somebody) {
-                return WrapMapper.error("hi"+somebody+"熔断了") ;
-            }
-        };
+        return somebody -> WrapMapper.error("hi"+somebody+"熔断了");
     }
 }

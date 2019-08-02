@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.provider.web;
+package com.gknoone.cloud.plus.provider.web.controller;
 
 import com.gknoone.cloud.plus.common.core.wrapper.Wrapper;
 import com.gknoone.cloud.plus.provider.service.HelloFeignApi;

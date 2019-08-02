@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.provider.web;
+package com.gknoone.cloud.plus.provider.web.rpc;
 
 import com.gknoone.cloud.plus.common.core.support.BaseController;
 import com.gknoone.cloud.plus.common.core.wrapper.WrapMapper;
