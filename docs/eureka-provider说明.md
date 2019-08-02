@@ -13,11 +13,10 @@ tree -N -d  -L 2 > tree.md
 │   └── gknoone-cloud-plus-common-util          ------通用工具类
 ├── gknoone-cloud-plus-eureka                   ------Eureka-server模块
 ├── gknoone-cloud-plus-provider
-│   ├── gknoone-cloud-plus-provider-article
-│   ├── gknoone-cloud-plus-provider-demo
-│   └── gknoone-cloud-plus-provider-user
+│   ├── gknoone-cloud-plus-provider-hello
+│   └── gknoone-cloud-plus-provider-test
 └── gknoone-cloud-plus-provider-api
-    └── gknoone-cloud-plus-provider-user-api
+    └── gknoone-cloud-plus-provider-hello-api
 ```
 - 基础的底层代码，如`BaseController`放在`gknoone-cloud-plus-common-core`模块
 -

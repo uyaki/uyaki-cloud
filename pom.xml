@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.gknoone.cloud.plus</groupId>
 	<artifactId>gknoone-cloud-plus</artifactId>
-	<version>${gknoone-cloud-plus.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>gknoone-cloud-plus</name>

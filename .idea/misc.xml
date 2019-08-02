@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml" />

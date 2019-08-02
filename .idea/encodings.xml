@@ -9,9 +9,9 @@
     <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test" charset="UTF-8" />
   </component>
 </project>

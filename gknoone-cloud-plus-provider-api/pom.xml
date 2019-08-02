@@ -19,12 +19,16 @@
         <java.version>1.8</java.version>
     </properties>
     <modules>
-        <module>gknoone-cloud-plus-provider-user-api</module>
+        <module>gknoone-cloud-plus-provider-hello-api</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <dependency>
             <groupId>com.gknoone.cloud.plus</groupId>

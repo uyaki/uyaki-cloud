@@ -1,0 +1,37 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: @pom.artifactId@
+  main:
+    ## 允许定义同名的FeignClient,name
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+    healthcheck:
+      # 开启健康检查
+      enabled: true
+  instance:
+    # 将自己的IP注册到eureka上，若为false，则注册微服务所在操作系统的hostname到eureka上
+    prefer-ip-address: true
+    # 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+    # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${server.port}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
+    # 自定义实例跳转链接
+    status-page-url: https://github.com/gknoone
+    # 发送心跳给server端的频率 （开发环境开启，默认30秒）
+    lease-renewal-interval-in-seconds: 5
+    # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
+    lease-expiration-duration-in-seconds: 5
+
+logging:
+  level:
+    # 配合FeignClient的Configuration自定义的Logger.LEVEL使用
+    com.gknoone.cloud.plus.provider.service: DEBUG
+
+feign:
+  hystrix:
+    enabled: true

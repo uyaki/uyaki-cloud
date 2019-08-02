@@ -6,17 +6,45 @@
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/eureka-provider说明.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/eureka-provider说明.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HelloFeignApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/test/java/com/gknoone/cloud/plus/provider/user/api/GknooneCloudPlusProviderUserApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/test/java/com/gknoone/cloud/plus/provider/user/api/GknooneCloudPlusProviderUserApiApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/ProviderArticleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/java/com/gknoone/cloud/plus/provider/ProviderTestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/web/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/java/com/gknoone/cloud/plus/provider/web/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/test/java/com/gknoone/cloud/plus/provider/article/ProviderArticleApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/test/java/com/gknoone/cloud/plus/provider/article/ProviderTestApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/src/main/java/com/gknoone/cloud/plus/provider/demo/ProviderDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/src/main/java/com/gknoone/cloud/plus/provider/demo/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/src/test/java/com/gknoone/cloud/plus/provider/demo/ProviderDemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/ProviderUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/ProviderHelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/web/UserFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HelloFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/test/java/com/gknoone/cloud/plus/provider/user/ProviderUserApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/test/java/com/gknoone/cloud/plus/provider/user/ProviderHelloApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree.md" beforeDir="false" afterPath="$PROJECT_DIR$/tree.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,6 +59,9 @@
     <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/target/" />
     <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/target/" />
     <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/target/" />
+    <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/target/" />
+    <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/target/" />
+    <ignored path="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,42 +91,38 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HiFeignClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            <state relative-caret-position="315">
+              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <entry file="file://$PROJECT_DIR$/tree.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="357">
+                <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -103,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/config/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="147">
               <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -113,6 +140,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/EurekaApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="6" selection-start-line="6" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/component/EurekaStateChangeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
+                <element signature="e#1278#1279#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/bootstrap.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -122,19 +183,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HiFactoryFeignApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/FeignConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="163">
+              <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,19 +195,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/Oauth2ClientProperties.java">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/FeignConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/OAuth2FeignRequestInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="166">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,32 +234,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wapper/Wapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wrapper/Wapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wrapper/Wrapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wrapper/WrapMapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/util/page/PageUtil.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wrapper/PageWrapMapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/wrapper/PageWrapper.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/GknooneCloudPlusEurekaApplication.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/config/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/docs/eureka-server搭建.md" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/component/EurekaStateChangeListener.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/user/ProviderUserApplication.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/article/ProviderArticleApplication.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/user/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/util/PublicUtil.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/test/java/com/gknoone/cloud/plus/common/core/support/BaseControllerTest.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/support/BaseController.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/user/web/UserFeignClient.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/article/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/user/api/service/UserFeignApi.java" />
@@ -228,17 +254,37 @@
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/FeignConfiguration.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/META-INF/spring.factories" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/FeignConfiguration.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/pom.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/OAuth2FeignRequestInterceptor.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/UserFeignApiFallback.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/UserFeignApiHystrix.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HelloFeignClient.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/ProviderHelloApplication.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HelloFeignApi.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/FactoryFeignApi.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/HiFactoryFeignApiHystrix.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/HelloFeignApiHystrix.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HiFactoryFeignApi.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/java/com/gknoone/cloud/plus/provider/web/TestController.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HiFeignClient.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -254,21 +300,12 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gknoone-cloud-plus-common-feign" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="gknoone-cloud-plus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gknoone-cloud-plus-common-feign" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gknoone-cloud-plus-provider-user-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gknoone-cloud-plus-provider-user-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="gknoone-cloud-plus" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
@@ -299,18 +336,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
@@ -361,20 +393,42 @@
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
               <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
-              <item name="gknoone-cloud-plus-common-feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
               <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
-              <item name="gknoone-cloud-plus-common-feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-util" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
               <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
-              <item name="gknoone-cloud-plus-common-feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-util" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -382,7 +436,7 @@
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
               <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
-              <item name="gknoone-cloud-plus-common-feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-util" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -391,17 +445,288 @@
               <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
               <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
               <item name="gknoone-cloud-plus-common" type="462c0819:PsiDirectoryNode" />
-              <item name="gknoone-cloud-plus-common-feign" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-common-util" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="feign" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-eureka" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-api" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-provider-hello-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hystrix" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,7 +788,7 @@
     </option>
     <option name="contentProportion" value="0.2729927" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ProviderUserApplication">
+  <component name="RunManager" selected="Spring Boot.ProviderHelloApplication">
     <configuration name="BaseControllerTest.handleResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gknoone-cloud-plus-common-core" />
       <extension name="coverage">
@@ -480,15 +805,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaApplication-peer1" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="eureka-server">
-      <module name="gknoone-cloud-plus-eureka" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.eureka.EurekaApplication" />
-      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=peer1" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EurekaApplication-peer2" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="eureka-server">
       <module name="gknoone-cloud-plus-eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.eureka.EurekaApplication" />
@@ -498,24 +814,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProviderArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="gknoone-cloud-plus-provider-article" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.provider.ProviderArticleApplication" />
+    <configuration name="ProviderHelloApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gknoone-cloud-plus-provider-hello" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.provider.ProviderHelloApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProviderDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="gknoone-cloud-plus-provider-demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.provider.demo.ProviderDemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProviderUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="gknoone-cloud-plus-provider-user" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.provider.ProviderUserApplication" />
+    <configuration name="ProviderTestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gknoone-cloud-plus-provider-test" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gknoone.cloud.plus.provider.ProviderTestApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -523,11 +832,9 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.BaseControllerTest.handleResult" />
-      <item itemvalue="Spring Boot.EurekaApplication-peer1" />
       <item itemvalue="Spring Boot.EurekaApplication-peer2" />
-      <item itemvalue="Spring Boot.ProviderUserApplication" />
-      <item itemvalue="Spring Boot.ProviderArticleApplication" />
-      <item itemvalue="Spring Boot.ProviderDemoApplication" />
+      <item itemvalue="Spring Boot.ProviderHelloApplication" />
+      <item itemvalue="Spring Boot.ProviderTestApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -550,7 +857,8 @@
       <workItem from="1564568108805" duration="7647000" />
       <workItem from="1564626705740" duration="1037000" />
       <workItem from="1564627973281" duration="4625000" />
-      <workItem from="1564647122730" duration="6219000" />
+      <workItem from="1564647122730" duration="7824000" />
+      <workItem from="1564708036381" duration="3397000" />
     </task>
     <servers />
   </component>
@@ -566,13 +874,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39681000" />
+    <option name="totallyTimeSpent" value="44683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35693848" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36194563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -599,9 +907,9 @@
       <window_info anchor="bottom" id="Version Control" order="18" weight="0.32923833" />
       <window_info anchor="bottom" id="Messages" order="19" weight="0.32923833" />
       <window_info anchor="bottom" id="MyBatis Log" order="20" />
-      <window_info anchor="bottom" id="Run Dashboard" order="21" sideWeight="0.49928468" weight="0.58476657" />
+      <window_info anchor="bottom" id="Run Dashboard" order="21" sideWeight="0.49928468" visible="true" weight="0.34029484" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -614,64 +922,12 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/Wrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/util/page/PageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/PageWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/WrapMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/PageWrapMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="96" column="7" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
-          <folding>
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/EurekaApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" selection-start-line="6" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/test/java/com/gknoone/cloud/plus/provider/user/ProviderUserApplicationTests.java">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/test/java/com/gknoone/cloud/plus/provider/user/ProviderHelloApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
@@ -694,18 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/component/EurekaStateChangeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/user/controller/UserController.java" />
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/.gitignore" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/util/ObjectUtils.class">
@@ -723,36 +967,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/support/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/web/UserFeignClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tree5.md" />
-    <entry file="file://$PROJECT_DIR$/tree.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -764,22 +979,6 @@
           </second_editor>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-actuator-autoconfigure/2.1.6.RELEASE/spring-boot-actuator-autoconfigure-2.1.6.RELEASE.jar!/org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -795,80 +994,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/target/classes/com/gknoone/cloud/plus/common/feign/OAuth2FeignAutoConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <folding>
-            <element signature="e#0#479#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/config/FeignConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/sdk/mapper/MqMessageDataMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/target/classes/com/gknoone/cloud/plus/common/feign/OAuth2FeignAutoConfiguration.class" />
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/config/FeignConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/sdk/mapper/MqMessageDataMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/META-INF/spring.factories" />
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/target/classes/com/gknoone/cloud/plus/common/feign/FeignConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-103" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -876,18 +1019,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/java/com/gknoone/cloud/plus/provider/ProviderUserApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/ProviderArticleApplication.java">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/java/com/gknoone/cloud/plus/provider/ProviderTestApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -897,103 +1029,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/pom.xml">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/OAuth2FeignRequestInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/web/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-user/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/UserFeignApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/FeignConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -1004,18 +1043,263 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="651">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
         </state>
       </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/OAuth2FeignRequestInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="126">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/ProviderHelloApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-util/src/main/java/com/gknoone/cloud/plus/common/util/page/PageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/support/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HelloFeignApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/HelloFeignApiHystrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/hystrix/HiFactoryFeignApiHystrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/java/com/gknoone/cloud/plus/provider/web/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HelloFeignClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-hello/src/main/java/com/gknoone/cloud/plus/provider/web/HiFeignClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-hello-api/src/main/java/com/gknoone/cloud/plus/provider/service/HiFactoryFeignApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/FeignConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-test/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="357">
+            <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/EurekaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" selection-start-line="6" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/java/com/gknoone/cloud/plus/eureka/component/EurekaStateChangeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-eureka/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1353,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>gknoone-cloud-plus-provider-user-api</last-edited>
+          <last-edited>gknoone-cloud-plus-provider</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

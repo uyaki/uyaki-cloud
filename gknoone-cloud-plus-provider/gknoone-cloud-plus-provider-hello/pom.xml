@@ -4,15 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.gknoone.cloud.plus</groupId>
-        <artifactId>common</artifactId>
+        <artifactId>provider</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <artifactId>common-core</artifactId>
+    <artifactId>provider-hello</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>gknoone-cloud-plus-common-core</name>
-    <description>核心代码</description>
+    <name>gknoone-cloud-plus-provider-hello</name>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.gknoone.cloud.plus</groupId>
-            <artifactId>common-util</artifactId>
+            <artifactId>provider-hello-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
