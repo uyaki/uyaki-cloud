@@ -1,0 +1,25 @@
+- [ ] eureka
+  - [x] eureka的security认证
+  - [x] eureka高可用
+  - [ ] 状态变化监听器
+    - [x] 常用设置
+    - [ ] 项目负责环境如何避免全节点输出
+  - [x] 开发环境下关闭自我保护
+  - [x] 开发环境下设置清理时间间隔
+- [ ] eureka-client
+  - [x] 集成openfeign
+    - [ ] 配置通用feignConfiguration
+      - [x] 全局日志级别
+      - [ ] 配置OAuth2
+    - [ ] 集成hystrix
+      - [x] hystrix+openfeign
+        - [x] fallback模式
+        - [x] fallbackFactory模式
+      - [ ] hystrix+actuator+hystrix dashboard
+      - [ ] 使用Turbine聚合集群数据
+- [ ] Gateway
+- [ ] Config
+- [ ] Sleuth
+- [ ] 安全认证
+- [ ] Spring boot Admin
+- [ ] 服务的API文档管理
