@@ -27,9 +27,11 @@
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 	</properties>
 	<modules>
-        <module>gknoone-cloud-plus-common</module>
-		<module>gknoone-cloud-plus-provider</module>
 		<module>gknoone-cloud-plus-eureka</module>
+		<module>gknoone-cloud-plus-gateway</module>
+		<module>gknoone-cloud-plus-provider-api</module>
+		<module>gknoone-cloud-plus-provider</module>
+        <module>gknoone-cloud-plus-common</module>
 	</modules>
 	<dependencies>
 		<dependency>

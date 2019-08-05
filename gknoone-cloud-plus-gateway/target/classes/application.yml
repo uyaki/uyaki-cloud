@@ -1,0 +1,211 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: final_profiles
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 开启服务注册和发现的功能，
+          # 并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router
+          # 这个router将以服务名开头的请求路径转发到对应的服务。
+          # 如果关闭，可以采用uri：lb://{server-name}的形式进行转发
+          enabled: true
+          # 将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了）
+          lower-case-service-id: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+# 配置Gateway日志等级，输出转发细节信息
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+---
+# After Route Predicate Factory
+# 配置一个时间
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          uri: http://localhost:8021
+          predicates:
+            - After=2019-07-12T09:22:47.789-07:00[America/Denver]
+  profiles: after_route
+---
+# Header Route Predicate Factory
+# 需要2个参数，一个是header名，另外一个header值，该值可以是一个正则表达式。
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: header_route
+          uri: http://localhost:8021
+          predicates:
+            # head名X-Request-Id，head值\d+ 数字
+            - Header=X-Request-Id, \d+
+  profiles: header_route
+---
+# Cookie Route Predicate Factory
+# 需要2个参数，一个时cookie名字，另一个时值，可以为正则表达式。
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cookie_route
+          uri: http://localhost:8021
+          predicates:
+            - Cookie=name, forezp
+  profiles: cookie_route
+---
+# Host Route Predicate Factory
+# 需要一个参数即hostname，它可以使用. * 等去匹配host。
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: http://localhost:8021
+          predicates:
+            - Host=**.gknoone.com
+  profiles: host_route
+---
+# Method Route Predicate Factory
+# 需要一个参数，即请求的类型。
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: method_route
+          uri: http://localhost:8021
+          predicates:
+            - Method=GET
+  profiles: method_route
+---
+# Path Route Predicate Factory
+# 需要一个参数: 一个spel表达式，应用匹配路径。
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          uri: http://localhost:8021
+          filters:
+            # AddRequestHeader GatewayFilter Factory
+            # - AddRequestHeader=X-Request-Foo, gknoone
+            # RewritePath GatewayFilter Factory
+            - RewritePath=/gk/(?<segment>.*), /$\{segment}
+            # 自定义
+            # - RequestTime=true
+          predicates:
+            - Path=/gk/**
+  profiles: path_route
+---
+# Query Route Predicate Factory
+# 一个参数名和一个参数值的正则表达式
+# 也可以只填一个参数，填一个参数时，则只匹配参数名，即请求的参数中含有配置的参数名，则命中路由
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: query_route
+          uri: http://localhost:8021
+          predicates:
+            - Query=foo, ba.
+  profiles: query_route
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test_route
+          uri: http://localhost:8003
+          predicates:
+            - Path=/consumer/**
+          filters:
+            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
+            - StripPrefix=1
+#            - name: RequestRateLimiter
+#              args:
+#                # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+#                key-resolver: "#{@uriKeyResolver}"
+#                # 令牌桶每秒填充平均速率
+#                redis-rate-limiter.replenishRate: 1
+#                # 令牌桶总容量
+#                redis-rate-limiter.burstCapacity: 3
+        - id: hello_route
+          # 整合eureka，从注册中心获取服务
+          uri: lb://provider-hello
+          predicates:
+            - Path=/provider/**
+          filters:
+            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
+            - StripPrefix=1
+        # spring.cloud.gateway.discovery.locator.enable=true
+  profiles: limit_route
+---
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: test_route
+#          uri: http://localhost:8003
+#          predicates:
+#            - Path=/test/**
+#          filters:
+#            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
+#            - StripPrefix=1
+#            - name: RequestRateLimiter
+#              args:
+#                # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+#                key-resolver: "#{@uriKeyResolver}"
+#                # 令牌桶每秒填充平均速率
+#                redis-rate-limiter.replenishRate: 1
+#                # 令牌桶总容量
+#                redis-rate-limiter.burstCapacity: 3
+#        - id: hello_route
+#          # 整合eureka，从注册中心获取服务
+#          uri: lb://provider-hello
+#          predicates:
+#            - Path=/hello/**
+#          filters:
+#            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
+#            - StripPrefix=1
+#        # spring.cloud.gateway.discovery.locator.enable=true
+spring:
+  profiles: final_profiles
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          # 访问 localhost:8222/gknoone/gknoone-cloud-plus
+          uri: https://github.com
+          predicates:
+            - Path=/gknoone/**
+#        - id: check_auth_route
+#          # 访问 localhost:8222/hot
+#          uri: https://www.zhihu.com
+#          predicates:
+#          - name: CheckAuth
+#            args:
+#              name: gknoone
+        - id: check_auth_route
+          # 访问 localhost:8222/hot
+          uri: https://zhihu.com/
+          predicates:
+          - name: CheckAuth
+            args:
+              name: gknoone
+          filters:
+#          - name: CheckAuth2
+#            args:
+#              name: gknoone2
+            - CheckAuth3=gk, noone

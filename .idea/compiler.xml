@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gknoone-cloud-plus-provider-hello-api" />
         <module name="gknoone-cloud-plus-eureka" />
         <module name="gknoone-cloud-plus-provider-test" />
         <module name="gknoone-cloud-plus-common-feign" />
         <module name="gknoone-cloud-plus-common-util" />
         <module name="gknoone-cloud-plus-common-core" />
-        <module name="gknoone-cloud-plus-provider-hello-api" />
+        <module name="gknoone-cloud-plus-gateway" />
         <module name="gknoone-cloud-plus-provider-hello" />
       </profile>
     </annotationProcessing>
@@ -27,6 +28,7 @@
       <module name="gknoone-cloud-plus-common-feign" options="-parameters" />
       <module name="gknoone-cloud-plus-common-util" options="-parameters" />
       <module name="gknoone-cloud-plus-eureka" options="-parameters" />
+      <module name="gknoone-cloud-plus-gateway" options="-parameters" />
       <module name="gknoone-cloud-plus-provider" options="-parameters" />
       <module name="gknoone-cloud-plus-provider-api" options="" />
       <module name="gknoone-cloud-plus-provider-demo" options="-parameters" />
