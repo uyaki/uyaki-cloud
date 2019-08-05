@@ -20,9 +20,57 @@
       - [ ] hystrix+actuator+hystrix dashboard
       - [ ] 使用Turbine聚合集群数据
 - [ ] Gateway
-  - [ ] 
+  - [ ] 整合Eureka
+  - [ ] 实现断言工厂
+  - [ ] 实现过滤器工厂
+  - [ ] 实现全局过滤器
+  - [ ] 限流
+  - [ ] 熔断回退
+  - [ ] 跨域
+  - [ ] 统一异常处理
+  - [ ] 重试机制
 - [ ] Config
+  - [ ] Apollo分布式配置中心
+    - [ ] Apollo部署
+    - [ ] ApolloPortal管理后台
 - [ ] Sleuth
+  - [ ] 整合Zipkin
+  - [ ] 整合RabbitMq
+  - [ ] 用Elasticsearch持久化数据
 - [ ] 安全认证
+  - [ ] Feign调用前统一申请token
+  - [ ] 服务消费方申请token
+  - [ ] 服务提供方进行调用认证
+  - [ ] Gateway传递token
 - [ ] Spring boot Admin
+  - [ ] 微服务注册到Admin
+  - [ ] 开启认证
+  - [ ] 集成Eureka
+  - [ ] 自定义监控报警
+  - [ ] 监控被保护服务
 - [ ] 服务的API文档管理
+  - [ ] 集成Swagger
+  - [ ] Eureka控制台统一查看
+  - [ ] 请求认证
+  - [ ] Gateway聚合多个服务Swagger
+- [ ] API网关扩展
+  - [ ] 用户认证
+  - [ ] 服务限流
+  - [ ] 服务降级
+  - [ ] 灰度发布
+- [ ] 微服务缓存
+  - [ ] Guava Cache 本地缓存
+  - [ ] Redis缓存
+  - [ ] 防止缓存穿透
+  - [ ] 防止缓存雪崩
+- [ ] 微服务存储
+- [ ] 微服务事务处理方案
+  - [ ] 两阶段型
+  - [ ] TCC补偿型
+  - [ ] 最终一致性
+  - [ ] 最大努力通知型
+- [ ] 分布式任务调度
+- [ ] 分库分表方案
+  - [ ] 读写分离
+  - [ ] 分库分表
+  - [ ] 分布式主键
