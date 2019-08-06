@@ -466,3 +466,115 @@ spring:
 
 ## 限流
 
+- 引入依赖Redis
+  ``` xml
+  <!--引入限流需要基于Redis实现-->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+  </dependency>
+  ```
+
+  ```yml
+  spring:
+  	redis:
+  	host: localhost
+  	port: 6379
+  	database: 0
+  ```
+  
+- 实现KeyResolver类
+
+- 在启动类中注册Bean
+
+- 在配置**application.yml**中配置
+
+### Ip限流
+
+- 实现keyResolver
+
+  ```java
+  public class IpKeyResolver implements KeyResolver {
+      @Override
+      public Mono<String> resolve(ServerWebExchange exchange) {
+          return Mono.just(getIpAddr(exchange.getRequest()));
+      }
+  
+      /**
+       * 获取真实IP
+       * @param request 请求
+       * @return ip
+       */
+      private static String getIpAddr(ServerHttpRequest request){
+          HttpHeaders httpHeaders  = request.getHeaders();
+          List<String> ips = httpHeaders.get("X-Forwarded-For");
+          String ip = "127.0.0.1";
+          if(ips!= null && ips.size()>0){
+              ip = ips.get(0);
+          }
+          return ip;
+      }
+  }
+  ```
+
+- 在启动类中注册Bean
+
+  ```java
+  @Bean
+  public IpKeyResolver ipKeyResolver(){
+    return new IpKeyResolver();
+  }
+  ```
+
+- 在配置文件中添加配置
+
+  ```yml
+  spring:
+    cloud:
+    gateway:
+        routes:
+          - id: resolver_route
+            uri: lb://provider-test
+            predicates:
+              - Path=/test/**
+            filters:
+              - StripPrefix=1
+              # 名称必须是RequestRateLimiter
+              - name: RequestRateLimiter
+                args:
+                  # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+                  key-resolver: "#{@ipKeyResolver}"
+                  # 令牌桶每秒填充平均速率（每秒处理多少个请求）
+                  redis-rate-limiter.replenishRate: 2
+                  # 令牌桶总容量（运行一秒内完成的最大请求数量）
+                  redis-rate-limiter.burstCapacity: 3
+  ```
+
+访问100次`localhost:8222/test/test/hi`，查看Redis如下：
+
+![image-20190806150619768](assets/image-20190806150619768.png)
+
+![image-20190806151530389](assets/image-20190806151530389.png)
+
+### 用户限流
+
+```java
+public class UserKeyResolver implements KeyResolver {
+    @Override
+    public Mono<String> resolve(ServerWebExchange exchange) {
+        return Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("userId")));
+    }
+}
+```
+
+### 接口限流
+
+```java
+public class ApiKeyResolver implements KeyResolver {
+    @Override
+    public Mono<String> resolve(ServerWebExchange exchange) {
+        return Mono.just(exchange.getRequest().getPath().value());
+    }
+}
+```
+

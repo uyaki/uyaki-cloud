@@ -192,21 +192,29 @@ spring:
             - Path=/gknoone/**
 #        - id: check_auth_route
 #          # 访问 localhost:8222/hot
-#          uri: https://www.zhihu.com
+#          uri: https://zhihu.com/
 #          predicates:
 #          - name: CheckAuth
 #            args:
 #              name: gknoone
-        - id: check_auth_route
-          # 访问 localhost:8222/hot
-          uri: https://zhihu.com/
+#          filters:
+#          - CheckAuth3=gk,noone
+#          - name: CheckAuth2
+#            args:
+#              name: gknoone2
+        - id: resolver_route
+          uri: lb://provider-test
           predicates:
-          - name: CheckAuth
-            args:
-              name: gknoone
+            - Path=/test/**
           filters:
-          - CheckAuth3=gk,noone
-          - name: CheckAuth2
-            args:
-              name: gknoone2
+            - StripPrefix=1
+            # 名称必须是RequestRateLimiter
+            - name: RequestRateLimiter
+              args:
+                # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+                key-resolver: "#{@ipKeyResolver}"
+                # 令牌桶每秒填充平均速率（每秒处理多少个请求）
+                redis-rate-limiter.replenishRate: 2
+                # 令牌桶总容量（运行一秒内完成的最大请求数量）
+                redis-rate-limiter.burstCapacity: 3
 

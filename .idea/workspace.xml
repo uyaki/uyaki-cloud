@@ -4,10 +4,7 @@
     <list default="true" id="2ee5f7b1-260b-4851-9306-f6029e4f0359" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/Gateway.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Gateway.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/predicates/CheckAuth2GatewayFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth2GatewayFilterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/predicates/CheckAuth3GatewayFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth3GatewayFilterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -56,17 +53,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/IpGlobalFilter.java">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-363">
-              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -74,26 +64,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="207" column="30" selection-start-line="207" selection-start-column="30" selection-end-line="207" selection-end-column="30" />
+            <state relative-caret-position="110">
+              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="218" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/Wrapper.java">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/UserKeyResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-698">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="247">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/ApiKeyResolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/IpKeyResolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="36" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth3GatewayFilterFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+            <state relative-caret-position="137">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
           <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
@@ -131,11 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tree5.md" />
-        <option value="$PROJECT_DIR$/tree.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-article/src/main/java/com/gknoone/cloud/plus/provider/ProviderArticleApplication.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/Oauth2ClientProperties.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/src/main/java/com/gknoone/cloud/plus/common/feign/OAuth2FeignAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/java/com/gknoone/cloud/plus/provider/service/FeignConfiguration.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/META-INF/spring.factories" />
@@ -176,12 +200,17 @@
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/predicates/CheckAuth2GatewayFilterFactory.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/predicates/CheckAuth3NameValueGatewayFilterFactory.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/predicates/CheckAuth3GatewayFilterFactory.java" />
-        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth3GatewayFilterFactory.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/config/ExampleConfiguration.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/IPGlobalFilter.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/IpGlobalFilter.java" />
         <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/IpResolver.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/UserKeyResolver.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/ApiKeyResolver.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/IpKeyResolver.java" />
       </list>
     </option>
   </component>
@@ -373,6 +402,16 @@
               <item name="gknoone-cloud-plus-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="resolver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gknoone-cloud-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gknoone-cloud-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="gknoone-cloud-plus-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -547,7 +586,7 @@
       <workItem from="1564627973281" duration="4625000" />
       <workItem from="1564647122730" duration="7824000" />
       <workItem from="1564708036381" duration="15650000" />
-      <workItem from="1564994296429" duration="9635000" />
+      <workItem from="1564994296429" duration="13078000" />
     </task>
     <servers />
   </component>
@@ -563,7 +602,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66571000" />
+    <option name="totallyTimeSpent" value="70014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -667,13 +706,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/sdk/mapper/MqMessageDataMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider-api/gknoone-cloud-plus-provider-user-api/src/main/resources/META-INF/spring.factories" />
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-feign/target/classes/com/gknoone/cloud/plus/common/feign/FeignConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-provider/gknoone-cloud-plus-provider-demo/pom.xml" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -988,13 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-gateway-core/2.1.1.RELEASE/spring-cloud-gateway-core-2.1.1.RELEASE.jar!/org/springframework/cloud/gateway/filter/factory/AbstractNameValueGatewayFilterFactory.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1031,13 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth3GatewayFilterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-common/gknoone-cloud-plus-common-core/src/main/java/com/gknoone/cloud/plus/common/core/wrapper/Wrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-698">
@@ -1066,20 +1084,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/filter/CheckAuth3GatewayFilterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="207" column="30" selection-start-line="207" selection-start-column="30" selection-end-line="207" selection-end-column="30" />
+        <state relative-caret-position="273">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        <state relative-caret-position="137">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/IpKeyResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="36" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/GatewayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="218" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/UserKeyResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gknoone-cloud-plus-gateway/src/main/java/com/gknoone/cloud/plus/gateway/resolver/ApiKeyResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
