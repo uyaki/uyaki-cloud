@@ -700,4 +700,146 @@ public class ApiKeyResolver implements KeyResolver {
                 - POST
   ```
 
-  
+## 统一异常处理
+
+在Gateway的全局异常处理中，不能直接使用`@ControllerAdvice`，可以通过跟踪异常信息的抛出，找到对应的源码，自定义一些处理逻辑。
+
+```java
+/**
+ * 统一的JSON异常处理逻辑
+ *
+ * @author gknoone
+ * @date 2019-08-06 17:42
+ */
+public class JsonExceptionHandler extends DefaultErrorWebExceptionHandler {
+    public JsonExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties, ErrorProperties errorProperties, ApplicationContext applicationContext) {
+        super(errorAttributes, resourceProperties, errorProperties, applicationContext);
+    }
+
+    /**
+     * 获取异常属性
+     *
+     * @param request           request
+     * @param includeStackTrace includeStackTrace
+     * @return 异常属性
+     */
+    @Override
+    protected Map<String, Object> getErrorAttributes(ServerRequest request, boolean includeStackTrace) {
+        int code = 500;
+        Throwable error = super.getError(request);
+        if (error instanceof org.springframework.web.server.ResponseStatusException) {
+            code = 404;
+        }
+        return response(code, this.buildMessage(request, error));
+    }
+
+    /**
+     * 指定响应处理方法为JSON处理的方法
+     *
+     * @param errorAttributes errorAttributes
+     * @return RouterFunction
+     */
+    @Override
+    protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
+        //默认采用HTML显示（详细见源码），这里改用JSON显示；
+        return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse);
+    }
+
+    /**
+     * 根据code获取对应的HttpStatus
+     *
+     * @param errorAttributes errorAttributes
+     * @return HttpStatus
+     */
+    @Override
+    protected HttpStatus getHttpStatus(Map<String, Object> errorAttributes) {
+        //原始方法是根据status获取，不存在会报错，所以改成code
+        int statusCode = (int) errorAttributes.get("code");
+        return HttpStatus.valueOf(statusCode);
+    }
+
+    /**
+     * 构建异常信息
+     * @param request request
+     * @param ex 异常
+     * @return 异常信息
+     */
+    private String buildMessage(ServerRequest request, Throwable ex) {
+        return String.format("Failed to handle request [%s %s]%s", request.methodName(), request.uri(), ex != null ? " : " + ex.getMessage() : "");
+    }
+
+    /**
+     * 构建返回的JSON数据格式
+     * @param status 状态码
+     * @param errorMessage 异常信息
+     * @return map
+     */
+    private static Map<String,Object> response(int status, String errorMessage){
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",status);
+        map.put("message",errorMessage);
+        map.put("data",null);
+        return map;
+    }
+}
+```
+
+```java
+/**
+ * 异常处理配置类
+ *
+ * @author gknoone
+ * @date 2019-08-06 18:00
+ */
+@Configuration
+@EnableConfigurationProperties({ServerProperties.class,ResourceProperties.class})
+public class ErrorHandlerConfiguration {
+    private final ServerProperties serverProperties;
+    private final ApplicationContext applicationContext;
+    private final ResourceProperties resourceProperties;
+    private final List<ViewResolver> viewResolvers;
+    private final ServerCodecConfigurer serverCodecConfigurer;
+
+    public ErrorHandlerConfiguration(ServerProperties serverProperties,
+                                     ResourceProperties resourceProperties,
+                                     ObjectProvider<List<ViewResolver>> viewResolversProvider,
+                                     ServerCodecConfigurer serverCodecConfigurer,
+                                     ApplicationContext applicationContext) {
+        this.serverProperties = serverProperties;
+        this.applicationContext = applicationContext;
+        this.resourceProperties = resourceProperties;
+        this.viewResolvers = viewResolversProvider.getIfAvailable(Collections::emptyList);
+        this.serverCodecConfigurer = serverCodecConfigurer;
+    }
+
+    /**
+     * 覆盖默认的配置
+     * @param errorAttributes errorAttributes
+     * @return errorWebExceptionHandler
+     */
+    @Bean
+    @Order(Ordered.HIGHEST_PRECEDENCE)
+    public ErrorWebExceptionHandler errorWebExceptionHandler(ErrorAttributes errorAttributes){
+        JsonExceptionHandler exceptionHandler = new JsonExceptionHandler(
+                errorAttributes,
+                this.resourceProperties,
+                this.serverProperties.getError(),
+                this.applicationContext
+        );
+        exceptionHandler.setViewResolvers(this.viewResolvers);
+        exceptionHandler.setMessageWriters(this.serverCodecConfigurer.getWriters());
+        exceptionHandler.setMessageReaders(this.serverCodecConfigurer.getReaders());
+        return exceptionHandler;
+    }
+
+}
+```
+
+注意：
+
+- 如果开启了熔断回退，则不会进入异常处理
+
+- 如果没有开启熔断回退，则效果如下：
+
+  ![image-20190806183056909](assets/image-20190806183056909.png)
+
