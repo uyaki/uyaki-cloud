@@ -80,7 +80,7 @@
 3. 整合默认路由，上面的uri配置可选择关闭
 
    ```yml
-   spring：
+   spring:
    	cloud:
        gateway:
          discovery:
@@ -122,12 +122,12 @@ spring:
 ```yml
 spring:
   cloud:
-  	gateway:
-  		routes:
-  			- id: query_route
-  				uri: 
-  				predicates: 
-  					- Query=foo, ba.
+    gateway:
+      routes:
+        - id: query_route
+          uri: 
+          predicates: 
+            - Query=foo, ba.
 ```
 
 如上，匹配一个查询参数为foo，值为符合正则`ba.`的路由
@@ -139,12 +139,12 @@ spring:
 ```yml
 spring:
   cloud:
-  	gateway:
-  		routes:
-  			- id: method_route
-  				uri: 
-  				predicates: 
-  					- Method=GET
+    gateway:
+      routes:
+        - id: method_route
+          uri: 
+          predicates: 
+            - Method=GET
 ```
 
 ### Header路由断言工厂
@@ -154,12 +154,12 @@ spring:
 ```yml
 spring:
   cloud:
-  	gateway:
-  		routes:
-  			- id: header_route
-  				uri: 
-  				predicates: 
-  					- Header=X-Request-Id，\d+
+    gateway:
+      routes:
+        - id: header_route
+          uri: 
+          predicates: 
+            - Header=X-Request-Id，\d+
 ```
 
 ### 自定义路由断言工厂
@@ -222,26 +222,26 @@ spring:
 
 ```yml
 spring:
-	cloud:
-		gateway:
-			routes:
-				- id: add_request_header_route
-				  uri: https://www.zhihu.com
-				  filters:
-				  	- AddRequestHeader=X-Request-Foo,Bar	
+  cloud:
+    gateway:
+      routes:
+        - id: add_request_header_route
+          uri: https://www.zhihu.com
+          filters:
+            - AddRequestHeader=X-Request-Foo,Bar	
 ```
 
 ### RemoveRequestHeader过滤器工厂
 
 ```yml
 spring:
-	cloud:
-		gateway:
-			routes:
-				- id: remove_request_header_route
-				  uri: https://www.zhihu.com
-				  filters:
-				  	- RemoveRequestHeader=X-Request-Foo,Bar	
+  cloud:
+    gateway:
+      routes:
+        - id: remove_request_header_route
+          uri: https://www.zhihu.com
+          filters:
+            - RemoveRequestHeader=X-Request-Foo,Bar	
 ```
 
 ### SetStatus过滤器工厂
@@ -250,26 +250,26 @@ spring:
 
 ```yml
 spring:
-	cloud:
-		gateway:
-			routes:
-				- id: set_status_route
-				  uri: https://www.zhihu.com
-				  filters:
-				  	- SetStatus=401
+  cloud:
+    gateway:
+      routes:
+        - id: set_status_route
+          uri: https://www.zhihu.com
+          filters:
+            - SetStatus=401
 ```
 
 ### RedirectTo过滤器工厂
 
 ```yml
 spring:
-	cloud:
-		gateway:
-			routes:
-				- id: redirect_to_route
-				  uri: https://www.zhihu.com
-				  filters:
-				  	- RedirectTo=302,http://baidu.com	
+  cloud:
+    gateway:
+      routes:
+        - id: redirect_to_route
+          uri: https://www.zhihu.com
+          filters:
+            - RedirectTo=302,http://baidu.com	
 ```
 
 ### 自定义过滤器工厂
@@ -633,3 +633,71 @@ public class ApiKeyResolver implements KeyResolver {
    }
    ```
 
+## 跨域
+
+- 方式一：代码配置方式
+
+  ```java
+  /**
+   * 全局跨域配置
+   * 预留，推荐采用配置文件配置的方式，如需开启，注释掉配置文件配置，添加@Configuration注解
+   * @author gknoone
+   * @date 2019-08-06 16:41
+   */
+  @Configuration
+  public class CorsConfig {
+      @Bean
+      public WebFilter corsFilter() {
+          return (ServerWebExchange exchange, WebFilterChain chain) -> {
+              ServerHttpRequest request = exchange.getRequest();
+              if (CorsUtils.isCorsRequest(request)) {
+                  HttpHeaders requestHeaders = request.getHeaders();
+                  ServerHttpResponse response = exchange.getResponse();
+                  HttpMethod requestMethod = requestHeaders.getAccessControlRequestMethod();
+                  HttpHeaders responseHeaders = response.getHeaders();
+                  responseHeaders.add(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, requestHeaders.getOrigin());
+                  responseHeaders.addAll(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, requestHeaders.getAccessControlRequestHeaders());
+                  if (requestMethod != null) {
+                      responseHeaders.add(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, requestMethod.name());
+                  }
+                  responseHeaders.add(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
+                  responseHeaders.add(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "*");
+                  if (request.getMethod() == HttpMethod.OPTIONS) {
+                      response.setStatusCode(HttpStatus.OK);
+                      return Mono.empty();
+                  }
+              }
+              return chain.filter(exchange);
+          };
+      }
+  }
+  ```
+
+  
+
+- 方式二：配置文件配置方式（推荐）:star:
+
+  ```yml
+  spring:
+    cloud:
+      gateway:
+        # 开启跨域
+        globalcors:
+          cors-configurations:
+            '[/**]':
+              allowedOrigins: "*"
+              exposedHeaders:
+                - content-type
+              allowedHeaders:
+                - content-type
+              allowedCredentials: true
+              allowedMethods:
+                - GET
+                - OPTIONS
+                - PUT
+                - PATCH
+                - DELETE
+                - POST
+  ```
+
+  

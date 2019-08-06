@@ -20,6 +20,24 @@ spring:
           enabled: true
           # 将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了）
           lower-case-service-id: true
+      # 开启跨域
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            exposedHeaders:
+              - content-type
+            allowedHeaders:
+              - content-type
+            allowedCredentials: true
+            allowedMethods:
+              - GET
+              - OPTIONS
+              - PUT
+              - PATCH
+              - DELETE
+              - POST
+
 eureka:
   client:
     service-url:
