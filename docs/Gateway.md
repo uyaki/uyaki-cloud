@@ -843,3 +843,47 @@ public class ErrorHandlerConfiguration {
 
   ![image-20190806183056909](assets/image-20190806183056909.png)
 
+## 重试机制
+
+```yml
+spring:
+  profiles: final_profiles
+  cloud:
+    gateway:
+      routes:
+        - id: resolver_route
+          uri: lb://provider-test
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
+            - name: Retry
+              args:
+                # 重试次数，默认3次
+                retries: 3
+                # 状态码配置（分段）
+                # INFORMATIONAL 1xx的异常
+                # SUCCESSFUL 2xx的异常
+                # REDIRECTION 3xx的异常
+                # CLIENT_ERROR 4xx的异常
+                # SERVER_ERROR 5xx的异常
+                series:
+                - SERVER_ERROR
+                ## 状态码配置
+                # statuses:
+                # 指定需要重试的方法
+                method:
+                - GET
+                - HEAD
+                - POST
+                - PUT
+                - PATCH
+                - DELETE
+                - OPTIONS
+                - TRACE
+                # 指定需要重试的exception
+                exception:
+                - java.io.IOException
+                - org.springframework.web.server.ResponseStatusException
+```
+
