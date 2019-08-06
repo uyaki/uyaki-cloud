@@ -217,4 +217,8 @@ spring:
                 redis-rate-limiter.replenishRate: 2
                 # 令牌桶总容量（运行一秒内完成的最大请求数量）
                 redis-rate-limiter.burstCapacity: 3
+            - name: Hystrix
+              args:
+                name: fallbackmd
+                fallbackUri: forward:/fallback
 

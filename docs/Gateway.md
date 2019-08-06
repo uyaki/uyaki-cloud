@@ -578,3 +578,58 @@ public class ApiKeyResolver implements KeyResolver {
 }
 ```
 
+## 熔断回退
+
+1. 引入依赖
+
+   ```xml
+   <!--回退熔断基于hystrix实现-->
+   <dependency>
+     <groupId>org.springframework.cloud</groupId>
+     <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+   </dependency>
+   ```
+
+2. 修改配置
+
+   ```yml
+   spring:
+     profiles: final_profiles
+     cloud:
+       gateway:
+         routes:
+           - id: resolver_route
+             uri: lb://provider-test
+             predicates:
+               - Path=/test/**
+             filters:
+               - StripPrefix=1
+               # 名称必须是RequestRateLimiter
+               - name: RequestRateLimiter
+                 args:
+                   # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+                   key-resolver: "#{@ipKeyResolver}"
+                   # 令牌桶每秒填充平均速率（每秒处理多少个请求）
+                   redis-rate-limiter.replenishRate: 2
+                   # 令牌桶总容量（运行一秒内完成的最大请求数量）
+                   redis-rate-limiter.burstCapacity: 3
+               - name: Hystrix
+                 args:
+                   name: fallbackmd
+                   fallbackUri: forward:/fallback
+   ```
+
+   
+
+3. 编写回退接口`fallback`
+
+   ```java
+   @RestController
+   public class FallbackController {
+       @GetMapping("/fallback")
+       public Wrapper<String> fallback(){
+           return WrapMapper.error("熔断回退了");
+       }
+   }
+   ```
+
