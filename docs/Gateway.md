@@ -361,3 +361,108 @@ spring:
           - CheckAuth3=gknoone,niubi
 ```
 
+## 全局过滤器
+
+- 作用于所有路由，不需要单独配置
+- 应用举例
+  - 权限认证
+  - IP访问配置
+- 接口定义类`org.springframework.cloud.gateway.filter.GlobalFilter`
+
+1. `@Configuration`的形式
+
+   ```java
+   @Configuration
+   public class ExampleConfiguration {
+       private Logger logger = LoggerFactory.getLogger(this.getClass());
+       @Bean
+       @Order(-1)
+       public GlobalFilter a(){
+           return (exchange, chain) -> {
+               logger.info("first pre filter");
+               return chain.filter(exchange).then(Mono.fromRunnable(()->{
+                   logger.info("third post filter");
+               }));
+           };
+       }
+       @Bean
+       @Order(0)
+       public GlobalFilter b(){
+           return (exchange, chain) -> {
+               logger.info("second pre filter");
+               return chain.filter(exchange).then(Mono.fromRunnable(()->{
+                   logger.info("second post filter");
+               }));
+           };
+       }
+       @Bean
+       @Order(1)
+       public GlobalFilter c(){
+           return (exchange, chain) -> {
+               logger.info("third pre filter");
+               return chain.filter(exchange).then(Mono.fromRunnable(()->{
+                   logger.info("first post filter");
+               }));
+           };
+       }
+   }
+   ```
+
+   > `@Order`数字越小，优先级越高
+
+   ![image-20190806090611771](assets/image-20190806090611771.png)
+
+2. `@Component`的形式
+
+   ```java
+   /**
+    * IP全局过滤器
+    *
+    * @author gknoone
+    * @date 2019-08-06 09:09
+    */
+   @Component
+   public class IpGlobalFilter implements GlobalFilter, Ordered {
+       private static final String LOCAL_IP = "127.0.0.1";
+   
+       @Override
+       public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+           HttpHeaders httpHeaders = exchange.getRequest().getHeaders();
+           if (LOCAL_IP.equals(getIp(httpHeaders))) {
+               ServerHttpResponse response = exchange.getResponse();
+               ResponseDate responseDate = new ResponseDate();
+               responseDate.setCode(401);
+               responseDate.setMessage("非法请求");
+               byte[] data = JSON.toJSONBytes(responseDate);
+               DataBuffer dataBuffer = response.bufferFactory().wrap(data);
+               response.setStatusCode(HttpStatus.UNAUTHORIZED);
+               response.getHeaders().add(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8");
+               return response.writeWith(Mono.just(dataBuffer));
+           }
+           return chain.filter(exchange);
+       }
+   
+       private String getIp(HttpHeaders httpHeaders) {
+           return "127.0.0.1";
+       }
+   
+       @Data
+       private class ResponseDate {
+           int code;
+           String message;
+       }
+   
+       /**
+        * 数字越小，优先级越高
+        *
+        * @return order
+        */
+       @Override
+       public int getOrder() {
+           return 0;
+       }
+   }
+   ```
+
+## 限流
+

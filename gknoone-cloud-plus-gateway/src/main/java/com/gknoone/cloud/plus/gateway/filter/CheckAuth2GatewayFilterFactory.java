@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.gateway.predicates;
+package com.gknoone.cloud.plus.gateway.filter;
 
 import lombok.Getter;
 import lombok.Setter;

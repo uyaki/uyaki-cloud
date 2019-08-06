@@ -20,9 +20,9 @@
       - [ ] hystrix+actuator+hystrix dashboard
       - [ ] 使用Turbine聚合集群数据
 - [ ] Gateway
-  - [ ] 整合Eureka
-  - [ ] 实现断言工厂
-  - [ ] 实现过滤器工厂
+  - [x] 整合Eureka
+  - [x] 实现断言工厂
+  - [x] 实现过滤器工厂
   - [ ] 实现全局过滤器
   - [ ] 限流
   - [ ] 熔断回退

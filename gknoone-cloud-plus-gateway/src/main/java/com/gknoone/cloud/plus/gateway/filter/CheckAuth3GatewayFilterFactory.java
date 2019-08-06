@@ -1,4 +1,4 @@
-package com.gknoone.cloud.plus.gateway.predicates;
+package com.gknoone.cloud.plus.gateway.filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractNameValueGatewayFilterFactory;

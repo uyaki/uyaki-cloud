@@ -205,7 +205,8 @@ spring:
             args:
               name: gknoone
           filters:
-#          - name: CheckAuth2
-#            args:
-#              name: gknoone2
-            - CheckAuth3=gk, noone
+          - CheckAuth3=gk,noone
+          - name: CheckAuth2
+            args:
+              name: gknoone2
+
