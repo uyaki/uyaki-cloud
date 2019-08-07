@@ -19,16 +19,16 @@
         - [x] fallbackFactory模式
       - [ ] hystrix+actuator+hystrix dashboard
       - [ ] 使用Turbine聚合集群数据
-- [ ] Gateway
+- [x] Gateway
   - [x] 整合Eureka
   - [x] 实现断言工厂
   - [x] 实现过滤器工厂
   - [x] 实现全局过滤器
   - [x] 限流
-  - [ ] 熔断回退
-  - [ ] 跨域
-  - [ ] 统一异常处理
-  - [ ] 重试机制
+  - [x] 熔断回退
+  - [x] 跨域
+  - [x] 统一异常处理
+  - [x] 重试机制
 - [ ] Config
   - [ ] Apollo分布式配置中心
     - [ ] Apollo部署
