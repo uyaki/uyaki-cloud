@@ -34,7 +34,7 @@
     - [ ] Apollo部署
     - [ ] ApolloPortal管理后台
 - [ ] Sleuth
-  - [ ] 整合Zipkin
+  - [x] 整合Zipkin
   - [ ] 整合RabbitMq
   - [ ] 用Elasticsearch持久化数据
 - [ ] 安全认证
