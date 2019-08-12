@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: eureka
-  security:
-    user:
-      name: gknoone
-      password: gk123456
