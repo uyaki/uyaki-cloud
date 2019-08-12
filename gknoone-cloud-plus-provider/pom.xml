@@ -23,6 +23,7 @@
 	<modules>
 		<module>gknoone-cloud-plus-provider-hello</module>
 		<module>gknoone-cloud-plus-provider-test</module>
+		<module>gknoone-cloud-plus-provider-auth</module>
 	</modules>
 
 	<dependencies>
@@ -42,14 +43,24 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
+		<!--用于追踪微服务-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<!--集成zipkin发送调用链数据-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--		</dependency>-->
+		<!--集成rabbit转发zipkin-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.amqp</groupId>-->
+<!--			<artifactId>spring-rabbit</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>com.gknoone.cloud.plus</groupId>
 			<artifactId>common-util</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.gknoone.cloud.plus</groupId>
-			<artifactId>common-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
