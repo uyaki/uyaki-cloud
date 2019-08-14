@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        # 共享的配置列表
+        shared-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
+        refreshable-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml

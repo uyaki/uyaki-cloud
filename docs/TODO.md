@@ -42,10 +42,10 @@
   - [ ] 服务消费方申请token
   - [ ] 服务提供方进行调用认证
   - [ ] Gateway传递token
-- [ ] Spring boot Admin
-  - [ ] 微服务注册到Admin
-  - [ ] 开启认证
-  - [ ] 集成Eureka
+- [x] Spring boot Admin
+  - [x] 微服务注册到Admin
+  - [x] 开启认证
+  - [x] 集成Eureka
   - [ ] 自定义监控报警
   - [ ] 监控被保护服务
 - [ ] 服务的API文档管理

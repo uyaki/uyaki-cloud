@@ -24,6 +24,8 @@
 		<module>gknoone-cloud-plus-provider-hello</module>
 		<module>gknoone-cloud-plus-provider-test</module>
 		<module>gknoone-cloud-plus-provider-auth</module>
+		<module>gknoone-cloud-plus-provider-apollo</module>
+		<module>gknoone-cloud-plus-provider-nacos-config</module>
 	</modules>
 
 	<dependencies>

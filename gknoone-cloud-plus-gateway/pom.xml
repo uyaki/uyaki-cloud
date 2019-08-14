@@ -37,6 +37,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
+        <!--谷歌算法实现类-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+
         <dependency>
             <groupId>com.gknoone.cloud.plus</groupId>
             <artifactId>common-core</artifactId>
