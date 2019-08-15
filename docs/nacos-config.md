@@ -174,6 +174,142 @@ Spring Cloud Alibaba Nacos Config 目前提供了三种配置能力从 Nacos 拉
 spring.cloud.nacos.config.enabled = false
 ```
 
+## 实战演示
+
+### 命名空间
+
+1. 新建命名空间DEV，作为开发环境
+
+   ![image-20190815093045898](assets/image-20190815093045898.png)
+
+2. 命名空间的ID才是需要配置的内容
+
+   ![image-20190815093148343](assets/image-20190815093148343.png)
+
+### 配置列表
+
+![image-20190815093806633](assets/image-20190815093806633.png)
+
+1. provider-nacos-config.yaml
+
+   ```yaml
+   user:
+     name: gknoone-cloud-plus
+     age: 123
+     
+   logging:
+     # 配置Admin的日志文件输出位置
+     file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-nacos-config.log
+   
+   server:
+     port: 8006
+   ```
+2. app-common-eureka.yaml
+
+   ```yaml
+   eureka:
+     client:
+       service-url:
+         defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+       healthcheck:
+         # 开启健康检查
+         enabled: true
+     instance:
+       # 将自己的IP注册到eureka上，若为false，则注册微服务所在操作系统的hostname到eureka上
+       prefer-ip-address: true
+       # 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+       # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
+       instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
+       # 自定义实例跳转链接
+       status-page-url: https://github.com/gknoone
+       # 发送心跳给server端的频率 （开发环境开启，默认30秒）
+       lease-renewal-interval-in-seconds: 5
+       # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
+       lease-expiration-duration-in-seconds: 5
+   ```
+
+3. app-common-actuator.yaml
+
+   ```yaml
+   # 开启监控点
+   management:
+     endpoints:
+       web:
+         exposure:
+           include: "*"
+     endpoint:
+       health:
+         # 是否展示健康检查详情
+         show-details: ALWAYS
+   ```
+
+4. app-common-feign.yaml
+
+   ```yaml
+   feign:
+     hystrix:
+       # 开启熔断
+       enabled: true
+   ```
+
+### 项目配置
+
+1. application.yml
+
+   ```yaml
+   spring:
+     application:
+       name: @pom.artifactId@
+   ```
+
+2. bootstrap.yml
+
+   ```yaml
+   spring:
+     cloud:
+       nacos:
+         config:
+           server-addr: 127.0.0.1:8848
+           file-extension: yaml
+           namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+           group: gknoone-cloud-plus
+           # 共享的配置列表
+           # shared-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
+           # refreshable-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
+           # 共享配置
+           ext-config:
+             - data-id: app-common-eureka.yaml
+               group: gknoone-cloud-plus
+               namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+               refresh: true
+             - data-id: app-common-actuator.yaml
+               group: gknoone-cloud-plus
+               namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+               refresh: true
+             - data-id: app-common-feign.yaml
+               group: gknoone-cloud-plus
+               namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+               refresh: true
+   ```
 
 
+3. 读取配置使用示例
+
+   ```java
+   @RestController
+   @RefreshScope
+   public class NacosConfigController {
+       @Value("${user.name:kk}")
+       private String name;
+       @Value("${user.age:11}")
+       private Integer age;
+   
+       @GetMapping("/user")
+       public String getUserInfo(){
+           return String.format("%s is %s years old this year.", name,age);
+       }
+   }
+   ```
+
+   
 
