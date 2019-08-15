@@ -6,11 +6,13 @@ spring:
         file-extension: yaml
         namespace: 1241625f-714b-440d-8d71-32e58d531f3a
         group: gknoone-cloud-plus
-        # 共享的配置列表
-        # shared-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
-        # refreshable-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
         # 共享配置
         ext-config:
+          # sleuth共享配置
+          - data-id: app-common-sleuth.yaml
+            group: gknoone-cloud-plus
+            namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+            refresh: true
           # eureka共享配置
           - data-id: app-common-eureka.yaml
             group: gknoone-cloud-plus
@@ -18,6 +20,16 @@ spring:
             refresh: true
           # actuator监控点配置
           - data-id: app-common-actuator.yaml
+            group: gknoone-cloud-plus
+            namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+            refresh: true
+          # postgresql
+          - data-id: app-common-postgresql.yaml
+            group: gknoone-cloud-plus
+            namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+            refresh: true
+           # mybatis
+          - data-id: app-common-mybatis.yaml
             group: gknoone-cloud-plus
             namespace: 1241625f-714b-440d-8d71-32e58d531f3a
             refresh: true

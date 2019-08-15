@@ -33,6 +33,10 @@
   - [ ] Apollo分布式配置中心
     - [ ] Apollo部署
     - [ ] ApolloPortal管理后台
+  - [x] Nacos config
+    - [x] 服务搭建
+    - [x] 配置demo
+    - [x] 配置共享方案
 - [ ] Sleuth
   - [x] 整合Zipkin
   - [ ] 整合RabbitMq
