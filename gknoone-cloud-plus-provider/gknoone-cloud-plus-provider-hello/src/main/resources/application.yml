@@ -4,11 +4,3 @@ spring:
   main:
     ## 允许定义同名的FeignClient,name
     allow-bean-definition-overriding: true
-#  zipkin:
-##    base-url: http://127.0.0.1:9411
-#    sender:
-#      type: RABBIT
-#  rabbitmq:
-#    addresses: 0.0.0.0:5672
-#    username: guest
-#    password: guest

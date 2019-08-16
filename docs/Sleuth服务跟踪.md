@@ -49,8 +49,8 @@ java -jar zipkin.jar
 ## 集成
 ### 模块说明
 
-- gknoone-cloud-eureka-consumer
-- gknoone-cloud-eureka-provider
+- Gknoone-cloud-plus-provider-hello
+- gknoone-cloud-plus-provider-test
 ### 集成sleuth
 1. 引入依赖
 ```xml
@@ -92,7 +92,7 @@ logging:
    <artifactId>spring-cloud-starter-zipkin</artifactId>
 </dependency>
 ```
-2. 配置`application.yml`(以gknoone-cloud-eureka-consumer为例)，添加zipkin配置
+2. 配置`application.yml`(以gknoone-cloud-plus-provider-hello为例)，添加zipkin配置
 ```yml
 spring:
   zipkin:
@@ -100,22 +100,35 @@ spring:
 ```
 ### 正常服务测试
 1. 重启两个模块，浏览器访问`localhost:9411`，点击依赖
-![](assets/markdown-img-paste-20190729144550787.png)
+![image-20190816095351464](assets/image-20190816095351464.png)
 
-2. 用postman访问`localhost:8021/test/1`，依次点击下图1、2查找，可以查找到3所示，点击3，可以看到具体到转发信息
-![](assets/markdown-img-paste-20190729144942243.png)
+2. 用postman访问`http://localhost:8003/test/hi`，点击下图查找，可以看到具体到转发信息
+![image-20190816100426703](assets/image-20190816100426703.png)
+
+3. 点击上图所示转发信息，可以查看细节
+
+  ![image-20190816100557649](assets/image-20190816100557649.png)
 
 ### 异常服务测试
-1. 关闭gknoone-cloud-eureka-provider
-2. 用postman访问`localhost:8021/test/1`，再次点击查找
-![](assets/markdown-img-paste-20190729145906751.png)
-![](assets/markdown-img-paste-20190729145945316.png)
-点击上图的红色异常服务
-![](assets/markdown-img-paste-20190729150030257.png)
-可以看出，异常的内容是`Connection refused`连接拒绝
+
+1. 关闭gknoone-cloud-plus-provider-hello
+
+2. 用postman访问`http://localhost:8003/test/hi`，再次点击查找
+
+![image-20190816103448988](assets/image-20190816103448988.png)
+
+3. 点击查看
+
+  ![image-20190816103515816](assets/image-20190816103515816.png)
+
+4. 点击查看，可以看到具体的BUG
+
+   ![image-20190816104104019](assets/image-20190816104104019.png)
 
 ### 优化
+
 #### 设置抽样比例
+
 ```yml
 spring:
   sleuth:
@@ -131,7 +144,7 @@ spring:
     - 添加自定义的标记
     - 将请求ID添加到响应头
 ```java
-package com.gknoone.cloud.eureka.consumer.filter;
+package com.gknoone.cloud.plus.provider.filter;
 
 import brave.Span;
 import brave.Tracer;
@@ -148,18 +161,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * 处理请求和响应的组件
  * 自定义Filter，用于
  * 1.添加自定义的标记
  * 2.将请求ID添加到响应头
  * @author gknoone
- * @date 2019-07-29 15:06
+ * @date 2019-08-16 09:45
  */
 @Component
 @Order(TraceWebServletAutoConfiguration.TRACING_FILTER_ORDER+1)
-public class MyFilter extends GenericFilterBean {
+public class MyTracingFilter extends GenericFilterBean {
     private  final Tracer tracer;
 
-    public MyFilter(Tracer tracer) {
+    public MyTracingFilter(Tracer tracer) {
         this.tracer = tracer;
     }
 
@@ -175,13 +189,15 @@ public class MyFilter extends GenericFilterBean {
         filterChain.doFilter(servletRequest,servletResponse);
     }
 }
-```
-2. 用postman访问`localhost:8021/test/1`，查看Headers信息
-![](assets/markdown-img-paste-20190729151515652.png)
-3. 查看zipkin
-![](assets/markdown-img-paste-20190729151605240.png)
 
-#### 过滤不行跟踪的请求
+```
+2. 用postman访问`http://localhost:8002/hello/sb`，查看Headers信息
+![image-20190816104421208](assets/image-20190816104421208.png)
+3. 查看zipkin
+![image-20190816104746637](assets/image-20190816104746637.png)
+
+#### 过滤不想跟踪的请求
+
 ```java
 /**
  * 进行zipkin过滤，返回false时，不会发生到zipkin
@@ -208,6 +224,7 @@ HttpSampler myHttpSampler(SkipPatternProvider provider){
 }
 ```
 #### 用rabbitMq代替http发送调用链数据（高可用）
+
 1. 引入依赖
 ```xml
 <dependency>
@@ -225,7 +242,30 @@ spring:
       type: rabbit
   rabbitmq:
     addresses: amqp://localhost:5672
-    username: guest
-    password: guest
+    username: gknoone
+    password: gk123456
 ```
-
+3. 重新启动zipkin
+
+```bash
+java -DRABBIT_ADDRESSES=127.0.0.1:5672 -DRABBIT_USER=guest -DRABBIT_PASSWORD=guest -jar zipkin.jar
+```
+
+![image-20190816145700118](assets/image-20190816145700118.png)
+
+#### 用Elasticsearch存储调用数据链
+
+重新启动zipkin
+
+```bash
+java -DSTORAGE_TYPE=elasticsearch -DES_HOSTS=127.0.0.1:9200 -DRABBIT_ADDRESSES=127.0.0.1:5672 -DRABBIT_USER=guest -DRABBIT_PASSWORD=guest -jar zipkin.jar
+```
+
+ 访问[http://localhost:9200/_cat/indices](http://localhost:9200/_cat/indices)，结果如下所示
+
+![image-20190816163951302](assets/image-20190816163951302.png)
+
+访问[http://localhost:9200/zipkin:span-2019-08-16/_search](http://localhost:9200/zipkin:span-2019-08-16/_search)
+
+![image-20190816164124968](assets/image-20190816164124968.png)
+

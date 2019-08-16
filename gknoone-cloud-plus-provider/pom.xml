@@ -62,10 +62,10 @@
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 		<!--集成rabbit转发zipkin-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.amqp</groupId>-->
-<!--			<artifactId>spring-rabbit</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.gknoone.cloud.plus</groupId>
 			<artifactId>common-util</artifactId>
