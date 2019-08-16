@@ -255,17 +255,174 @@ java -DRABBIT_ADDRESSES=127.0.0.1:5672 -DRABBIT_USER=guest -DRABBIT_PASSWORD=gue
 
 #### 用Elasticsearch存储调用数据链
 
-重新启动zipkin
+1. 重新启动zipkin
 
 ```bash
 java -DSTORAGE_TYPE=elasticsearch -DES_HOSTS=127.0.0.1:9200 -DRABBIT_ADDRESSES=127.0.0.1:5672 -DRABBIT_USER=guest -DRABBIT_PASSWORD=guest -jar zipkin.jar
 ```
 
- 访问[http://localhost:9200/_cat/indices](http://localhost:9200/_cat/indices)，结果如下所示
+2. 访问[http://localhost:9200/_cat/indices](http://localhost:9200/_cat/indices)，结果如下所示
 
 ![image-20190816163951302](assets/image-20190816163951302.png)
 
-访问[http://localhost:9200/zipkin:span-2019-08-16/_search](http://localhost:9200/zipkin:span-2019-08-16/_search)
+3. 访问[http://localhost:9200/zipkin:span-2019-08-16/_search](http://localhost:9200/zipkin:span-2019-08-16/_search)
+
+```http
+http://localhost:9200/${索引名称}/_search
+```
 
 ![image-20190816164124968](assets/image-20190816164124968.png)
+
+```json
+{
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 5,
+        "max_score": 1.0,
+        "hits": [
+            {
+                "_index": "zipkin:span-2019-08-16",
+                "_type": "span",
+                "_id": "306adc4251529012-2b563a70c7e4c12410b2a5a9db8a5539",
+                "_score": 1.0,
+                "_source": {
+                    "traceId": "306adc4251529012",
+                    "duration": 34146,
+                    "localEndpoint": {
+                        "serviceName": "provider-test",
+                        "ipv4": "192.168.13.111"
+                    },
+                    "timestamp_millis": 1565944703379,
+                    "kind": "CLIENT",
+                    "name": "get",
+                    "id": "21c8e2a342fe8eb3",
+                    "parentId": "5eed9fef502e6d6f",
+                    "timestamp": 1565944703379934,
+                    "tags": {
+                        "http.method": "GET",
+                        "http.path": "/api/hi/test"
+                    }
+                }
+            },
+            {
+                "_index": "zipkin:span-2019-08-16",
+                "_type": "span",
+                "_id": "306adc4251529012-731bd11b591ff5fd398682e708d3a8c9",
+                "_score": 1.0,
+                "_source": {
+                    "traceId": "306adc4251529012",
+                    "duration": 60039,
+                    "localEndpoint": {
+                        "serviceName": "provider-test",
+                        "ipv4": "192.168.13.111"
+                    },
+                    "timestamp_millis": 1565944703362,
+                    "name": "hystrix",
+                    "id": "5eed9fef502e6d6f",
+                    "parentId": "306adc4251529012",
+                    "timestamp": 1565944703362907
+                }
+            },
+            {
+                "_index": "zipkin:span-2019-08-16",
+                "_type": "span",
+                "_id": "306adc4251529012-8f7c68db1756c5b8fbfa561ea8b48b05",
+                "_score": 1.0,
+                "_source": {
+                    "traceId": "306adc4251529012",
+                    "duration": 14379,
+                    "remoteEndpoint": {
+                        "ipv4": "192.168.13.111",
+                        "port": 49289
+                    },
+                    "shared": true,
+                    "localEndpoint": {
+                        "serviceName": "provider-hello",
+                        "ipv4": "192.168.13.111"
+                    },
+                    "timestamp_millis": 1565944703400,
+                    "kind": "SERVER",
+                    "name": "get /api/hi/{somebody}",
+                    "id": "21c8e2a342fe8eb3",
+                    "parentId": "5eed9fef502e6d6f",
+                    "timestamp": 1565944703400636,
+                    "tags": {
+                        "custom": "tag",
+                        "http.method": "GET",
+                        "http.path": "/api/hi/test",
+                        "mvc.controller.class": "HiFeignClient",
+                        "mvc.controller.method": "sayHi"
+                    }
+                }
+            },
+            {
+                "_index": "zipkin:span-2019-08-16",
+                "_type": "span",
+                "_id": "306adc4251529012-5e5846bb3adcb13f092807ed844d52ba",
+                "_score": 1.0,
+                "_source": {
+                    "traceId": "306adc4251529012",
+                    "duration": 80837,
+                    "remoteEndpoint": {
+                        "ipv6": "::1",
+                        "port": 49287
+                    },
+                    "localEndpoint": {
+                        "serviceName": "provider-test",
+                        "ipv4": "192.168.13.111"
+                    },
+                    "timestamp_millis": 1565944703345,
+                    "kind": "SERVER",
+                    "name": "get /test/hi",
+                    "id": "306adc4251529012",
+                    "timestamp": 1565944703345167,
+                    "tags": {
+                        "http.method": "GET",
+                        "http.path": "/test/hi",
+                        "mvc.controller.class": "TestController",
+                        "mvc.controller.method": "sayHi"
+                    }
+                }
+            },
+            {
+                "_index": "zipkin:span-2019-08-16",
+                "_type": "span",
+                "_id": "1d46f364e4f57166-633263dace20472f83b4098862fe6731",
+                "_score": 1.0,
+                "_source": {
+                    "traceId": "1d46f364e4f57166",
+                    "duration": 91351,
+                    "remoteEndpoint": {
+                        "ipv4": "127.0.0.1",
+                        "port": 49282
+                    },
+                    "localEndpoint": {
+                        "serviceName": "provider-test",
+                        "ipv4": "192.168.13.111"
+                    },
+                    "timestamp_millis": 1565944696401,
+                    "kind": "SERVER",
+                    "name": "get /**",
+                    "id": "1d46f364e4f57166",
+                    "timestamp": 1565944696401754,
+                    "tags": {
+                        "error": "404",
+                        "http.method": "GET",
+                        "http.path": "/",
+                        "http.status_code": "404",
+                        "mvc.controller.class": "ResourceHttpRequestHandler"
+                    }
+                }
+            }
+        ]
+    }
+}
+```
 
