@@ -1,0 +1,7 @@
+mybatis:
+  mapper-locations: classpath:**/*.xml
+  type-aliases-package: com.gknoone.cloud.plus.model
+  type-handlers-package: com.gknoone.cloud.plus.typehandler
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+    call-setters-on-nulls: true
