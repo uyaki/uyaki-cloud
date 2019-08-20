@@ -46,6 +46,17 @@ eureka:
 logging:
   level:
     org.springframework.cloud.gateway: debug
+#security:
+#  oauth2:
+#    client:
+#      //在认证服务器中配置的客户端账号
+#      clientId: client
+#      clientSecret: client-secret
+#    resource:
+#      token-info-uri: http://localhost:8009/oauth/check_token
+#      prefer-token-info: true
+#      jwt:
+#        key-uri: http://localhost:8009/oauth/token_key
 ---
 # After Route Predicate Factory
 # 配置一个时间
@@ -170,36 +181,8 @@ spring:
         # spring.cloud.gateway.discovery.locator.enable=true
   profiles: limit_route
 ---
-#spring:
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: test_route
-#          uri: http://localhost:8003
-#          predicates:
-#            - Path=/test/**
-#          filters:
-#            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
-#            - StripPrefix=1
-#            - name: RequestRateLimiter
-#              args:
-#                # 用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
-#                key-resolver: "#{@uriKeyResolver}"
-#                # 令牌桶每秒填充平均速率
-#                redis-rate-limiter.replenishRate: 1
-#                # 令牌桶总容量
-#                redis-rate-limiter.burstCapacity: 3
-#        - id: hello_route
-#          # 整合eureka，从注册中心获取服务
-#          uri: lb://provider-hello
-#          predicates:
-#            - Path=/hello/**
-#          filters:
-#            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
-#            - StripPrefix=1
-#        # spring.cloud.gateway.discovery.locator.enable=true
 spring:
-  profiles: final_profiles
+  profiles: test_profiles
   cloud:
     gateway:
       routes:
@@ -208,18 +191,6 @@ spring:
           uri: https://github.com
           predicates:
             - Path=/gknoone/**
-#        - id: check_auth_route
-#          # 访问 localhost:8222/hot
-#          uri: https://zhihu.com/
-#          predicates:
-#          - name: CheckAuth
-#            args:
-#              name: gknoone
-#          filters:
-#          - CheckAuth3=gk,noone
-#          - name: CheckAuth2
-#            args:
-#              name: gknoone2
         - id: resolver_route
           uri: lb://provider-test
           predicates:
@@ -267,5 +238,33 @@ spring:
                 exception:
                 - java.io.IOException
                 - org.springframework.web.service.ResponseStatusException
-
-
+---
+spring:
+  profiles: final_profiles
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          # 访问 localhost:8222/gknoone/gknoone-cloud-plus
+          uri: https://github.com
+          predicates:
+            - Path=/gknoone/**
+        - id: hello_route
+          uri: lb://provider-hello
+          predicates:
+            - Path=/provider-hello/**
+          filters:
+            - StripPrefix=1
+        - id: test_route
+          uri: lb://provider-test
+          predicates:
+            - Path=/provider-test/**
+          filters:
+            - StripPrefix=1
+        - id: test_route
+          uri: http://localhost:8003
+          predicates:
+            - Path=/test/**
+          filters:
+            # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
+            - StripPrefix=1

@@ -23,9 +23,9 @@
 	<modules>
 		<module>gknoone-cloud-plus-provider-hello</module>
 		<module>gknoone-cloud-plus-provider-test</module>
-		<module>gknoone-cloud-plus-provider-auth</module>
 		<module>gknoone-cloud-plus-provider-apollo</module>
 		<module>gknoone-cloud-plus-provider-nacos-config</module>
+		<module>gknoone-cloud-plus-provider-auth</module>
 	</modules>
 
 	<dependencies>
@@ -66,10 +66,16 @@
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.gknoone.cloud.plus</groupId>-->
+<!--			<artifactId>common-util</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
+		<!--API 文档管理-->
 		<dependency>
-			<groupId>com.gknoone.cloud.plus</groupId>
-			<artifactId>common-util</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.spring4all</groupId>
+			<artifactId>swagger-spring-boot-starter</artifactId>
+			<version>1.9.0.RELEASE</version>
 		</dependency>
 	</dependencies>
 </project>

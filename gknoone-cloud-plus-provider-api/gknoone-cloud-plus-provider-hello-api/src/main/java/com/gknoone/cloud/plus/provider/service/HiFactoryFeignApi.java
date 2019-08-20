@@ -3,6 +3,8 @@ package com.gknoone.cloud.plus.provider.service;
 import com.gknoone.cloud.plus.common.core.wrapper.Wrapper;
 import com.gknoone.cloud.plus.common.feign.FeignConfiguration;
 import com.gknoone.cloud.plus.provider.service.hystrix.HiFactoryFeignApiHystrix;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

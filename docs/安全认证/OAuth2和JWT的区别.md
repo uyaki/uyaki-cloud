@@ -73,3 +73,37 @@
 
 ![img](assets/v2-467d442498d0ed41372a7567fc36a714_hd.png)
 
+## JWT
+
+### 生成Token格式
+
+**头部header**+**消息体payload**+**签名signature**
+
+```bash
+token=encodeBase64(header)+'.'+encodeBase64(payload)+'.'+encodeBase64(signature)
+```
+
+- header
+
+  - 令牌类型
+  - 使用的签名算法
+
+  ```json
+  {"alg":"HS256","typ":"JWT"}
+  ```
+
+- 消息体
+
+  - 自己需要的信息，如用户名等
+
+  ```json
+  {"id":"123","name":"gknoone","admin":true}
+  ```
+
+- 签名
+  - 用来判断传递路上是否被篡改
+
+## 工程架构图
+
+![SpringCloudï¼10ï¼ä½¿ç¨Spring Cloud OAuth2åJWTä¿æ¤å¾®æå¡](assets/java0-1548306971.png)
+

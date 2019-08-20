@@ -19,8 +19,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-		<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+		<spring-boot.version>2.1.7.RELEASE</spring-boot.version>
 		<gknoone-cloud-plus.version>0.0.1-SNAPSHOT</gknoone-cloud-plus.version>
 		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
 		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
@@ -32,6 +32,8 @@
 		<module>gknoone-cloud-plus-provider-api</module>
 		<module>gknoone-cloud-plus-provider</module>
         <module>gknoone-cloud-plus-common</module>
+		<module>gknoone-cloud-plus-admin</module>
+		<module>gknoone-cloud-plus-apollo</module>
 	</modules>
 	<dependencies>
 		<dependency>
