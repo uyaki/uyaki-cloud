@@ -66,11 +66,6 @@
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.gknoone.cloud.plus</groupId>-->
-<!--			<artifactId>common-util</artifactId>-->
-<!--			<version>0.0.1-SNAPSHOT</version>-->
-<!--		</dependency>-->
 		<!--API 文档管理-->
 		<dependency>
 			<groupId>com.spring4all</groupId>

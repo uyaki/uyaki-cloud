@@ -1,6 +1,11 @@
 # Nacos安装与启动
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
-下载最新的Nacos[最新稳定版本](https://github.com/alibaba/nacos/releases) 
+
+
+<!-- /code_chunk_output -->
+下载最新的Nacos[最新稳定版本](https://github.com/alibaba/nacos/releases)
 
 ```bash
 unzip nacos-server-$version.zip 或者 tar -xvf nacos-server-$version.tar.gz

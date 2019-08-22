@@ -20,7 +20,6 @@
     </properties>
 
     <modules>
-        <module>gknoone-cloud-plus-common-util</module>
         <module>gknoone-cloud-plus-common-core</module>
         <module>gknoone-cloud-plus-common-feign</module>
     </modules>

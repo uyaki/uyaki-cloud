@@ -1,6 +1,27 @@
 # sleuth服务跟踪
 
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [术语](#术语)
+* [zipkin安装启动](#zipkin安装启动)
+	* [Docker 安装](#docker-安装)
+* [Java安装](#java安装)
+	* [验证](#验证)
+* [集成](#集成)
+	* [模块说明](#模块说明)
+	* [集成sleuth](#集成sleuth)
+	* [集成zipkin](#集成zipkin)
+	* [正常服务测试](#正常服务测试)
+	* [异常服务测试](#异常服务测试)
+	* [优化](#优化)
+		* [设置抽样比例](#设置抽样比例)
+		* [设置自定义TracingFilter](#设置自定义tracingfilter)
+		* [过滤不想跟踪的请求](#过滤不想跟踪的请求)
+		* [用rabbitMq代替http发送调用链数据（高可用）](#用rabbitmq代替http发送调用链数据高可用)
+		* [用Elasticsearch存储调用数据链](#用elasticsearch存储调用数据链)
+
+<!-- /code_chunk_output -->
 
 ## 术语
 - `Span`：基本工作单元，例如，在一个新建的span中发送一个RPC等同于发送一个回应请求给RPC，span通过一个64位ID唯一标识，trace以另一个64位ID表示，span还有其他数据信息，比如摘要、时间戳事件、关键值注释(tags)、span的ID、以及进度ID(通常是IP地址)
@@ -17,9 +38,9 @@
 
 - `cr - Client Received` -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
 
-  
 
-  
+
+
 
   可视化**Span**和**Trace**将与Zipkin注释一起查看系统如下图：
 
@@ -425,4 +446,3 @@ http://localhost:9200/${索引名称}/_search
     }
 }
 ```
-

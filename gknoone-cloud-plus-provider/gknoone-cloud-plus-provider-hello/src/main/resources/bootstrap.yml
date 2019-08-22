@@ -38,3 +38,8 @@ spring:
             group: gknoone-cloud-plus
             namespace: 1241625f-714b-440d-8d71-32e58d531f3a
             refresh: true
+          # 上传文件大小配置
+          - data-id: app_common_multipart.yaml
+            group: gknoone-cloud-plus
+            namespace: 1241625f-714b-440d-8d71-32e58d531f3a
+            refresh: true

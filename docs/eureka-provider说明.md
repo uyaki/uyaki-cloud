@@ -1,6 +1,12 @@
 # README
 
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [目录结构](#目录结构)
+* [实现](#实现)
+
+<!-- /code_chunk_output -->
 
 
 
@@ -90,9 +96,9 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
          - **controller**： 存放所有对
        - **service**： 存放Service接口
          - **impl**：存放Service接口实现
-   
+
    - 理论上，一个模块只存在一个API，即，一个API表示当前微服务提供的所有对外服务，但是有时候为了分包明确，需要建立多个API，此时，需要在服务提供方和调用方的`yml配置文件`中，声明
-   
+
      ```yml
      spring:
        main:
@@ -157,7 +163,7 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
 
    - Gknoone-cloud-plus-provider-api
 
-   ```xml 
+   ```xml
    <dependency>
      <groupId>org.springframework.cloud</groupId>
      <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -234,7 +240,7 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
        main:
          ## 允许定义同名的FeignClient,name
          allow-bean-definition-overriding: true
-     
+
      eureka:
        client:
          service-url:
@@ -254,18 +260,18 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
          lease-renewal-interval-in-seconds: 5
          # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
          lease-expiration-duration-in-seconds: 5
-     
+
      logging:
        level:
          # 配合FeignClient的Configuration自定义的Logger.LEVEL使用
          com.gknoone.cloud.plus.provider.service: DEBUG
-     
+
      feign:
        hystrix:
          # 开启熔断
          enabled: true
      ```
-     
+
    - **gknoone-cloud-plus-produce-hello**
 
      ```yml
@@ -277,7 +283,7 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
        main:
          ## 允许定义同名的FeignClient,name
          allow-bean-definition-overriding: true
-     
+
      eureka:
        client:
          service-url:
@@ -299,7 +305,7 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
          lease-expiration-duration-in-seconds: 5
      ```
 
-     
+
 
 4. 定义API与熔断实现
 
@@ -337,7 +343,7 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
      }
      ```
 
-     
+
 
    - 方式二：可抛出异常（配置项为`fallbackFactory`）
 
@@ -369,9 +375,9 @@ tree -N -I 'target|test|mvnw*|*.iml|*.md'  -L 20 > tree.md
       */
      @Component
      public class HiFactoryFeignApiHystrix implements FallbackFactory<HiFactoryFeignApi> {
-     
+
          private Logger logger = LoggerFactory.getLogger(this.getClass());
-     
+
          @Override
          public HiFactoryFeignApi create(Throwable throwable) {
              logger.error("fallback reason: ",throwable);
@@ -422,4 +428,3 @@ public class TestController {
     }
 }
 ```
-

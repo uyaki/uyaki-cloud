@@ -1,6 +1,15 @@
-# Spring Cloud Admin 
+# Spring Cloud Admin
 
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [Admin Server](#admin-server)
+* [admin-client配置](#admin-client配置)
+	* [不使用eureka](#不使用eureka)
+	* [使用eureka](#使用eureka)
+	* [公共配置](#公共配置)
+
+<!-- /code_chunk_output -->
 
 ## Admin Server
 
@@ -63,11 +72,11 @@
    @EnableAdminServer
    @SpringBootApplication
    public class AdminApplication {
-   
+
        public static void main(String[] args) {
            SpringApplication.run(AdminApplication.class, args);
        }
-   
+
    }
    ```
 
@@ -92,7 +101,7 @@
        user:
          name: gknoone
          password: gk123456
-   
+
    eureka:
      client:
        service-url:
@@ -112,7 +121,7 @@
        lease-renewal-interval-in-seconds: 5
        # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
        lease-expiration-duration-in-seconds: 5
-   
+
    # 开启监控点
    management:
      endpoints:
@@ -137,11 +146,11 @@
    @Configuration
    public class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {
        private final String adminContextPath;
-   
+
        public SecurityPermitAllConfig(AdminServerProperties adminServerProperties) {
            this.adminContextPath = adminServerProperties.getContextPath();
        }
-   
+
        @Override
        protected void configure(HttpSecurity http) throws Exception {
            SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
@@ -238,4 +247,3 @@ logging:
 ```
 
 ![image-20190812170504252](assets/image-20190812170504252.png)
-

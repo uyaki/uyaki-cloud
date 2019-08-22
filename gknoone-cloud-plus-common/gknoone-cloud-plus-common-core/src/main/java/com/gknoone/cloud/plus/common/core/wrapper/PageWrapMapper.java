@@ -1,6 +1,6 @@
 package com.gknoone.cloud.plus.common.core.wrapper;
 
-import com.gknoone.cloud.plus.common.util.page.PageUtil;
+import com.gknoone.cloud.plus.common.core.util.page.PageUtil;
 
 /**
  * @author gknoone

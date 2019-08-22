@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: @pom.artifactId@
+zuul:
+  routes:
+    provider-hello:
+      path: /xx/**
+      url: forward:/local
+  prefix: /rest
+  # 开启重试
+  retryable: true
+  debug:
+    request: true
+  include-debug-header: true
+ribbon:
+  # 请求链接的超时时间，上传大文件时候需要配置长一些
+  connectTimeout: 3000
+  # 上传大文件时候需要配置长一些
+  readTimeout: 60000
+  # 对当前实例的重试次数
+  maxAutoRetries: 3
+  # 切换实例的最大重试次数
+  maxAutoRetriesNextServer: 3
+  # 对所有的操作请求都进行重试
+  okToRetryOnAllOperation: true
+  # 对指定的Http响应码进行重试
+  retryableStatusCodes: 500,404,502

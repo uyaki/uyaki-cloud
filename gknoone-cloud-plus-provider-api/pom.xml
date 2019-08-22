@@ -30,12 +30,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
-        <!--通用工具-->
-        <dependency>
-            <groupId>com.gknoone.cloud.plus</groupId>
-            <artifactId>common-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
         <!--通用核心代码-->
         <dependency>
             <groupId>com.gknoone.cloud.plus</groupId>

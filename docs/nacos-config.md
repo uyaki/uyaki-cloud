@@ -1,6 +1,19 @@
 # Nacos Config
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
-[TOC]
+* [启动配置管理](#启动配置管理)
+* [支持自定义 namespace 的配置](#支持自定义-namespace-的配置)
+* [支持自定义 Group 的配置](#支持自定义-group-的配置)
+* [定义扩展的 Data Id 配置](#定义扩展的-data-id-配置)
+* [配置的优先级](#配置的优先级)
+* [完全关闭配置](#完全关闭配置)
+* [实战演示](#实战演示)
+	* [命名空间](#命名空间)
+	* [配置列表](#配置列表)
+	* [项目配置](#项目配置)
+
+<!-- /code_chunk_output -->
 
 ## 启动配置管理
 
@@ -54,14 +67,14 @@
    - `prefix` 默认为 `spring.application.name` 的值，也可以通过配置项 `spring.cloud.nacos.config.prefix`来配置。
 
      ```properties
-    spring.application.name=xxx
+   spring.application.name=xxx
      spring.cloud.nacos.config.prefix=yyy
      ```
-   
-   - `spring.profile.active` 即为当前环境对应的 profile，详情可以参考 [Spring Boot文档](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html#boot-features-profiles)。 
-   
+
+   - `spring.profile.active` 即为当前环境对应的 profile，详情可以参考 [Spring Boot文档](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html#boot-features-profiles)。
+
      > 注意：当 spring.profile.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变成 `${prefix}.${file-extension}`
-   
+
      ```properties
      spring.profiles.active=product
      ```
@@ -78,7 +91,7 @@
        private String name;
        @Value("${user.age:11}")
        private Integer age;
-   
+
        @GetMapping("/user")
        public String getUserInfo(){
            return String.format("%s is %s years old this year.", name,age);
@@ -196,11 +209,11 @@ spring.cloud.nacos.config.enabled = false
    user:
      name: gknoone-cloud-plus
      age: 123
-     
+
    logging:
      # 配置Admin的日志文件输出位置
      file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-nacos-config.log
-   
+
    server:
      port: 8006
    ```
@@ -303,13 +316,10 @@ spring.cloud.nacos.config.enabled = false
        private String name;
        @Value("${user.age:11}")
        private Integer age;
-   
+
        @GetMapping("/user")
        public String getUserInfo(){
            return String.format("%s is %s years old this year.", name,age);
        }
    }
    ```
-
-   
-

@@ -4,3 +4,6 @@ spring:
   main:
     ## 允许定义同名的FeignClient,name
     allow-bean-definition-overriding: true
+server:
+  port: 8002
+

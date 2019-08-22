@@ -1,6 +1,34 @@
 # Gateway
 
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [快速上手](#快速上手)
+* [整合Eureka路由](#整合eureka路由)
+* [路由断言工厂（predicates）](#路由断言工厂predicates)
+	* [Path路由断言工厂](#path路由断言工厂)
+	* [Query路由断言工厂](#query路由断言工厂)
+	* [Method路由断言工厂](#method路由断言工厂)
+	* [Header路由断言工厂](#header路由断言工厂)
+	* [自定义路由断言工厂](#自定义路由断言工厂)
+* [过滤器工厂](#过滤器工厂)
+	* [AddRequestHearder过滤器工厂](#addrequesthearder过滤器工厂)
+	* [RemoveRequestHeader过滤器工厂](#removerequestheader过滤器工厂)
+	* [SetStatus过滤器工厂](#setstatus过滤器工厂)
+	* [RedirectTo过滤器工厂](#redirectto过滤器工厂)
+	* [自定义过滤器工厂](#自定义过滤器工厂)
+	* [自定义KeyValue过滤器工厂](#自定义keyvalue过滤器工厂)
+* [全局过滤器](#全局过滤器)
+* [限流](#限流)
+	* [Ip限流](#ip限流)
+	* [用户限流](#用户限流)
+	* [接口限流](#接口限流)
+* [熔断回退](#熔断回退)
+* [跨域](#跨域)
+* [统一异常处理](#统一异常处理)
+* [重试机制](#重试机制)
+
+<!-- /code_chunk_output -->
 
 ## 快速上手
 
@@ -13,7 +41,7 @@
    </dependency>
    ```
 
-2. 配置**application.yml** 
+2. 配置**application.yml**
 
    ```yml
    server:
@@ -125,8 +153,8 @@ spring:
     gateway:
       routes:
         - id: query_route
-          uri: 
-          predicates: 
+          uri:
+          predicates:
             - Query=foo, ba.
 ```
 
@@ -142,8 +170,8 @@ spring:
     gateway:
       routes:
         - id: method_route
-          uri: 
-          predicates: 
+          uri:
+          predicates:
             - Method=GET
 ```
 
@@ -157,8 +185,8 @@ spring:
     gateway:
       routes:
         - id: header_route
-          uri: 
-          predicates: 
+          uri:
+          predicates:
             - Header=X-Request-Id，\d+
 ```
 
@@ -228,7 +256,7 @@ spring:
         - id: add_request_header_route
           uri: https://www.zhihu.com
           filters:
-            - AddRequestHeader=X-Request-Foo,Bar	
+            - AddRequestHeader=X-Request-Foo,Bar
 ```
 
 ### RemoveRequestHeader过滤器工厂
@@ -241,7 +269,7 @@ spring:
         - id: remove_request_header_route
           uri: https://www.zhihu.com
           filters:
-            - RemoveRequestHeader=X-Request-Foo,Bar	
+            - RemoveRequestHeader=X-Request-Foo,Bar
 ```
 
 ### SetStatus过滤器工厂
@@ -269,7 +297,7 @@ spring:
         - id: redirect_to_route
           uri: https://www.zhihu.com
           filters:
-            - RedirectTo=302,http://baidu.com	
+            - RedirectTo=302,http://baidu.com
 ```
 
 ### 自定义过滤器工厂
@@ -424,7 +452,7 @@ spring:
    @Component
    public class IpGlobalFilter implements GlobalFilter, Ordered {
        private static final String LOCAL_IP = "127.0.0.1";
-   
+
        @Override
        public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
            HttpHeaders httpHeaders = exchange.getRequest().getHeaders();
@@ -441,17 +469,17 @@ spring:
            }
            return chain.filter(exchange);
        }
-   
+
        private String getIp(HttpHeaders httpHeaders) {
            return "127.0.0.1";
        }
-   
+
        @Data
        private class ResponseDate {
            int code;
            String message;
        }
-   
+
        /**
         * 数字越小，优先级越高
         *
@@ -482,7 +510,7 @@ spring:
   	port: 6379
   	database: 0
   ```
-  
+
 - 实现KeyResolver类
 
 - 在启动类中注册Bean
@@ -499,7 +527,7 @@ spring:
       public Mono<String> resolve(ServerWebExchange exchange) {
           return Mono.just(getIpAddr(exchange.getRequest()));
       }
-  
+
       /**
        * 获取真实IP
        * @param request 请求
@@ -619,7 +647,7 @@ public class ApiKeyResolver implements KeyResolver {
                    fallbackUri: forward:/fallback
    ```
 
-   
+
 
 3. 编写回退接口`fallback`
 
@@ -673,7 +701,7 @@ public class ApiKeyResolver implements KeyResolver {
   }
   ```
 
-  
+
 
 - 方式二：配置文件配置方式（推荐）:star:
 
@@ -886,4 +914,3 @@ spring:
                 - java.io.IOException
                 - org.springframework.web.server.ResponseStatusException
 ```
-

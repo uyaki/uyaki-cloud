@@ -1,8 +1,20 @@
 # OAuth2和JWT的区别
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [区别](#区别)
+	* [OAuth2认证框架](#oauth2认证框架)
+* [JWT认证协议](#jwt认证协议)
+* [JWT](#jwt)
+	* [生成Token格式](#生成token格式)
+* [工程架构图](#工程架构图)
+
+<!-- /code_chunk_output -->
+
 ## 区别
 
-### OAuth2**认证框架**
+### OAuth2认证框架
 
 - OAuth2中包含四个角色
   - 资源拥有者(Resource Owner)
@@ -59,7 +71,7 @@
 |           |    access_token / refresh_token     |             |
 |           |    token_type / expire_in           |             |
 |  Client   |                                     +-------------+
-|           |                                 
+|           |
 |           |                                     +-------------+
 |           |       4-Request Resource            |             |
 |           |-----------------------------------> |             |
@@ -106,4 +118,3 @@ token=encodeBase64(header)+'.'+encodeBase64(payload)+'.'+encodeBase64(signature)
 ## 工程架构图
 
 ![SpringCloudï¼10ï¼ä½¿ç¨Spring Cloud OAuth2åJWTä¿æ¤å¾®æå¡](assets/java0-1548306971.png)
-

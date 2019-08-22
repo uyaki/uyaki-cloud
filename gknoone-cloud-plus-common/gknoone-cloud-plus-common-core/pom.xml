@@ -88,12 +88,6 @@
             <artifactId>guava</artifactId>
             <version>28.0-jre</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.gknoone.cloud.plus</groupId>
-            <artifactId>common-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 </project>

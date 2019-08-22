@@ -1,5 +1,14 @@
 # SCA Nacos Config 共享配置方案设计
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
+* [原文链接](#原文链接)
+* [实际情况](#实际情况)
+* [基于域名的配置方式给应用分组](#基于域名的配置方式给应用分组)
+* [自定义的方式来命名 Data Id](#自定义的方式来命名-data-id)
+* [通过类似面向对象方式的自定义配置](#通过类似面向对象方式的自定义配置)
+
+<!-- /code_chunk_output -->
 ## 原文链接
 
 [SCA Nacos Config 共享配置方案设计](https://github.com/alibaba/spring-cloud-alibaba/issues/141)

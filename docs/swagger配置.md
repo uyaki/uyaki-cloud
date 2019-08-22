@@ -1,5 +1,13 @@
 # swagger 配置
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 
+* [项目集成swagger](#项目集成swagger)
+* [Eureka控制台快速查看Swagger文档](#eureka控制台快速查看swagger文档)
+* [修改请求认真](#修改请求认真)
+* [在网关中聚合多个服务](#在网关中聚合多个服务)
+
+<!-- /code_chunk_output -->
 ## 项目集成swagger
 
 1. 使用封装好的swagger
@@ -20,11 +28,11 @@
    @SpringBootApplication
    @EnableFeignClients
    public class ProviderTestApplication {
-   
+
        public static void main(String[] args) {
            SpringApplication.run(ProviderTestApplication.class, args);
        }
-   
+
    }
    ```
 
@@ -35,12 +43,12 @@
    @RestController
    @RequestMapping(value = "/test",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
    public class TestController {
-   
+
        @Resource
        private HelloFeignApi helloFeignApi;
        @Resource
        private HiFactoryFeignApi hiFactoryFeignApi;
-   
+
        @ApiOperation(value = "say hello")
        @GetMapping(value = "/hello")
        public Wrapper<String> sayHello(){
@@ -60,8 +68,8 @@
    @Api(tags = "Hello Feign Client")
    @RestController
    public class HelloFeignClient extends BaseController implements HelloFeignApi {
-   
-   
+
+
        @ApiOperation(value = "say hello to sb")
        @Override
        public Wrapper<String> sayHello(@PathVariable String somebody) {
