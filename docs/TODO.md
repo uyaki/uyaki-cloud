@@ -52,11 +52,11 @@
   - [x] 集成Eureka
   - [ ] 自定义监控报警
   - [ ] 监控被保护服务
-- [ ] 服务的API文档管理
+- [x] 服务的API文档管理
   - [x] 集成Swagger
   - [x] Eureka控制台统一查看
   - [x] 请求认证
-  - [ ] Gateway聚合多个服务Swagger
+  - [x] Gateway(Zuul)聚合多个服务Swagger
 - [ ] API网关扩展
   - [ ] 用户认证
   - [ ] 服务限流

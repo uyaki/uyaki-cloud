@@ -6,7 +6,7 @@ zuul:
     provider-hello:
       path: /xx/**
       url: forward:/local
-  prefix: /rest
+#  prefix: /rest
   # 开启重试
   retryable: true
   debug:

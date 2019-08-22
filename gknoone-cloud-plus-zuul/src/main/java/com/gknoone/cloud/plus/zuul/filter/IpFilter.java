@@ -22,7 +22,7 @@ public class IpFilter extends ZuulFilter {
     /**
      * 黑名单列表
      */
-    private List<String> blackIpList = Collections.singletonList("127.0.0.1");
+    private List<String> blackIpList = Collections.singletonList("127.0.0.111");
 
     public IpFilter() {
         super();

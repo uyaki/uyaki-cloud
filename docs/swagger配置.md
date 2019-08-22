@@ -68,6 +68,7 @@
    @Api(tags = "Hello Feign Client")
    @RestController
    public class HelloFeignClient extends BaseController implements HelloFeignApi {
+   ```
 
 
        @ApiOperation(value = "say hello to sb")
@@ -107,3 +108,64 @@ swagger.authorization.key-name=Authorization
 ```
 
 ## 在网关中聚合多个服务
+
+1. 在zuul中引入依赖
+
+   ```xml
+   <!--聚合swagger服务-->
+   <dependency>
+     <groupId>io.springfox</groupId>
+     <artifactId>springfox-swagger-ui</artifactId>
+     <version>2.9.2</version>
+   </dependency>
+   <dependency>
+     <groupId>io.springfox</groupId>
+     <artifactId>springfox-swagger2</artifactId>
+     <version>2.9.2</version>
+   </dependency>
+   ```
+
+   
+
+2. 配置Provider
+
+   ```java
+   /**
+    *
+    * @author gknoone
+    * @date 2019-08-22 11:36
+    */
+   @EnableSwagger2
+   @Component
+   @Primary
+   public class DocumentationConfig implements SwaggerResourcesProvider {
+       @Autowired
+       private DiscoveryClient discoveryClient;
+       @Value("${spring.application.name}")
+       private String applicationName;
+       @Override
+       public List<SwaggerResource> get() {
+           List<SwaggerResource> resources = new ArrayList<>();
+           discoveryClient.getServices().stream().filter(
+                   s -> !s.equals(applicationName)
+           ).forEach(name->{
+               resources.add(swaggerResource(name, "/" + name + "/v2/api-docs", "2.0"));
+           });
+           return resources;
+       }
+   
+       private SwaggerResource swaggerResource(String name, String location, String version) {
+           SwaggerResource swaggerResource = new SwaggerResource();
+           swaggerResource.setName(name);
+           swaggerResource.setLocation(location);
+           swaggerResource.setSwaggerVersion(version);
+           return swaggerResource;
+       }
+   }
+   ```
+
+3. 访问[http://127.0.0.1:8444/swagger-ui.html](http://127.0.0.1:8444/swagger-ui.html)，可以在右上角切换
+
+   ![image-20190822115913872](assets/image-20190822115913872.png)
+
+   
