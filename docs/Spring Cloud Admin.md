@@ -112,7 +112,7 @@
      instance:
        # 将自己的IP注册到eureka上，若为false，则注册微服务所在操作系统的hostname到eureka上
        prefer-ip-address: true
-       # 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+       # 实例id，配置前192.168.13.111:microservices-user:8002，配置后microservices-user:192.168.13.111:8002
        # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
        # 自定义实例跳转链接
@@ -243,7 +243,7 @@ management:
       show-details: ALWAYS
 logging:
   # 配置Admin的日志文件输出位置
-  file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-hello.log
+  file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/microservices/microservices-hello.log
 ```
 
 ![image-20190812170504252](assets/image-20190812170504252.png)

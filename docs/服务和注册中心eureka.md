@@ -1,4 +1,4 @@
-# eureka-server搭建
+# 服务和注册中心eureka
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -133,7 +133,7 @@ eureka:
 ```yml
 eureka:
   client:
-    # 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+    # 实例id，配置前192.168.13.111:microservices-user:8002，配置后microservices-user:192.168.13.111:8002
     # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${server.port}
     instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
 ```

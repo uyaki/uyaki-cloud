@@ -1,4 +1,4 @@
-# Zuul
+# 网关zuul
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -58,7 +58,7 @@
 
      zuul:
        routes:
-         provider-hello:
+         microservices-hello:
            path: /**
            url: http://localhost:8002/
      ```
@@ -134,7 +134,7 @@
 
 3. 重启服务
 
-4. 访问[http://localhost:8444/provider-hello/api/hello/sb](http://localhost:8444/provider-hello/api/hello/sb)
+4. 访问[http://localhost:8444/microservices-hello/api/hello/sb](http://localhost:8444/microservices-hello/api/hello/sb)
 
    ```bash
    # API网关地址+访问服务名称+接口URI
@@ -148,11 +148,11 @@
    ```yml
    zuul:
      routes:
-       provider-hello:
+       microservices-hello:
          path: /hello/**
    ```
 
-   > 这样的话，访问http://localhost:8444/hello/api/hello/sb就会重定向到http://localhost:8444/provider-hello/api/hello/sb
+   > 这样的话，访问http://localhost:8444/hello/api/hello/sb就会重定向到http://localhost:8444/microservices-hello/api/hello/sb
 
    > `**`表示匹配任意层次路由
 
@@ -163,14 +163,14 @@
      prefix: /rest
    ```
 
-   > 访问[http://localhost:8444/rest/provider-hello/api/hello/sb](http://localhost:8444/rest/provider-hello/api/hello/sb)
+   > 访问[http://localhost:8444/rest/microservices-hello/api/hello/sb](http://localhost:8444/rest/microservices-hello/api/hello/sb)
 
 3. 本地跳转（跳转到zuul服务本地）
 
    ```yml
    zuul:
      routes:
-       provider-hello:
+       microservices-hello:
          path: /xx/**
          url: forward:/local
      prefix: /rest
@@ -399,7 +399,7 @@
    ```
 
 4. 重启服务
-5. 访问[http://127.0.0.1:8444/rest/provider-hello/api/hello/sb](http://127.0.0.1:8444/rest/provider-hello/api/hello/sb)，可以看到结果被拦截
+5. 访问[http://127.0.0.1:8444/rest/microservices-hello/api/hello/sb](http://127.0.0.1:8444/rest/microservices-hello/api/hello/sb)，可以看到结果被拦截
 
 ### 过滤器禁用
 
@@ -579,9 +579,9 @@ return null;
 
 #### 场景模拟
 
-1. 新建两个provider-hello服务
-2. 多次访问[http://localhost:8444/rest/provider-hello/api/hello/sb](http://localhost:8444/rest/provider-hello/api/hello/sb)，正常
-3. 停掉其中一个provider-hello服务
+1. 新建两个microservices-hello服务
+2. 多次访问[http://localhost:8444/rest/microservices-hello/api/hello/sb](http://localhost:8444/rest/microservices-hello/api/hello/sb)，正常
+3. 停掉其中一个microservices-hello服务
 4. 发现，访问，一次成功，一次失败
 
 > 默认Robbon的转发规则是轮询，没有重试机制，一定有一次转发到停掉的服务上
@@ -619,10 +619,10 @@ return null;
 
 ### 回退机制
 
->  回退需要实现`FallbackProvider`接口
+>  回退需要实现`Fallbackmicroservices`接口
 
 ```java
-package com.gknoone.cloud.plus.zuul.provider;
+package com.gknoone.cloud.plus.zuul.microservices;
 
 import com.alibaba.fastjson.JSON;
 import com.gknoone.cloud.plus.common.core.response.ResponseCode;
@@ -630,7 +630,7 @@ import com.gknoone.cloud.plus.common.core.response.ResponseData;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.Fallbackmicroservices;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -649,8 +649,8 @@ import java.nio.charset.Charset;
  * @date 2019-08-22 08:55
  */
 @Component
-public class ServiceConsumerFallbackProvider implements FallbackProvider {
-    private Logger logger = LoggerFactory.getLogger(ServiceConsumerFallbackProvider.class);
+public class ServiceConsumerFallbackmicroservices implements Fallbackmicroservices {
+    private Logger logger = LoggerFactory.getLogger(ServiceConsumerFallbackmicroservices.class);
 
     /**
      * 对所有服务进行回退操作
@@ -749,7 +749,7 @@ public class ServiceConsumerFallbackProvider implements FallbackProvider {
 
 ### 文件上传
 
-1. 在Provider-hello服务中添加接口
+1. 在microservices-hello服务中添加接口
 
    ```java
    @RestController
@@ -796,7 +796,7 @@ public class ServiceConsumerFallbackProvider implements FallbackProvider {
        hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=60000
        ```
 
-     如下，访问[http://localhost:8444/zuul/rest/provider-hello/file/upload](http://localhost:8444/zuul/rest/provider-hello/file/upload)
+     如下，访问[http://localhost:8444/zuul/rest/microservices-hello/file/upload](http://localhost:8444/zuul/rest/microservices-hello/file/upload)
 
      ![sss](assets/image-20190822094228007.png)
 
@@ -812,7 +812,7 @@ public class ServiceConsumerFallbackProvider implements FallbackProvider {
    zuul.include-debug-header=true
    ```
 
-2. 在请求的url最末尾带上`?debug=true`，如[http://localhost:8444/rest/provider-hello/api/hello/sb?debug=true](http://localhost:8444/rest/provider-hello/api/hello/sb?debug=true)。
+2. 在请求的url最末尾带上`?debug=true`，如[http://localhost:8444/rest/microservices-hello/api/hello/sb?debug=true](http://localhost:8444/rest/microservices-hello/api/hello/sb?debug=true)。
 
    > 如果开启了`zuul.debug.request=true`，则可以跳过
 

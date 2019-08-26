@@ -1,4 +1,4 @@
-# sleuth服务跟踪
+# 服务跟踪Sleuth+zipkin+ribbitmq+elasticsearch
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -70,8 +70,8 @@ java -jar zipkin.jar
 ## 集成
 ### 模块说明
 
-- Gknoone-cloud-plus-provider-hello
-- gknoone-cloud-plus-provider-test
+- Gknoone-cloud-plus-microservices-hello
+- gknoone-cloud-plus-microservices-test
 ### 集成sleuth
 1. 引入依赖
 ```xml
@@ -90,11 +90,11 @@ logging:
 ```
 3. 用postman访问`localhost:8021/test/1`，查看日志如下
 ```bash
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-provider-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-provider-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-provider-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-2019-07-29 11:49:05.682 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-provider-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-2019-07-29 11:49:05.683 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-provider-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
+2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
+2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
+2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+2019-07-29 11:49:05.682 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+2019-07-29 11:49:05.683 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
 ```
 
 其中可以看到日志内容中的`[gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
@@ -113,7 +113,7 @@ logging:
    <artifactId>spring-cloud-starter-zipkin</artifactId>
 </dependency>
 ```
-2. 配置`application.yml`(以gknoone-cloud-plus-provider-hello为例)，添加zipkin配置
+2. 配置`application.yml`(以gknoone-cloud-plus-microservices-hello为例)，添加zipkin配置
 ```yml
 spring:
   zipkin:
@@ -132,7 +132,7 @@ spring:
 
 ### 异常服务测试
 
-1. 关闭gknoone-cloud-plus-provider-hello
+1. 关闭gknoone-cloud-plus-microservices-hello
 
 2. 用postman访问`http://localhost:8003/test/hi`，再次点击查找
 
@@ -222,12 +222,12 @@ public class MyTracingFilter extends GenericFilterBean {
 ```java
 /**
  * 进行zipkin过滤，返回false时，不会发生到zipkin
- * @param provider SkipPatternProvider设置了很多过滤规则
+ * @param microservices SkipPatternmicroservices设置了很多过滤规则
  * @return HttpSampler
  */
 @Bean(name = ServerSampler.NAME)
-HttpSampler myHttpSampler(SkipPatternProvider provider){
-    Pattern pattern = provider.skipPattern();
+HttpSampler myHttpSampler(SkipPatternmicroservices microservices){
+    Pattern pattern = microservices.skipPattern();
     return new HttpSampler() {
         @Override
         public <Req> Boolean trySample(HttpAdapter<Req, ?> httpAdapter, Req req) {
@@ -317,7 +317,7 @@ http://localhost:9200/${索引名称}/_search
                     "traceId": "306adc4251529012",
                     "duration": 34146,
                     "localEndpoint": {
-                        "serviceName": "provider-test",
+                        "serviceName": "microservices-test",
                         "ipv4": "192.168.13.111"
                     },
                     "timestamp_millis": 1565944703379,
@@ -341,7 +341,7 @@ http://localhost:9200/${索引名称}/_search
                     "traceId": "306adc4251529012",
                     "duration": 60039,
                     "localEndpoint": {
-                        "serviceName": "provider-test",
+                        "serviceName": "microservices-test",
                         "ipv4": "192.168.13.111"
                     },
                     "timestamp_millis": 1565944703362,
@@ -365,7 +365,7 @@ http://localhost:9200/${索引名称}/_search
                     },
                     "shared": true,
                     "localEndpoint": {
-                        "serviceName": "provider-hello",
+                        "serviceName": "microservices-hello",
                         "ipv4": "192.168.13.111"
                     },
                     "timestamp_millis": 1565944703400,
@@ -396,7 +396,7 @@ http://localhost:9200/${索引名称}/_search
                         "port": 49287
                     },
                     "localEndpoint": {
-                        "serviceName": "provider-test",
+                        "serviceName": "microservices-test",
                         "ipv4": "192.168.13.111"
                     },
                     "timestamp_millis": 1565944703345,
@@ -425,7 +425,7 @@ http://localhost:9200/${索引名称}/_search
                         "port": 49282
                     },
                     "localEndpoint": {
-                        "serviceName": "provider-test",
+                        "serviceName": "microservices-test",
                         "ipv4": "192.168.13.111"
                     },
                     "timestamp_millis": 1565944696401,

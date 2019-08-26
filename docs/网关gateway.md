@@ -1,4 +1,4 @@
-# Gateway
+# 网关gateway
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -94,7 +94,7 @@
          routes:
            - id: hello_route
              # 整合eureka，从注册中心获取服务
-             uri: lb://provider-hello
+             uri: lb://microservices-hello
              predicates:
                - Path=/hello/**
              filters:
@@ -122,7 +122,7 @@
              lower-case-service-id: true
    ```
 
-   - 访问`http://localhost:8222/provider-hello/api/hello/sb`，成功
+   - 访问`http://localhost:8222/microservices-hello/api/hello/sb`，成功
 
 ## 路由断言工厂（predicates）
 
@@ -562,7 +562,7 @@ spring:
     gateway:
         routes:
           - id: resolver_route
-            uri: lb://provider-test
+            uri: lb://microservices-test
             predicates:
               - Path=/test/**
             filters:
@@ -627,7 +627,7 @@ public class ApiKeyResolver implements KeyResolver {
        gateway:
          routes:
            - id: resolver_route
-             uri: lb://provider-test
+             uri: lb://microservices-test
              predicates:
                - Path=/test/**
              filters:
@@ -830,13 +830,13 @@ public class ErrorHandlerConfiguration {
 
     public ErrorHandlerConfiguration(ServerProperties serverProperties,
                                      ResourceProperties resourceProperties,
-                                     ObjectProvider<List<ViewResolver>> viewResolversProvider,
+                                     Objectmicroservices<List<ViewResolver>> viewResolversmicroservices,
                                      ServerCodecConfigurer serverCodecConfigurer,
                                      ApplicationContext applicationContext) {
         this.serverProperties = serverProperties;
         this.applicationContext = applicationContext;
         this.resourceProperties = resourceProperties;
-        this.viewResolvers = viewResolversProvider.getIfAvailable(Collections::emptyList);
+        this.viewResolvers = viewResolversmicroservices.getIfAvailable(Collections::emptyList);
         this.serverCodecConfigurer = serverCodecConfigurer;
     }
 
@@ -880,7 +880,7 @@ spring:
     gateway:
       routes:
         - id: resolver_route
-          uri: lb://provider-test
+          uri: lb://microservices-test
           predicates:
             - Path=/test/**
           filters:

@@ -1,4 +1,5 @@
-# Nacos Config
+# 配置中心Nacos
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
@@ -124,7 +125,7 @@ spring.cloud.nacos.config.group=DEVELOP_GROUP
 ## 定义扩展的 Data Id 配置
 
 ```
-spring.application.name=opensource-service-provider
+spring.application.name=opensource-service-microservices
 spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 
 # config external configuration
@@ -203,7 +204,7 @@ spring.cloud.nacos.config.enabled = false
 
 ![image-20190815093806633](assets/image-20190815093806633.png)
 
-1. provider-nacos-config.yaml
+1. microservices-nacos-config.yaml
 
    ```yaml
    user:
@@ -212,7 +213,7 @@ spring.cloud.nacos.config.enabled = false
 
    logging:
      # 配置Admin的日志文件输出位置
-     file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-nacos-config.log
+     file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/microservices/microservices-nacos-config.log
 
    server:
      port: 8006
@@ -230,7 +231,7 @@ spring.cloud.nacos.config.enabled = false
      instance:
        # 将自己的IP注册到eureka上，若为false，则注册微服务所在操作系统的hostname到eureka上
        prefer-ip-address: true
-       # 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+       # 实例id，配置前192.168.13.111:microservices-user:8002，配置后microservices-user:192.168.13.111:8002
        # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
        # 自定义实例跳转链接
