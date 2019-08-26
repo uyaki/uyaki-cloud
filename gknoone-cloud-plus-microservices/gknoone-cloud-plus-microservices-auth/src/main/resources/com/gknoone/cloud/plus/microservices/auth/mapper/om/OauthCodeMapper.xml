@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gknoone.cloud.plus.microservices.auth.mapper.om.OauthCodeMapper">
+  <resultMap id="BaseResultMap" type="com.gknoone.cloud.plus.microservices.auth.model.om.OauthCode">
+    <result column="code" jdbcType="VARCHAR" property="code" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.gknoone.cloud.plus.microservices.auth.model.om.OauthCode">
+    <result column="authentication" jdbcType="BINARY" property="authentication" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    authentication
+  </sql>
+  <insert id="insert" parameterType="com.gknoone.cloud.plus.microservices.auth.model.om.OauthCode">
+    insert into om.oauth_code (code, authentication)
+    values (#{code,jdbcType=VARCHAR}, #{authentication,jdbcType=BINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gknoone.cloud.plus.microservices.auth.model.om.OauthCode">
+    insert into om.oauth_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        code,
+      </if>
+      <if test="authentication != null">
+        authentication,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="authentication != null">
+        #{authentication,jdbcType=BINARY},
+      </if>
+    </trim>
+  </insert>
+</mapper>

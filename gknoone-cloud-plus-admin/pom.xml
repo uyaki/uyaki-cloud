@@ -10,7 +10,7 @@
     <artifactId>admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>admin</name>
+    <name>gknoone-cloud-plus-admin</name>
 
     <properties>
         <java.version>1.8</java.version>

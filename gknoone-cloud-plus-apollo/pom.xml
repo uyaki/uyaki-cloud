@@ -10,7 +10,7 @@
     <artifactId>apollo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>apollo</name>
+    <name>gknoone-cloud-plus-apollo</name>
     <description>Apollo配置中心</description>
 
     <properties>

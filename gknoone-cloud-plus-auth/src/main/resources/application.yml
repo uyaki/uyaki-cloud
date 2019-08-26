@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: @pom.artifactId@
+server:
+  port: 8555
+  servlet:
+    # web基础路径
+    context-path: /uaa

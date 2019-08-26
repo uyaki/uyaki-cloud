@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.6.RELEASE</version>
+		<version>2.1.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gknoone.cloud.plus</groupId>
@@ -27,13 +27,26 @@
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 	</properties>
 	<modules>
+		<!-- 服务和注册中心eureka -->
 		<module>gknoone-cloud-plus-eureka</module>
+		<!-- 网关：gateway -->
 		<module>gknoone-cloud-plus-gateway</module>
-		<module>gknoone-cloud-plus-provider-api</module>
-		<module>gknoone-cloud-plus-provider</module>
-        <module>gknoone-cloud-plus-common</module>
-		<module>gknoone-cloud-plus-admin</module>
+		<!-- 网关：zuul -->
+		<module>gknoone-cloud-plus-zuul</module>
+		<!-- 配置中心：apollo（暂未启动，现使用nacos） -->
 		<module>gknoone-cloud-plus-apollo</module>
+		<!-- 管理员模块 -->
+		<module>gknoone-cloud-plus-admin</module>
+		<!-- 鉴权模块 -->
+		<module>gknoone-cloud-plus-auth</module>
+		<!-- 微服务模块 -->
+		<module>gknoone-cloud-plus-microservices</module>
+		<!-- 微服务API模块 -->
+		<module>gknoone-cloud-plus-microservices-api</module>
+		<!-- 数据库模块 -->
+		<module>gknoone-cloud-plus-db</module>
+		<!-- 底层通用模块 -->
+		<module>gknoone-cloud-plus-common</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -51,11 +64,11 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-		<!-- 热启动 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+		<!-- 热启动 ，使用缓存时候需关闭-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-devtools</artifactId>-->
+<!--		</dependency>-->
 		<!-- actuator监控 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

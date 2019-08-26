@@ -165,7 +165,7 @@ spring:
     - 添加自定义的标记
     - 将请求ID添加到响应头
 ```java
-package com.gknoone.cloud.plus.provider.filter;
+package com.gknoone.cloud.plus.microservices.filter;
 
 import brave.Span;
 import brave.Tracer;

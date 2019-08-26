@@ -10,7 +10,7 @@
     <artifactId>zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>zuul</name>
+    <name>gknoone-cloud-plus-zuul</name>
     <description>zuul</description>
 
     <properties>
