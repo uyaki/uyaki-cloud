@@ -1,5 +1,5 @@
 # 身份信息
-app.id=provider-apollo
+app.id=microservices-apollo
 # Meta Server(Config Server)
 apollo.meta=http://localhost:8080
 # 项目启动bootstrap阶段，向spring 容器注入配置信息
@@ -23,7 +23,7 @@ eureka.client.healthcheck.enabled=true
 
 # 将自己的IP注册到eureka上，若为false，则注册微服务所在操作系统的hostname到eureka上
 eureka.instance.prefer-ip-address= true
-# 实例id，配置前192.168.13.111:provider-user:8002，配置后provider-user:192.168.13.111:8002
+# 实例id，配置前192.168.13.111:microservices-user:8002，配置后microservices-user:192.168.13.111:8002
 # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
 eureka.instance.instance-id=${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
 # 自定义实例跳转链接

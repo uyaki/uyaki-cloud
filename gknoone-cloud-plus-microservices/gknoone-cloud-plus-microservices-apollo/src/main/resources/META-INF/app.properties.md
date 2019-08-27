@@ -1,5 +1,5 @@
 # 身份信息
-app.id=provider-apollo
+app.id=microservices-apollo
 # Meta Server(Config Server)
 apollo.meta=http://localhost:8080
 # 项目启动bootstrap阶段，向spring 容器注入配置信息

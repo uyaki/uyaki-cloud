@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author gknoone
  * @date 2019-07-31 17:58
  */
-@FeignClient(value ="provider-hello",configuration = FeignConfiguration.class, fallback = HelloFeignApiHystrix.class)
+@FeignClient(value ="microservices-hello",configuration = FeignConfiguration.class, fallback = HelloFeignApiHystrix.class)
 public interface HelloFeignApi {
     /**
      * sayHello

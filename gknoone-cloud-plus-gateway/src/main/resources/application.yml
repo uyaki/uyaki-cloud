@@ -172,9 +172,9 @@ spring:
 #                redis-rate-limiter.burstCapacity: 3
         - id: hello_route
           # 整合eureka，从注册中心获取服务
-          uri: lb://provider-hello
+          uri: lb://microservices-hello
           predicates:
-            - Path=/provider/**
+            - Path=/microservices/**
           filters:
             # 去掉predicates.path的一个路径，实际访问接口为http://localhost:8021/**
             - StripPrefix=1
@@ -192,7 +192,7 @@ spring:
           predicates:
             - Path=/gknoone/**
         - id: resolver_route
-          uri: lb://provider-test
+          uri: lb://microservices-test
           predicates:
             - Path=/test/**
           filters:
@@ -250,15 +250,15 @@ spring:
           predicates:
             - Path=/gknoone/**
         - id: hello_route
-          uri: lb://provider-hello
+          uri: lb://microservices-hello
           predicates:
-            - Path=/provider-hello/**
+            - Path=/microservices-hello/**
           filters:
             - StripPrefix=1
         - id: test_route
-          uri: lb://provider-test
+          uri: lb://microservices-test
           predicates:
-            - Path=/provider-test/**
+            - Path=/microservices-test/**
           filters:
             - StripPrefix=1
         - id: test_route
