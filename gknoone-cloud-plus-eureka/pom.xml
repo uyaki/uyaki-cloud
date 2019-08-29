@@ -31,4 +31,51 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <!-- 有该配置mvn clean package -Dmaven.test.skip=true -->
+                <!-- 无该配置mvn clean package -Dmaven.test.skip=true docker:build -->
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <!--执行mvn package命令的时候自动执行mvn docker:build-->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 镜像名称 -->
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+                    <!-- 指定Dockerfile所在路径 -->
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <!-- 指定需要复制的根目录，${project.build.directory}表示target目录 -->
+                            <directory>${project.build.directory}</directory>
+                            <!-- 用于指定需要复制的文件 ${project.build.finalName}.jar指打包后的jar文件包-->
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

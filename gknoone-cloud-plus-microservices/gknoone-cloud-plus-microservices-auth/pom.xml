@@ -8,6 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>microservices-auth</artifactId>
+    <packaging>jar</packaging>
     <name>gknoone-cloud-plus-microservices-auth</name>
     <description>Demo project for Spring Boot</description>
 

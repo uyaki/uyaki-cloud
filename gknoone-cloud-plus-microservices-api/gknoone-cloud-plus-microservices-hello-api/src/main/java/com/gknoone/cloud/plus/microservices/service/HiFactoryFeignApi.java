@@ -21,5 +21,5 @@ public interface HiFactoryFeignApi {
      * @return wrapper
      */
     @GetMapping("/api/hi/{somebody}")
-    Wrapper<String> sayHi(@PathVariable String somebody);
+    Wrapper<String> sayHi(@PathVariable("somebody") String somebody);
 }

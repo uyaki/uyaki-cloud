@@ -10,7 +10,7 @@
 
     <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>gknoone-cloud-plus-gateway</name>
     <description>API网关中心gateway</description>
 

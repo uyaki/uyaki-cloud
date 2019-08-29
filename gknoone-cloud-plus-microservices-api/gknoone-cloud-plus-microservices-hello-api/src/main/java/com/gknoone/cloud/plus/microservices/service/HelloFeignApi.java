@@ -19,5 +19,5 @@ public interface HelloFeignApi {
      * @return  the wrapper
      */
     @GetMapping(value = "/api/hello/{somebody}")
-    Wrapper<String> sayHello(@PathVariable String somebody);
+    Wrapper<String> sayHello(@PathVariable("somebody") String somebody);
 }
