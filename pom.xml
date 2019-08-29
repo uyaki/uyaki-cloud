@@ -1,112 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.gknoone.cloud.plus</groupId>
-	<artifactId>gknoone-cloud-plus</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.gknoone.cloud.plus</groupId>
+    <artifactId>gknoone-cloud-plus</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>gknoone-cloud-plus</name>
-	<description>总项目</description>
+    <name>gknoone-cloud-plus</name>
+    <description>总项目</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
-		<spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-		<gknoone-cloud-plus.version>0.0.1-SNAPSHOT</gknoone-cloud-plus.version>
-		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
-		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
-		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-	</properties>
-	<modules>
-		<!-- 服务和注册中心eureka -->
-		<module>gknoone-cloud-plus-eureka</module>
-		<!-- 网关：gateway -->
-		<module>gknoone-cloud-plus-gateway</module>
-		<!-- 网关：zuul -->
-		<module>gknoone-cloud-plus-zuul</module>
-		<!-- 配置中心：apollo（暂未启动，现使用nacos） -->
-		<module>gknoone-cloud-plus-apollo</module>
-		<!-- 管理员模块 -->
-		<module>gknoone-cloud-plus-admin</module>
-		<!-- 鉴权模块 -->
-		<module>gknoone-cloud-plus-auth</module>
-		<!-- 微服务模块 -->
-		<module>gknoone-cloud-plus-microservices</module>
-		<!-- 微服务API模块 -->
-		<module>gknoone-cloud-plus-microservices-api</module>
-		<!-- 数据库模块 -->
-		<module>gknoone-cloud-plus-db</module>
-		<!-- 底层通用模块 -->
-		<module>gknoone-cloud-plus-common</module>
-	</modules>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+        <gknoone-cloud-plus.version>0.0.1-SNAPSHOT</gknoone-cloud-plus.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <docker.image.prefix>gknoone-cloud-plus</docker.image.prefix>
+    </properties>
+    <modules>
+        <!-- 服务和注册中心eureka -->
+        <module>gknoone-cloud-plus-eureka</module>
+        <!-- 网关：gateway -->
+        <module>gknoone-cloud-plus-gateway</module>
+        <!-- 网关：zuul -->
+        <module>gknoone-cloud-plus-zuul</module>
+        <!-- 配置中心：apollo（暂未启动，现使用nacos） -->
+        <module>gknoone-cloud-plus-apollo</module>
+        <!-- 管理员模块 -->
+        <module>gknoone-cloud-plus-admin</module>
+        <!-- 鉴权模块 -->
+        <module>gknoone-cloud-plus-auth</module>
+        <!-- 微服务模块 -->
+        <module>gknoone-cloud-plus-microservices</module>
+        <!-- 微服务API模块 -->
+        <module>gknoone-cloud-plus-microservices-api</module>
+        <!-- 数据库模块 -->
+        <module>gknoone-cloud-plus-db</module>
+        <!-- 底层通用模块 -->
+        <module>gknoone-cloud-plus-common</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-		<!-- 热启动 ，使用缓存时候需关闭-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-devtools</artifactId>-->
-<!--		</dependency>-->
-		<!-- actuator监控 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- 热启动 ，使用缓存时候需关闭-->
+        <!--		<dependency>-->
+        <!--			<groupId>org.springframework.boot</groupId>-->
+        <!--			<artifactId>spring-boot-devtools</artifactId>-->
+        <!--		</dependency>-->
+        <!-- actuator监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.58</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+    </dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.cloud</groupId>
-				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
-				<version>2.1.0.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>disable-javadoc-doclint</id>-->
+<!--            <activation>-->
+<!--                <jdk>[1.8,)</jdk>-->
+<!--            </activation>-->
+<!--            <properties>-->
+<!--                <javadoc.opts>-Xdoclint:none</javadoc.opts>-->
+<!--            </properties>-->
+<!--        </profile>-->
+<!--    </profiles>-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                <version>2.10.4</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>attach-javadocs</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>jar</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <additionalparam>${javadoc.opts}</additionalparam>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
 
 </project>
