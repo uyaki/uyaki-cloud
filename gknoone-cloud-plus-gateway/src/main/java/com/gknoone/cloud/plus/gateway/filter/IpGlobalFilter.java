@@ -45,10 +45,26 @@ public class IpGlobalFilter implements GlobalFilter, Ordered {
         return "127.0.0.1";
     }
 
-    @Data
+
     private class ResponseDate {
         int code;
         String message;
+
+        public int getCode() {
+            return code;
+        }
+
+        void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        void setMessage(String message) {
+            this.message = message;
+        }
     }
 
     /**

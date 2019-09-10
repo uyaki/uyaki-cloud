@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: @pom.artifactId@
+  main:
+    ## 允许定义同名的FeignClient,name
+    allow-bean-definition-overriding: true

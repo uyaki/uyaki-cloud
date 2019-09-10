@@ -16,10 +16,16 @@ public class CheckAuth2GatewayFilterFactory extends AbstractGatewayFilterFactory
     public CheckAuth2GatewayFilterFactory() {
         super(Config.class);
     }
-    @Getter
-    @Setter
     static class Config{
         private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
     @Override
     public GatewayFilter apply(CheckAuth2GatewayFilterFactory.Config config) {

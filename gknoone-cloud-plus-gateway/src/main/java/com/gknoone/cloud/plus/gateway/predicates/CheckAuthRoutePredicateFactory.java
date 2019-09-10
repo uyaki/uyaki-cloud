@@ -22,10 +22,17 @@ public class CheckAuthRoutePredicateFactory extends AbstractRoutePredicateFactor
 
     private final static String AUTH_NAME = "gknoone";
 
-    @Getter
-    @Setter
+
     static class Config{
         private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 
     @Override

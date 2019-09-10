@@ -1,6 +1,8 @@
 package com.gknoone.cloud.plus.eureka.component;
 
 import com.netflix.appinfo.InstanceInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.eureka.server.event.*;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -13,14 +15,17 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class EurekaStateChangeListener {
+    private Logger logger = LoggerFactory.getLogger("elk_logger");
     @EventListener
     public void listen(EurekaInstanceCanceledEvent event) {
+        logger.info(String.format("%s  %s  服务下线  ", event.getServerId(), event.getAppName()));
         System.out.println(String.format("%s  %s  服务下线  ", event.getServerId(), event.getAppName()));
     }
 
     @EventListener
     public void listen(EurekaInstanceRegisteredEvent event) {
         InstanceInfo instanceInfo = event.getInstanceInfo();
+        logger.info(String.format("%s  服务进行注册  ", instanceInfo.getAppName()));
         System.out.println(String.format("%s  服务进行注册  ", instanceInfo.getAppName()));
     }
 
@@ -31,11 +36,13 @@ public class EurekaStateChangeListener {
 
     @EventListener
     public void listen(EurekaRegistryAvailableEvent event) {
+        logger.info("注册中心启动");
         System.out.println("注册中心启动");
     }
 
     @EventListener
     public void listen(EurekaServerStartedEvent event) {
+        logger.info("Eureka Server启动");
         System.out.println("Eureka Server启动");
     }
 }

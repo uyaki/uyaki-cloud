@@ -1,48 +1,40 @@
 package com.gknoone.cloud.plus.db.postgresql.typehandler;
 
 import com.gknoone.cloud.plus.common.core.enums.MathSymbolEnum;
-import com.gknoone.cloud.plus.common.core.util.SpringContextUtil;
+import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
-import org.apache.ibatis.type.MappedTypes;
-import org.apache.ibatis.type.TypeHandler;
 
-import javax.sql.DataSource;
 import java.sql.*;
 
 /**
- * @author noone
+ * @author gknoone
+ * @date 2019-09-08 16:20
  */
-@MappedTypes(Long[].class)
 @MappedJdbcTypes(JdbcType.ARRAY)
-public class LongArrayTypeHandler implements TypeHandler<Long[]> {
+public class LongArrayTypeHandler extends BaseTypeHandler<Long[]> {
+
     @Override
-    public void setParameter(PreparedStatement preparedStatement, int i, Long[] longs, JdbcType jdbcType) throws SQLException {
-        if (null == longs) {
-            preparedStatement.setNull(i, Types.ARRAY);
-        } else {
-            DataSource dataSource = (DataSource) SpringContextUtil.getBean("dataSource");
-            Connection connection = dataSource.getConnection();
-            Array array = connection.createArrayOf("bigint", longs);
-            connection.close();
-            preparedStatement.setArray(i, array);
-        }
+    public void setNonNullParameter(PreparedStatement preparedStatement, int i, Long[] longs, JdbcType jdbcType) throws SQLException {
+        Connection connection = preparedStatement.getConnection();
+        Array array = connection.createArrayOf("bigint", longs);
+        preparedStatement.setArray(i, array);
     }
 
     @Override
-    public Long[] getResult(ResultSet resultSet, String s) throws SQLException {
+    public Long[] getNullableResult(ResultSet resultSet, String s) throws SQLException {
         String columnValue = resultSet.getString(s);
         return getLongArray(columnValue);
     }
 
     @Override
-    public Long[] getResult(ResultSet resultSet, int i) throws SQLException {
+    public Long[] getNullableResult(ResultSet resultSet, int i) throws SQLException {
         String columnValue = resultSet.getString(i);
         return getLongArray(columnValue);
     }
 
     @Override
-    public Long[] getResult(CallableStatement callableStatement, int i) throws SQLException {
+    public Long[] getNullableResult(CallableStatement callableStatement, int i) throws SQLException {
         String columnValue = callableStatement.getString(i);
         return getLongArray(columnValue);
     }
