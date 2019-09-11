@@ -30,3 +30,5 @@ services:
     image: gknoone-cloud-plus/microservices-test:0.0.1-SNAPSHOT
 #    ports:
 #      - "8003:8003"
+  microservices-db:
+    image: gknoone-cloud-plus/microservices-db:0.0.1-SNAPSHOT
