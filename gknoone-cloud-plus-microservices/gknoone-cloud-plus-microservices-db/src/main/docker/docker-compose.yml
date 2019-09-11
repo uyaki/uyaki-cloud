@@ -4,4 +4,4 @@ services:
     image: gknoone-cloud-plus/microservices-db:0.0.1-SNAPSHOT
     container_name: db
     ports:
-      - "8002:8002"
+      - "8004:8004"
