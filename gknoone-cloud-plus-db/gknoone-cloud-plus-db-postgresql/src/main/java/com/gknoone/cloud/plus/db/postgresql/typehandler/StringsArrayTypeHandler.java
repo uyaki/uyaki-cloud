@@ -54,21 +54,6 @@ public class StringsArrayTypeHandler extends BaseTypeHandler<String[][]> {
         if (null == columnValue) {
             return null;
         }
-        String[] arrays = (String[]) columnValue.getArray();
-        if (ArrayUtils.isEmpty(arrays)) {
-            return null;
-        }
-        String[][] strings = new String[arrays.length][];
-        for (int i = 0; i < arrays.length; i++) {
-            String str = arrays[i];
-            Matcher m = PatternContansts.ARRAY_CONVERSION_PATTERN.matcher(str);
-            str = m.replaceAll("").trim();
-            if (StringUtils.isEmpty(str)) {
-                continue;
-            }
-            String[] strArr = str.split(MathSymbolEnum.COMMA.symbol());
-            strings[i] = strArr;
-        }
-        return strings;
+        return (String[][]) columnValue.getArray();
     }
 }

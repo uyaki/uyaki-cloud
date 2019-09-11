@@ -3,53 +3,53 @@ spring:
     nacos:
       config:
         # 本地开发写法
-        server-addr: 127.0.0.1:8848
+        # server-addr: 127.0.0.1:8848
         # linux docker 写法
         # server-addr: 172.17.0.1:8848
         # mac docker 写法
-        # server-addr: docker.for.mac.host.internal:8848
+        server-addr: docker.for.mac.host.internal:8848
         file-extension: yaml
-        namespace: a1566156-8210-488e-9339-1a16d28ca31c
+        namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
         group: gknoone-cloud-plus
         # 共享配置
         ext-config:
            # sleuth共享配置
           - data-id: app-db-redis.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # sleuth共享配置
           - data-id: app-common-sleuth.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # eureka共享配置
           - data-id: app-common-eureka.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # actuator监控点配置
           - data-id: app-common-actuator.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # postgresql
           - data-id: app-common-postgresql.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
            # mybatis
           - data-id: app-common-mybatis.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # feign熔断配置
           - data-id: app-common-feign.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true
           # 上传文件大小配置
           - data-id: app_common_multipart.yaml
             group: gknoone-cloud-plus
-            namespace: a1566156-8210-488e-9339-1a16d28ca31c
+            namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
             refresh: true

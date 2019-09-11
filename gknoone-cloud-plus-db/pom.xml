@@ -19,7 +19,6 @@
     </properties>
     <modules>
         <module>gknoone-cloud-plus-db-redis</module>
-        <module>gknoone-cloud-plus-db-mongodb</module>
         <module>gknoone-cloud-plus-db-postgresql</module>
     </modules>
     <dependencies>

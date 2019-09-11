@@ -1,11 +1,15 @@
 package com.gknoone.cloud.plus.db.postgresql.typehandler;
 
 import com.gknoone.cloud.plus.common.core.enums.MathSymbolEnum;
+import com.gknoone.cloud.plus.db.postgresql.contanst.PatternContansts;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author gknoone
@@ -43,11 +47,11 @@ public class LongArrayTypeHandler extends BaseTypeHandler<Long[]> {
         if (null == columnValue) {
             return null;
         }
-        String[] stringArray = columnValue.split(MathSymbolEnum.COMMA.symbol());
-        Long[] longArray = new Long[stringArray.length];
-        for (int i = 0; i < stringArray.length; i++) {
-            longArray[i] = Long.valueOf(stringArray[i]);
+        Matcher matcher = PatternContansts.STRING_WITH_OPEN_BRACE_TO_DIGITAL_PATTERN.matcher(columnValue);
+        ArrayList<Long> list=new ArrayList<>();
+        while (matcher.find()){
+            list.add(Long.valueOf(matcher.group()));
         }
-        return longArray;
+        return list.toArray(new Long[]{});
     }
 }
