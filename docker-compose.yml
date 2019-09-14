@@ -16,19 +16,47 @@ services:
       - spring.profiles.active=peer2
   zuul:
     image: gknoone-cloud-plus/zuul:0.0.1-SNAPSHOT
-#    ports:
-#      - "8444:8444"
+    ports:
+      - "8444:8444"
+    depends_on:
+      - peer1
+      - peer2
+    entrypoint: "bash /usr/local/bin/wait-for-it.sh peer1:8111,peer2:8112 -t 30 -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   admin:
     image: gknoone-cloud-plus/admin:0.0.1-SNAPSHOT
-#    ports:
-#      - "8333:8333"
+    ports:
+      - "8333:8333"
+    depends_on:
+      - peer1
+      - peer2
+    entrypoint: "bash /usr/local/bin/wait-for-it.sh peer1:8111,peer2:8112 -t 30 -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   microservices-hello:
     image: gknoone-cloud-plus/microservices-hello:0.0.1-SNAPSHOT
-#    ports:
-#      - "8002:8002"
+    ports:
+      - "8002:8002"
+    depends_on:
+      - peer1
+      - peer2
+      - admin
+      - zuul
+    entrypoint: "bash /usr/local/bin/wait-for-it.sh peer1:8111,peer2:8112,zuul:8444,admin:8333 -t 40 -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   microservices-test:
     image: gknoone-cloud-plus/microservices-test:0.0.1-SNAPSHOT
-#    ports:
-#      - "8003:8003"
+    ports:
+      - "8003:8003"
+    depends_on:
+      - peer1
+      - peer2
+      - admin
+      - zuul
+    entrypoint: "bash /usr/local/bin/wait-for-it.sh peer1:8111,peer2:8112,zuul:8444,admin:8333 -t 40 -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   microservices-db:
     image: gknoone-cloud-plus/microservices-db:0.0.1-SNAPSHOT
+    ports:
+      - "8004:8004"
+    depends_on:
+      - peer1
+      - peer2
+      - admin
+      - zuul
+    entrypoint: "bash /usr/local/bin/wait-for-it.sh peer1:8111,peer2:8112,zuul:8444,admin:8333 -t 40 -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"

@@ -4,6 +4,8 @@ eureka:
     enable-self-preservation: false
     # 清理间隔（开发环境下修改，默认60000毫秒）
     eviction-interval-timer-in-ms: 5000
+    # 节点间的读数据连接超时时间
+    peer-node-read-timeout-ms: 200
   client:
     service-url:
       defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
