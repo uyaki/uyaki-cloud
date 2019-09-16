@@ -10,6 +10,8 @@
 </p>
 
 > spring-cloud的升级配置，项目内容更加实用
+ 
+访问这里获取更好的阅读体验：[https://gknoone.github.io/gknoone-cloud-plus/](https://gknoone.github.io/gknoone-cloud-plus/)
 
 ### 🏠 [Homepage](https://github.com/gknoone/gknoone-cloud-plus)
 

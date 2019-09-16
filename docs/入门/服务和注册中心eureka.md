@@ -16,6 +16,8 @@
 ## Eureka-Server
 
 1. 引入依赖
+
+
 ```xml
 <!--需要在启动类添加@EnableEurekaServer注解-->
 <dependencies>
@@ -43,7 +45,9 @@
    </dependencies>
 </dependencyManagement>
 ```
+
 2. 配置`application.yml`
+
 ```yml
 spring:
   application:
@@ -53,7 +57,10 @@ spring:
       name: gknoone
       password: gk123456
 ```
+
 3. 配置`bootstrap.yml`
+
+
 ```yml
 eureka:
 #  server:
@@ -81,7 +88,10 @@ eureka:
   instance:
     hostname: peer2
 ```
+
 4. 添加配置类(Spring Cloud2.0以上需要)
+
+
 ```java
 /**
  * Security配置类
@@ -99,7 +109,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 }
 ```
+
 5. 启动类
+
+
 ```java
 /**
  * 启动类
@@ -117,19 +130,24 @@ public class GknooneCloudPlusEurekaApplication {
 
 }
 ```
+
+
 6. 启动peer1和peer2
 7. 浏览器访问[http://localhost:8111/](http://localhost:8111/)，看到如下界面，说明成功
 ![](assets/markdown-img-paste-20190731104050878.png)
 
 ## 常用配置
 ### 关闭自我保护
+
 ```properties
 eureka:
   server:
     # 关闭自我保护
     enable-self-preservation: false
 ```
+
 ### 自定义Eureka的InstanceID
+
 ```yml
 eureka:
   client:
@@ -137,7 +155,9 @@ eureka:
     # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${server.port}
     instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
 ```
+
 ### 自定义实例跳转链接
+
 ```yml
 eureka:
   instance:

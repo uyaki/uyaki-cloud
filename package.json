@@ -1,0 +1,24 @@
+{
+  "name": "gknoone-cloud-plus",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Welcome to gknoone-cloud-plus 👋</h1> <p>   <img alt=\"Version\" src=\"https://img.shields.io/badge/version-0.0.1-SNAPSHOT-blue.svg?cacheSeconds=2592000\" />   <a href=\"https://github.com/gknoone/gknoone-cloud-plus/blob/master/README.md\">     <img alt=\"Documentation\" src=\"https://img.shields.io/badge/documentation-yes-brightgreen.svg\" target=\"_blank\" />   </a>   <a href=\"https://github.com/gknoone/gknoone-cloud-plus/blob/master/LICENSE\">     <img alt=\"License: MIT License\" src=\"https://img.shields.io/badge/License-MIT License-yellow.svg\" target=\"_blank\" />   </a> </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "doc":"docsify serve docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gknoone/gknoone-cloud-plus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gknoone/gknoone-cloud-plus/issues"
+  },
+  "homepage": "https://github.com/gknoone/gknoone-cloud-plus#readme"
+}
