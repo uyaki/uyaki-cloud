@@ -24,6 +24,7 @@
 <!-- /code_chunk_output -->
 
 ## 术语
+
 - `Span`：基本工作单元，例如，在一个新建的span中发送一个RPC等同于发送一个回应请求给RPC，span通过一个64位ID唯一标识，trace以另一个64位ID表示，span还有其他数据信息，比如摘要、时间戳事件、关键值注释(tags)、span的ID、以及进度ID(通常是IP地址)
   span在不断的启动和停止，同时记录了时间信息，当你创建了一个span，你必须在未来的某个时刻停止它。
 
@@ -38,11 +39,7 @@
 
 - `cr - Client Received` -表明span的结束，客户端成功接收到服务端的回复，如果cr减去cs时间戳便可得到客户端从服务端获取回复的所有所需时间
 
-
-
-
-
-  可视化**Span**和**Trace**将与Zipkin注释一起查看系统如下图：
+可视化**Span**和**Trace**将与Zipkin注释一起查看系统如下图：
 
 ![img](assets/1202638-20180530141639192-125791597.png)
 
@@ -72,54 +69,68 @@ java -jar zipkin.jar
 
 - Gknoone-cloud-plus-microservices-hello
 - gknoone-cloud-plus-microservices-test
+
 ### 集成sleuth
+
 1. 引入依赖
-```xml
-<dependency>
-   <groupId>org.springframework.cloud</groupId>
-   <artifactId>spring-cloud-starter-sleuth</artifactId>
-</dependency>
-```
+
+	```xml
+	<dependency>
+	   <groupId>org.springframework.cloud</groupId>
+	   <artifactId>spring-cloud-starter-sleuth</artifactId>
+	</dependency>
+	```
+
 2. 配置`application.yml`(以gknoone-cloud-eureka-consumer为例)，开启sleuth的debug日志
-```yml
-logging:
-  level:
-    root: INFO
-    # 开启sleuth的debug日志
-    org.springframework.cloud.sleuth: DEBUG
-```
+
+	```yml
+	logging:
+	  level:
+	    root: INFO
+	    # 开启sleuth的debug日志
+	    org.springframework.cloud.sleuth: DEBUG
+	```
+
 3. 用postman访问`localhost:8021/test/1`，查看日志如下
-```bash
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
-2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-2019-07-29 11:49:05.682 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-2019-07-29 11:49:05.683 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
-```
 
-其中可以看到日志内容中的`[gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
-即`[appname,traceId,spanId,exportable]`。
-含义如下：
+	```bash
+	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
+	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
+	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.682 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.683 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
+	```
 
-- appname：服务的名称，即spring.application.name。
-- traceId：整个请求的唯一ID，它标识整个请求的链路。
-- spanId：基本的工作单元，发起一次远程调用就是一个span。
-- exportable：决定是否导入到Zipkin。
+	其中可以看到日志内容中的`[gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
+	即`[appname,traceId,spanId,exportable]`。
+	含义如下：
+
+	- appname：服务的名称，即spring.application.name。
+	- traceId：整个请求的唯一ID，它标识整个请求的链路。
+	- spanId：基本的工作单元，发起一次远程调用就是一个span。
+	- exportable：决定是否导入到Zipkin。
+
 ### 集成zipkin
+
 1. 引入依赖
-```xml
-<dependency>
-   <groupId>org.springframework.cloud</groupId>
-   <artifactId>spring-cloud-starter-zipkin</artifactId>
-</dependency>
-```
+
+	```xml
+	<dependency>
+	   <groupId>org.springframework.cloud</groupId>
+	   <artifactId>spring-cloud-starter-zipkin</artifactId>
+	</dependency>
+	```
+
 2. 配置`application.yml`(以gknoone-cloud-plus-microservices-hello为例)，添加zipkin配置
-```yml
-spring:
-  zipkin:
-    base-url: http://localhost:9411
-```
+
+	```yml
+	spring:
+	  zipkin:
+	    base-url: http://localhost:9411
+	```
+
 ### 正常服务测试
+
 1. 重启两个模块，浏览器访问`localhost:9411`，点击依赖
 ![image-20190816095351464](assets/image-20190816095351464.png)
 
@@ -159,62 +170,67 @@ spring:
 ```
 
 #### 设置自定义TracingFilter
+
 > TracingFilter是负责处理请求和响应的组件。
 > 方便调试排查问题
+
 1. 添加自定义组件MyFilter
     - 添加自定义的标记
     - 将请求ID添加到响应头
-```java
-package com.gknoone.cloud.plus.microservices.filter;
+	```java
+	package com.gknoone.cloud.plus.microservices.filter;
 
-import brave.Span;
-import brave.Tracer;
-import org.springframework.cloud.sleuth.instrument.web.TraceWebServletAutoConfiguration;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-import org.springframework.web.filter.GenericFilterBean;
+	import brave.Span;
+	import brave.Tracer;
+	import org.springframework.cloud.sleuth.instrument.web.TraceWebServletAutoConfiguration;
+	import org.springframework.core.annotation.Order;
+	import org.springframework.stereotype.Component;
+	import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+	import javax.servlet.FilterChain;
+	import javax.servlet.ServletException;
+	import javax.servlet.ServletRequest;
+	import javax.servlet.ServletResponse;
+	import javax.servlet.http.HttpServletResponse;
+	import java.io.IOException;
 
-/**
- * 处理请求和响应的组件
- * 自定义Filter，用于
- * 1.添加自定义的标记
- * 2.将请求ID添加到响应头
- * @author gknoone
- * @date 2019-08-16 09:45
- */
-@Component
-@Order(TraceWebServletAutoConfiguration.TRACING_FILTER_ORDER+1)
-public class MyTracingFilter extends GenericFilterBean {
-    private  final Tracer tracer;
+	/**
+	 * 处理请求和响应的组件
+	 * 自定义Filter，用于
+	 * 1.添加自定义的标记
+	 * 2.将请求ID添加到响应头
+	 * @author gknoone
+	 * @date 2019-08-16 09:45
+	 */
+	@Component
+	@Order(TraceWebServletAutoConfiguration.TRACING_FILTER_ORDER+1)
+	public class MyTracingFilter extends GenericFilterBean {
+	    private  final Tracer tracer;
 
-    public MyTracingFilter(Tracer tracer) {
-        this.tracer = tracer;
-    }
+	    public MyTracingFilter(Tracer tracer) {
+	        this.tracer = tracer;
+	    }
 
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        Span currentSpan = this.tracer.currentSpan();
-        if(currentSpan == null){
-            filterChain.doFilter(servletRequest,servletResponse);
-            return ;
-        }
-        ((HttpServletResponse) servletResponse).addHeader("ZIPKIN-TRACE-ID",currentSpan.context().traceIdString());
-        currentSpan.tag("custom","tag");
-        filterChain.doFilter(servletRequest,servletResponse);
-    }
-}
+	    @Override
+	    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+	        Span currentSpan = this.tracer.currentSpan();
+	        if(currentSpan == null){
+	            filterChain.doFilter(servletRequest,servletResponse);
+	            return ;
+	        }
+	        ((HttpServletResponse) servletResponse).addHeader("ZIPKIN-TRACE-ID",currentSpan.context().traceIdString());
+	        currentSpan.tag("custom","tag");
+	        filterChain.doFilter(servletRequest,servletResponse);
+	    }
+	}
 
-```
+	```
 2. 用postman访问`http://localhost:8002/hello/sb`，查看Headers信息
+
 ![image-20190816104421208](assets/image-20190816104421208.png)
+
 3. 查看zipkin
+
 ![image-20190816104746637](assets/image-20190816104746637.png)
 
 #### 过滤不想跟踪的请求
@@ -225,6 +241,7 @@ public class MyTracingFilter extends GenericFilterBean {
  * @param microservices SkipPatternmicroservices设置了很多过滤规则
  * @return HttpSampler
  */
+
 @Bean(name = ServerSampler.NAME)
 HttpSampler myHttpSampler(SkipPatternmicroservices microservices){
     Pattern pattern = microservices.skipPattern();
@@ -244,6 +261,7 @@ HttpSampler myHttpSampler(SkipPatternmicroservices microservices){
     };
 }
 ```
+
 #### 用rabbitMq代替http发送调用链数据（高可用）
 
 1. 引入依赖
@@ -253,7 +271,9 @@ HttpSampler myHttpSampler(SkipPatternmicroservices microservices){
     <artifactId>spring-rabbit</artifactId>
 </dependency>
 ```
+
 2. 升级配置
+
 ```yml
 spring:
   zipkin:
@@ -266,6 +286,7 @@ spring:
     username: gknoone
     password: gk123456
 ```
+
 3. 重新启动zipkin
 
 ```bash

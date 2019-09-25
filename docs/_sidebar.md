@@ -7,7 +7,7 @@
     - [Spring_Cloud_Admin](/入门/Spring_Cloud_Admin.md)
   - 网关
     - [网关gateway](/入门/网关gateway.md)
-    - [网关zuul](/入门/zuul.md)
+    - [网关zuul](/入门/网关zuul.md)
   - 配置中心
     - [配置中心apollo](/入门/配置中心apollo.md)
     - [配置中心Nacos](/入门/配置中心Nacos.md)
@@ -57,3 +57,22 @@
   - [TODO](/管理/TODO.md)
   - [登录密码管理](/管理/登录密码管理.md)
 - Bug记录
+  - feigin
+    - [PathVariable_annotation_was_empty_on_param_0](/Bug记录/PathVariable_annotation_was_empty_on_param_0.md)
+  - gateway
+    - [Parameter 0 of method modifyRequestBodyGatewayFilterFactory in org.springframework.cloud.gateway.config.GatewayAutoConfiguration required a bean of type 'org.springframework.http.codec.ServerCodecConfigurer' that could not be found](/Bug记录/gateway_bug.md)
+  - Jenkins
+    - [docker-compose:command not found](/Bug记录/jenkins/docker-compose_command_not_found.md)
+    - [docker-credential-desktop not installed or not available in PATH](/Bug记录/jenkins/docker-credential-desktop_not_installed_or_not_available_in_PATH.md)
+  - maven打包
+    - [Could not find artifact](/Bug记录/maven打包/Could_not_find_artifact.md)
+    - [JDK8下maven使用maven-javadoc-plugin问题](/Bug记录/maven打包/JDK8下maven使用maven-javadoc-plugin问题.md)
+    - [maven程序包不存在](/Bug记录/maven打包/maven程序包不存在.md)
+    - [repackage failed:Unable to find main class](/Bug记录/maven打包/repackage_failed_Unable_to_find_main_class.md)
+  - 未归档
+    - [【admin】-asyncError()](/Bug记录/【admin】-asyncError().md)
+    - [【apollo】链接bug](/Bug记录/【apollo】链接bug.md)
+    - [curl链接一直定向到服务器](/Bug记录/curl链接一直定向到服务器.md)
+    - [jackson-databind安全漏洞](/Bug记录/jackson-databind安全漏洞.md)
+    - [ssl错误](/Bug记录/ssl错误.md)
+    - [tomcat-embed-core安全漏洞](/Bug记录/tomcat-embed-core安全漏洞.md)

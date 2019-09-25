@@ -168,7 +168,9 @@ eureka:
 2. 修改配置后，网页跳转到[https://github.com/gknoone](https://github.com/gknoone)
 
 ### 快速移除已经失效的服务信息（建议只在开发环境使用）
+
 1. eureka-server
+
 ```yml
 server:
   # 关闭自我保护（开发环境下关闭）
@@ -176,7 +178,9 @@ server:
   # 清理间隔（开发环境下修改，默认60000毫秒）
   eviction-interval-timer-in-ms: 5000
 ```
+
 2. eureka-client
+
 ```yml
 eureka:
   client:
@@ -189,14 +193,18 @@ eureka:
     # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
     lease-expiration-duration-in-seconds: 5
 ```
+
 3. healthcheck开启需要引入依赖
+
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
 ```
+
 ## 服务上下线监控（Eureka事件监听）
+
 目前支持事件：
 - `EurekaInstanceCanceledEvent`服务下线事件
 - `EurekaInstanceRegisteredEvent`服务注册事件

@@ -193,7 +193,6 @@ spring:
 ### 自定义路由断言工厂
 
 - 引用注解`@Component`
-
 - 继承`AbstractRoutePredicateFactory`类，重写`apply`方法
 - `apply`方法中，可以通过`exchang.getRequest()`拿到**ServerHttpRequest**对象，从而获取到
 	- 请求参数
@@ -303,7 +302,6 @@ spring:
 ### 自定义过滤器工厂
 
 - 引用注解`@Component`
-
 - 继承`AbstractGatewayFilterFactory`类，重写`apply`方法
 - 类命名以`GatewayFilterFactory`结尾，如：`MyDiyGatewayFilterFactory`，使用的时候`MyDiy`就是过滤器工厂的名称
 
@@ -353,7 +351,6 @@ spring:
 
 - 不需要定义配置类Config
 - 引用注解`@Component`
-
 - 继承`AbstractNameValueGatewayFilterFactory`类，重写`apply`方法
 - 类命名以`GatewayFilterFactory`结尾，如：`MyDiyGatewayFilterFactory`，使用的时候`MyDiy`就是过滤器工厂的名称
 
@@ -495,6 +492,7 @@ spring:
 ## 限流
 
 - 引入依赖Redis
+
   ``` xml
   <!--引入限流需要基于Redis实现-->
   <dependency>

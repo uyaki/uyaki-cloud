@@ -89,7 +89,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
    ```sh
    # 有phase配置
-   mvn clean package -Dmaven.test.skip=true 
+   mvn clean package -Dmaven.test.skip=true
    # 无phase配置
    mvn clean package -Dmaven.test.skip=true docker:build
    ```
@@ -148,6 +148,3 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
    ```sh
    docker-compose down
    ```
-
-   
-

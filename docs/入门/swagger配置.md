@@ -5,7 +5,7 @@
 
 * [项目集成swagger](#项目集成swagger)
 * [Eureka控制台快速查看Swagger文档](#eureka控制台快速查看swagger文档)
-* [修改请求认真](#修改请求认真)
+* [修改请求认证](#修改请求认证)
 * [在网关中聚合多个服务](#在网关中聚合多个服务)
 
 <!-- /code_chunk_output -->
@@ -65,13 +65,11 @@
 
 4. FeignClient使用
 
+
    ```java
    @Api(tags = "Hello Feign Client")
    @RestController
    public class HelloFeignClient extends BaseController implements HelloFeignApi {
-   ```
-
-
        @ApiOperation(value = "say hello to sb")
        @Override
        public Wrapper<String> sayHello(@PathVariable String somebody) {
@@ -80,11 +78,14 @@
    }
    ```
 
+
 5. 接口访问
+
 
    ```	html
    http://192.168.13.111:8002/swagger-ui.html
    ```
+
 
    ![image-20190820181117367](assets/image-20190820181117367.png)
 
@@ -102,7 +103,7 @@
 
    ![image-20190820181437145](assets/image-20190820181437145.png)
 
-## 修改请求认真
+## 修改请求认证
 
 ```properties
 swagger.authorization.key-name=Authorization
@@ -126,7 +127,7 @@ swagger.authorization.key-name=Authorization
    </dependency>
    ```
 
-   
+
 
 2. 配置Provider
 
@@ -154,7 +155,7 @@ swagger.authorization.key-name=Authorization
            });
            return resources;
        }
-   
+
        private SwaggerResource swaggerResource(String name, String location, String version) {
            SwaggerResource swaggerResource = new SwaggerResource();
            swaggerResource.setName(name);
@@ -168,5 +169,3 @@ swagger.authorization.key-name=Authorization
 3. 访问[http://127.0.0.1:8444/swagger-ui.html](http://127.0.0.1:8444/swagger-ui.html)，可以在右上角切换
 
    ![image-20190822115913872](assets/image-20190822115913872.png)
-
-   
