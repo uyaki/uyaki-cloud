@@ -285,7 +285,7 @@ spring.cloud.nacos.config.enabled = false
          config:
            server-addr: 127.0.0.1:8848
            file-extension: yaml
-           namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
+           namespace: a1566156-8210-488e-9339-1a16d28ca31c
            group: gknoone-cloud-plus
            # 共享的配置列表
            # shared-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
@@ -294,15 +294,15 @@ spring.cloud.nacos.config.enabled = false
            ext-config:
              - data-id: app-common-eureka.yaml
                group: gknoone-cloud-plus
-               namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
+               namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
              - data-id: app-common-actuator.yaml
                group: gknoone-cloud-plus
-               namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
+               namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
              - data-id: app-common-feign.yaml
                group: gknoone-cloud-plus
-               namespace: a2694131-cfb9-4b06-bdf8-d319d22aff48
+               namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
    ```
 
