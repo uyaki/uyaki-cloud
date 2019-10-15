@@ -26,6 +26,8 @@
         <module>gknoone-cloud-plus-microservices-db</module>
         <module>gknoone-cloud-plus-microservices-nacos-config</module>
         <module>gknoone-cloud-plus-microservices-auth</module>
+        <module>gknoone-cloud-plus-microservices-transaction-mq</module>
+        <module>gknoone-cloud-plus-microservices-netty</module>
     </modules>
 
     <dependencies>
@@ -71,6 +73,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
         </dependency>
+        <!--swagger依赖-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
         <!--API 文档管理-->
         <dependency>
             <groupId>com.spring4all</groupId>
@@ -78,4 +86,24 @@
             <version>1.9.0.RELEASE</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>42.2.6</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>
