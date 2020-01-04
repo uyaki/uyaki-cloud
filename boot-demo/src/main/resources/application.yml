@@ -1,5 +1,5 @@
 # 本地测试ip
-localhostip: 192.168.2.55
+localhostip: localhost
 
 # MYSQ 相关配置
 spring:
