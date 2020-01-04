@@ -1,0 +1,23 @@
+# 本地测试ip
+localhostip: 192.168.2.55
+
+# MYSQ 相关配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${localhostip}:3306/test?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  # Spring JPA 相关配置
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+  # redis
+  redis:
+    database: 0
+    host: ${localhostip}
+    port: 6379
+    password:
+    timeout: 1000
