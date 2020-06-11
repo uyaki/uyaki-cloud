@@ -109,7 +109,7 @@ token=encodeBase64(header)+'.'+encodeBase64(payload)+'.'+encodeBase64(signature)
   - 自己需要的信息，如用户名等
 
   ```json
-  {"id":"123","name":"gknoone","admin":true}
+  {"id":"123","name":"uyaba","admin":true}
   ```
 
 - 签名

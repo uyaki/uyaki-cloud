@@ -1,10 +1,10 @@
 user:
-  name: gknoone-cloud-plus
+  name: uyaba-cloud
   age: 123
   
 logging:
   # 配置Admin的日志文件输出位置
-  file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-nacos-config.log
+  file: /Users/baweibin/Downloads/uyaba-cloud/log/provider/provider-nacos-config.log
 
 server:
   port: 8006

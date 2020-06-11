@@ -1,4 +1,4 @@
 server:
   port: 8003
 logging:
-  file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/provider/provider-test.log
+  file: /Users/baweibin/Downloads/uyaba-cloud/log/provider/provider-test.log

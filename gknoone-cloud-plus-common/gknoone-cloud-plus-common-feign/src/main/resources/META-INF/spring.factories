@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.gknoone.cloud.plus.common.feign.FeignConfiguration

@@ -11,7 +11,7 @@
 ```xml
 <properties>
   <java.version>1.8</java.version>
-  <docker.image.prefix>gknoone-cloud-plus</docker.image.prefix>
+  <docker.image.prefix>uyaba-cloud</docker.image.prefix>
 </properties>
 <build>
   <plugins>
@@ -112,7 +112,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
    version: "3"
    services:
      peer1:      # 默认情况下，其他服务可以使用服务名称连接到该服务。因此，对于peer2的节点，它需要连接http://peer1:8111/eureka/，因此需要配置该服务的名称是peer1。
-       image: gknoone-cloud-plus/eureka:0.0.1-SNAPSHOT
+       image: uyaba-cloud/eureka:0.0.1-SNAPSHOT
        container_name: eureka-peer1
        networks:
          - eureka-net
@@ -121,7 +121,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
        environment:
          - spring.profiles.active=peer1
      peer2:
-       image: gknoone-cloud-plus/eureka:0.0.1-SNAPSHOT
+       image: uyaba-cloud/eureka:0.0.1-SNAPSHOT
        container_name: eureka-peer2
        hostname: peer2
        networks:

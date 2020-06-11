@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: @pom.artifactId@
+  security:
+    user:
+      name: uyaba
+      password: gk123456
+#
+#logstash:
+#  #日志保存级别
+#  level: info
+#  #日志保存地址，该值与logstash没关系，是当日志存在本地File文件内的文件夹地址
+#  levelfile: /Users/baweibin/Downloads/uyaba-cloud/eureka

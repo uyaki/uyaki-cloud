@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+      defaultZone: http://uyaba:gk123456@peer1:8111/eureka/,http://uyaba:gk123456@peer2:8112/eureka/
     healthcheck:
       # 开启健康检查
       enabled: true
@@ -12,7 +12,7 @@ eureka:
     # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
     instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
     # 自定义实例跳转链接
-    status-page-url: https://github.com/gknoone
+    status-page-url: https://github.com/uyaba
     # 发送心跳给server端的频率 （开发环境开启，默认30秒）
     lease-renewal-interval-in-seconds: 5
     # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）

@@ -208,12 +208,12 @@ spring.cloud.nacos.config.enabled = false
 
    ```yaml
    user:
-     name: gknoone-cloud-plus
+     name: uyaba-cloud
      age: 123
 
    logging:
      # 配置Admin的日志文件输出位置
-     file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/microservices/microservices-nacos-config.log
+     file: /Users/baweibin/Downloads/uyaba-cloud/log/microservices/microservices-nacos-config.log
 
    server:
      port: 8006
@@ -224,7 +224,7 @@ spring.cloud.nacos.config.enabled = false
    eureka:
      client:
        service-url:
-         defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+         defaultZone: http://uyaba:gk123456@peer1:8111/eureka/,http://uyaba:gk123456@peer2:8112/eureka/
        healthcheck:
          # 开启健康检查
          enabled: true
@@ -235,7 +235,7 @@ spring.cloud.nacos.config.enabled = false
        # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
        # 自定义实例跳转链接
-       status-page-url: https://github.com/gknoone
+       status-page-url: https://github.com/uyaba
        # 发送心跳给server端的频率 （开发环境开启，默认30秒）
        lease-renewal-interval-in-seconds: 5
        # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
@@ -286,22 +286,22 @@ spring.cloud.nacos.config.enabled = false
            server-addr: 127.0.0.1:8848
            file-extension: yaml
            namespace: a1566156-8210-488e-9339-1a16d28ca31c
-           group: gknoone-cloud-plus
+           group: uyaba-cloud
            # 共享的配置列表
            # shared-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
            # refreshable-dataids: app-common-eureka-dev.yaml,app-common-actuator-dev.yaml,app-common-feign-dev.yaml
            # 共享配置
            ext-config:
              - data-id: app-common-eureka.yaml
-               group: gknoone-cloud-plus
+               group: uyaba-cloud
                namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
              - data-id: app-common-actuator.yaml
-               group: gknoone-cloud-plus
+               group: uyaba-cloud
                namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
              - data-id: app-common-feign.yaml
-               group: gknoone-cloud-plus
+               group: uyaba-cloud
                namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
    ```

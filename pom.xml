@@ -8,12 +8,12 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.gknoone.cloud.plus</groupId>
-    <artifactId>gknoone-cloud-plus</artifactId>
+    <groupId>com.uyaba.cloud</groupId>
+    <artifactId>uyaba-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>gknoone-cloud-plus</name>
+    <name>uyaba-cloud</name>
     <description>总项目</description>
 
     <properties>
@@ -21,33 +21,33 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <gknoone-cloud-plus.version>0.0.1-SNAPSHOT</gknoone-cloud-plus.version>
+        <uyaba-cloud.version>0.0.1-SNAPSHOT</uyaba-cloud.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <docker.image.prefix>gknoone-cloud-plus</docker.image.prefix>
+        <docker.image.prefix>uyaba-cloud</docker.image.prefix>
     </properties>
     <modules>
         <!-- 服务和注册中心eureka -->
-        <module>gknoone-cloud-plus-eureka</module>
+        <module>uyaba-cloud-eureka</module>
         <!-- 网关：gateway -->
-        <module>gknoone-cloud-plus-gateway</module>
+        <module>uyaba-cloud-gateway</module>
         <!-- 网关：zuul -->
-        <module>gknoone-cloud-plus-zuul</module>
+        <module>uyaba-cloud-zuul</module>
         <!-- 配置中心：apollo（暂未启动，现使用nacos） -->
-        <module>gknoone-cloud-plus-apollo</module>
+        <module>uyaba-cloud-apollo</module>
         <!-- 管理员模块 -->
-        <module>gknoone-cloud-plus-admin</module>
+        <module>uyaba-cloud-admin</module>
         <!-- 鉴权模块 -->
-        <module>gknoone-cloud-plus-auth</module>
+        <module>uyaba-cloud-auth</module>
         <!-- 微服务模块 -->
-        <module>gknoone-cloud-plus-microservices</module>
+        <module>uyaba-cloud-microservices</module>
         <!-- 微服务API模块 -->
-        <module>gknoone-cloud-plus-microservices-api</module>
+        <module>uyaba-cloud-microservices-api</module>
         <!-- 数据库模块 -->
-        <module>gknoone-cloud-plus-db</module>
+        <module>uyaba-cloud-db</module>
         <!-- 底层通用模块 -->
-        <module>gknoone-cloud-plus-common</module>
+        <module>uyaba-cloud-common</module>
     </modules>
     <dependencies>
         <dependency>

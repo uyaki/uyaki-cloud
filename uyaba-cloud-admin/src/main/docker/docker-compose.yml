@@ -1,0 +1,7 @@
+version: "3"
+services:
+  zuul:      # 默认情况下，其他服务可以使用服务名称连接到该服务。因此，对于peer2的节点，它需要连接http://peer1:8111/eureka/，因此需要配置该服务的名称是peer1。
+    image: uyaba-cloud/admin:0.0.1-SNAPSHOT
+    container_name: admin
+    ports:
+      - "8333:8333"

@@ -26,11 +26,11 @@ Elasticsearch使用**_version**来确保所有改变操作都被正确排序。�
 
 我们可以利用**_version** 的优点来确保我们程序修改的数据冲突不会造成数据丢失。我们可以指定 **_version** 的数字。如果数字错误，请求就是失败。
 
-1. 获取`GET /gknoone/employee/5`，它的_version是1
+1. 获取`GET /uyaba/employee/5`，它的_version是1
 
    ```json
    {
-     "_index" : "gknoone",
+     "_index" : "uyaba",
      "_type" : "employee",
      "_id" : "5",
      "_version" : 1,
@@ -53,7 +53,7 @@ Elasticsearch使用**_version**来确保所有改变操作都被正确排序。�
 2. 更新，在_version为1的时候
 
    ```sh
-   PUT /gknoone/employee/5?version=1
+   PUT /uyaba/employee/5?version=1
    {
        "first_name" : "赵",
        "last_name" : "虎",
@@ -70,7 +70,7 @@ Elasticsearch使用**_version**来确保所有改变操作都被正确排序。�
 
    ```json
    {
-     "_index" : "gknoone",
+     "_index" : "uyaba",
      "_type" : "employee",
      "_id" : "5",
      "_version" : 2,
@@ -85,7 +85,7 @@ Elasticsearch使用**_version**来确保所有改变操作都被正确排序。�
    }
    ```
 
-3. 再次执行2的内容`PUT /gknoone/employee/5?version=1 {...}`
+3. 再次执行2的内容`PUT /uyaba/employee/5?version=1 {...}`
 
    - 结果 ，返回409
 
@@ -98,14 +98,14 @@ Elasticsearch使用**_version**来确保所有改变操作都被正确排序。�
            "reason": "[employee][5]: version conflict, current version [2] is different than the one provided [1]",
            "index_uuid": "j-gD7jb6STq9hFVe8tlPFA",
            "shard": "1",
-           "index": "gknoone"
+           "index": "uyaba"
          }
        ],
        "type": "version_conflict_engine_exception",
        "reason": "[employee][5]: version conflict, current version [2] is different than the one provided [1]",
        "index_uuid": "j-gD7jb6STq9hFVe8tlPFA",
        "shard": "1",
-       "index": "gknoone"
+       "index": "uyaba"
      },
      "status": 409
    }
@@ -124,7 +124,7 @@ Elasticsearch在处理外部版本号时会与对内部版本号的处理有些�
 外部版本号不仅可以在索引和删除请求时使用，还可以在创建时使用
 
 ```sh
-PUT /gknoone/employee/5?version=1&version_type=external
+PUT /uyaba/employee/5?version=1&version_type=external
 {
     "first_name" : "赵",
     "last_name" : "虎",
@@ -140,7 +140,7 @@ PUT /gknoone/employee/5?version=1&version_type=external
 现在我们更新这个文档，并指定version为10
 
 ```sh
-PUT /gknoone/employee/5?version=10&version_type=external
+PUT /uyaba/employee/5?version=10&version_type=external
 {
     "first_name" : "赵",
     "last_name" : "虎",

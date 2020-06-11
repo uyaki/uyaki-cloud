@@ -54,7 +54,7 @@ spring:
     name: @pom.artifactId@
   security:
     user:
-      name: gknoone
+      name: uyaba
       password: gk123456
 ```
 
@@ -68,7 +68,7 @@ eureka:
 #    enable-self-preservation: false
   client:
     service-url:
-      defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+      defaultZone: http://uyaba:gk123456@peer1:8111/eureka/,http://uyaba:gk123456@peer2:8112/eureka/
     healthcheck:
       enabled: true
 ---
@@ -95,7 +95,7 @@ eureka:
 ```java
 /**
  * Security配置类
- * @author gknoone
+ * @author uyaba
  * @date 2019-07-31 09:29
  */
 @EnableWebSecurity
@@ -117,15 +117,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 /**
  * 启动类
  * 使用 @EnableEurekaServer 开启EurekaServer
- * @author gknoone
+ * @author uyaba
  * @date 2019-07-31 09:01:32
  */
 @SpringBootApplication
 @EnableEurekaServer
-public class GknooneCloudPlusEurekaApplication {
+public class uyabaCloudPlusEurekaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GknooneCloudPlusEurekaApplication.class, args);
+        SpringApplication.run(uyabaCloudPlusEurekaApplication.class, args);
     }
 
 }
@@ -161,11 +161,11 @@ eureka:
 ```yml
 eureka:
   instance:
-    status-page-url: https://github.com/gknoone
+    status-page-url: https://github.com/uyaba
 ```
 1. 点击如下位置，网页会跳转到`http://192.168.13.111:8002/actuator/info`
 ![](assets/markdown-img-paste-20190731162906886.png)
-2. 修改配置后，网页跳转到[https://github.com/gknoone](https://github.com/gknoone)
+2. 修改配置后，网页跳转到[https://github.com/uyaba](https://github.com/uyaba)
 
 ### 快速移除已经失效的服务信息（建议只在开发环境使用）
 

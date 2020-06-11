@@ -13,7 +13,7 @@
 
 ## Admin Server
 
-1. 创建模块`gknoone-cloud-plus-admin`
+1. 创建模块`uyaba-cloud-admin`
 
 2. 引入依赖
 
@@ -92,20 +92,20 @@
        admin:
          ui:
            # 自定义显示title
-           title: gknoone-cloud-plus-Admin-Server
+           title: uyaba-cloud-Admin-Server
      # 配置认证信息，client端需要对应配置（ 如果配置到了eureka，则不需要）
      # spring.boot.admin.client.url=http://localhost:8333
-     # spring.boot.admin.client.username=gknoone
+     # spring.boot.admin.client.username=uyaba
      # spring.boot.admin.client.password=gk123456
      security:
        user:
-         name: gknoone
+         name: uyaba
          password: gk123456
 
    eureka:
      client:
        service-url:
-         defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+         defaultZone: http://uyaba:gk123456@peer1:8111/eureka/,http://uyaba:gk123456@peer2:8112/eureka/
        healthcheck:
          # 开启健康检查
          enabled: true
@@ -116,7 +116,7 @@
        # 默认${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${service.port}
        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${server.port}
        # 自定义实例跳转链接
-       status-page-url: https://github.com/gknoone
+       status-page-url: https://github.com/uyaba
        # 发送心跳给server端的频率 （开发环境开启，默认30秒）
        lease-renewal-interval-in-seconds: 5
        # server至上一次收到心跳之后，等待下一次心跳的超时时间，超时未收到心跳，移除instance （开发环境开启，默认90秒）
@@ -140,7 +140,7 @@
    /**
     * 认证配置
     *
-    * @author gknoone
+    * @author uyaba
     * @date 2019-08-12 08:49
     */
    @Configuration
@@ -208,7 +208,7 @@
        admin:
          client:
          	url: http://localhost:8333
-           username: gknoone
+           username: uyaba
            password: gk123456
    ```
 
@@ -243,7 +243,7 @@ management:
       show-details: ALWAYS
 logging:
   # 配置Admin的日志文件输出位置
-  file: /Users/baweibin/Downloads/gknoone-cloud-plus/log/microservices/microservices-hello.log
+  file: /Users/baweibin/Downloads/uyaba-cloud/log/microservices/microservices-hello.log
 ```
 
 ![image-20190812170504252](assets/image-20190812170504252.png)

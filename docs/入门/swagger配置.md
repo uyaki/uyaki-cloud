@@ -134,7 +134,7 @@ swagger.authorization.key-name=Authorization
    ```java
    /**
     *
-    * @author gknoone
+    * @author uyaba
     * @date 2019-08-22 11:36
     */
    @EnableSwagger2

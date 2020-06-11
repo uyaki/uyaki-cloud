@@ -7,14 +7,14 @@
 - 示例
 
   ```sh
-  GET /gknoone/employee/1?pretty
+  GET /uyaba/employee/1?pretty
   ```
 
 - 结果
 
   ```json
   {
-    "_index" : "gknoone",
+    "_index" : "uyaba",
     "_type" : "employee",
     "_id" : "1",
     "_version" : 2,
@@ -37,7 +37,7 @@
   > 添加 -i 返回，反馈头文件
   
   ```sh
-  curl -i GET /gknoone/employee/1?pretty
+  curl -i GET /uyaba/employee/1?pretty
   ```
 
 ### - _source
@@ -48,14 +48,14 @@
 
   ```sh
   # 多个field 用逗号过滤
-  GET /gknoone/employee/1?_source=age,interests
+  GET /uyaba/employee/1?_source=age,interests
   ```
 
 - 结果
 
   ```json
   {
-    "_index" : "gknoone",
+    "_index" : "uyaba",
     "_type" : "employee",
     "_id" : "1",
     "_version" : 2,
@@ -78,7 +78,7 @@
 - 示例
 
   ```sh
-  GET /gknoone/employee/1/_source
+  GET /uyaba/employee/1/_source
   ```
 
 - 结果
@@ -105,8 +105,8 @@
 - 示例
 
   ```sh
-  # POST /gknoone/employee/5/_create
-  POST /gknoone/employee/5?op_type=create
+  # POST /uyaba/employee/5/_create
+  POST /uyaba/employee/5?op_type=create
   {
     "first_name" : "张",
     "last_name" : "龙",
@@ -123,7 +123,7 @@
 
   ```json
   {
-    "_index" : "gknoone",
+    "_index" : "uyaba",
     "_type" : "employee",
     "_id" : "5",
     "_version" : 1,
@@ -147,14 +147,14 @@
           "reason": "[employee][5]: version conflict, document already exists (current version [1])",
           "index_uuid": "j-gD7jb6STq9hFVe8tlPFA",
           "shard": "1",
-          "index": "gknoone"
+          "index": "uyaba"
         }
       ],
       "type": "version_conflict_engine_exception",
       "reason": "[employee][5]: version conflict, document already exists (current version [1])",
       "index_uuid": "j-gD7jb6STq9hFVe8tlPFA",
       "shard": "1",
-      "index": "gknoone"
+      "index": "uyaba"
     },
     "status": 409
   }
@@ -163,7 +163,7 @@
 ### - /_update
 
 ```
-POST /gknoone/employee/5/_update
+POST /uyaba/employee/5/_update
 {
   "first_name" : "张",
   "last_name" : "龙",

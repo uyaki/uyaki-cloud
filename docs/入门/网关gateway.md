@@ -87,7 +87,7 @@
    eureka:
      client:
        service-url:
-         defaultZone: http://gknoone:gk123456@peer1:8111/eureka/,http://gknoone:gk123456@peer2:8112/eureka/
+         defaultZone: http://uyaba:gk123456@peer1:8111/eureka/,http://uyaba:gk123456@peer2:8112/eureka/
    spring:
      cloud:
        gateway:
@@ -138,10 +138,10 @@ spring:
         - id: path_route
           uri: https://github.com
           predicates:
-            - Path=/gknoone/**
+            - Path=/uyaba/**
 ```
 
-访问`localhost:8222/gknoone/gknoone-cloud-plus`会跳转到[https://github.com/gknoone/gknoone-cloud-plus](https://github.com/gknoone/gknoone-cloud-plus)
+访问`localhost:8222/uyaba/uyaba-cloud`会跳转到[https://github.com/uyaba/uyaba-cloud](https://github.com/uyaba/uyaba-cloud)
 
 ### Query路由断言工厂
 
@@ -208,7 +208,7 @@ public class CheckAuthRoutePredicateFactory extends AbstractRoutePredicateFactor
         super(Config.class);
     }
 
-    private final static String AUTH_NAME = "gknoone";
+    private final static String AUTH_NAME = "uyaba";
 
     @Getter
     @Setter
@@ -240,7 +240,7 @@ spring:
           predicates:
           - name: CheckAuth
             args:
-              name: gknoone
+              name: uyaba
 ```
 
 ## 过滤器工厂
@@ -340,11 +340,11 @@ spring:
           predicates:
           - name: CheckAuth
             args:
-              name: gknoone
+              name: uyaba
           filters:
           - name: CheckAuth2
             args:
-              name: gknoone2
+              name: uyaba2
 ```
 
 ### 自定义KeyValue过滤器工厂
@@ -381,9 +381,9 @@ spring:
           predicates:
           - name: CheckAuth
             args:
-              name: gknoone
+              name: uyaba
           filters:
-          - CheckAuth3=gknoone,niubi
+          - CheckAuth3=uyaba,niubi
 ```
 
 ## 全局过滤器
@@ -443,7 +443,7 @@ spring:
    /**
     * IP全局过滤器
     *
-    * @author gknoone
+    * @author uyaba
     * @date 2019-08-06 09:09
     */
    @Component
@@ -667,7 +667,7 @@ public class ApiKeyResolver implements KeyResolver {
   /**
    * 全局跨域配置
    * 预留，推荐采用配置文件配置的方式，如需开启，注释掉配置文件配置，添加@Configuration注解
-   * @author gknoone
+   * @author uyaba
    * @date 2019-08-06 16:41
    */
   @Configuration
@@ -734,7 +734,7 @@ public class ApiKeyResolver implements KeyResolver {
 /**
  * 统一的JSON异常处理逻辑
  *
- * @author gknoone
+ * @author uyaba
  * @date 2019-08-06 17:42
  */
 public class JsonExceptionHandler extends DefaultErrorWebExceptionHandler {
@@ -814,7 +814,7 @@ public class JsonExceptionHandler extends DefaultErrorWebExceptionHandler {
 /**
  * 异常处理配置类
  *
- * @author gknoone
+ * @author uyaba
  * @date 2019-08-06 18:00
  */
 @Configuration

@@ -67,8 +67,8 @@ java -jar zipkin.jar
 ## 集成
 ### 模块说明
 
-- Gknoone-cloud-plus-microservices-hello
-- gknoone-cloud-plus-microservices-test
+- uyaba-cloud-microservices-hello
+- uyaba-cloud-microservices-test
 
 ### 集成sleuth
 
@@ -81,7 +81,7 @@ java -jar zipkin.jar
 	</dependency>
 	```
 
-2. 配置`application.yml`(以gknoone-cloud-eureka-consumer为例)，开启sleuth的debug日志
+2. 配置`application.yml`(以uyaba-cloud-eureka-consumer为例)，开启sleuth的debug日志
 
 	```yml
 	logging:
@@ -94,14 +94,14 @@ java -jar zipkin.jar
 3. 用postman访问`localhost:8021/test/1`，查看日志如下
 
 	```bash
-	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
-	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
-	2019-07-29 11:49:05.457 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-	2019-07-29 11:49:05.682 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-	2019-07-29 11:49:05.683 DEBUG [gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
+	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
+	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
+	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.682 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.683 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
 	```
 
-	其中可以看到日志内容中的`[gknoone-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
+	其中可以看到日志内容中的`[uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
 	即`[appname,traceId,spanId,exportable]`。
 	含义如下：
 
@@ -121,7 +121,7 @@ java -jar zipkin.jar
 	</dependency>
 	```
 
-2. 配置`application.yml`(以gknoone-cloud-plus-microservices-hello为例)，添加zipkin配置
+2. 配置`application.yml`(以uyaba-cloud-microservices-hello为例)，添加zipkin配置
 
 	```yml
 	spring:
@@ -143,7 +143,7 @@ java -jar zipkin.jar
 
 ### 异常服务测试
 
-1. 关闭gknoone-cloud-plus-microservices-hello
+1. 关闭uyaba-cloud-microservices-hello
 
 2. 用postman访问`http://localhost:8003/test/hi`，再次点击查找
 
@@ -178,7 +178,7 @@ spring:
     - 添加自定义的标记
     - 将请求ID添加到响应头
 	```java
-	package com.gknoone.cloud.plus.microservices.filter;
+	package com.uyaba.cloud.microservices.filter;
 
 	import brave.Span;
 	import brave.Tracer;
@@ -199,7 +199,7 @@ spring:
 	 * 自定义Filter，用于
 	 * 1.添加自定义的标记
 	 * 2.将请求ID添加到响应头
-	 * @author gknoone
+	 * @author uyaba
 	 * @date 2019-08-16 09:45
 	 */
 	@Component
@@ -283,7 +283,7 @@ spring:
       type: rabbit
   rabbitmq:
     addresses: amqp://localhost:5672
-    username: gknoone
+    username: uyaba
     password: gk123456
 ```
 
