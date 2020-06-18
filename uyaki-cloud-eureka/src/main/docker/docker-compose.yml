@@ -1,0 +1,24 @@
+version: "3"
+services:
+  peer1:      # 默认情况下，其他服务可以使用服务名称连接到该服务。因此，对于peer2的节点，它需要连接http://peer1:8111/eureka/，因此需要配置该服务的名称是peer1。
+    image: uyaki-cloud/eureka:0.0.1-SNAPSHOT
+    container_name: eureka-peer1
+    networks:
+      - eureka-net
+    ports:
+      - "8111:8111"
+    environment:
+      - spring.profiles.active=peer1
+  peer2:
+    image: uyaki-cloud/eureka:0.0.1-SNAPSHOT
+    container_name: eureka-peer2
+    hostname: peer2
+    networks:
+      - eureka-net
+    ports:
+      - "8112:8112"
+    environment:
+      - spring.profiles.active=peer2
+networks:
+  eureka-net:
+    driver: bridge

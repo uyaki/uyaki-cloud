@@ -1,7 +1,7 @@
 {
-  "name": "uyaba-cloud",
+  "name": "uyaki-cloud",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\">Welcome to uyaba-cloud 👋</h1> <p>   <img alt=\"Version\" src=\"https://img.shields.io/badge/version-0.0.1-SNAPSHOT-blue.svg?cacheSeconds=2592000\" />   <a href=\"https://github.com/uyaba/uyaba-cloud/blob/master/README.md\">     <img alt=\"Documentation\" src=\"https://img.shields.io/badge/documentation-yes-brightgreen.svg\" target=\"_blank\" />   </a>   <a href=\"https://github.com/uyaba/uyaba-cloud/blob/master/LICENSE\">     <img alt=\"License: MIT License\" src=\"https://img.shields.io/badge/License-MIT License-yellow.svg\" target=\"_blank\" />   </a> </p>",
+  "description": "<h1 align=\"center\">Welcome to uyaki-cloud 👋</h1> <p>   <img alt=\"Version\" src=\"https://img.shields.io/badge/version-0.0.1-SNAPSHOT-blue.svg?cacheSeconds=2592000\" />   <a href=\"https://github.com/uyaki/uyaki-cloud/blob/master/README.md\">     <img alt=\"Documentation\" src=\"https://img.shields.io/badge/documentation-yes-brightgreen.svg\" target=\"_blank\" />   </a>   <a href=\"https://github.com/uyaki/uyaki-cloud/blob/master/LICENSE\">     <img alt=\"License: MIT License\" src=\"https://img.shields.io/badge/License-MIT License-yellow.svg\" target=\"_blank\" />   </a> </p>",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uyaba/uyaba-cloud.git"
+    "url": "git+https://github.com/uyaki/uyaki-cloud.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uyaba/uyaba-cloud/issues"
+    "url": "https://github.com/uyaki/uyaki-cloud/issues"
   },
-  "homepage": "https://github.com/uyaba/uyaba-cloud#readme"
+  "homepage": "https://github.com/uyaki/uyaki-cloud#readme"
 }

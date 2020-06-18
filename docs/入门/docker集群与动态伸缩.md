@@ -8,31 +8,31 @@
    version: "2"
    services:
      peer1:      # 默认情况下，其他服务可以使用服务名称连接到该服务。因此，对于peer2的节点，它需要连接http://peer1:8111/eureka/，因此需要配置该服务的名称是peer1。
-       image: uyaba-cloud/eureka:0.0.1-SNAPSHOT
+       image: uyaki-cloud/eureka:0.0.1-SNAPSHOT
        ports:
          - "8111:8111"
        environment:
          - spring.profiles.active=peer1
      peer2:
-       image: uyaba-cloud/eureka:0.0.1-SNAPSHOT
+       image: uyaki-cloud/eureka:0.0.1-SNAPSHOT
        ports:
          - "8112:8112"
        environment:
          - spring.profiles.active=peer2
      zuul:
-       image: uyaba-cloud/zuul:0.0.1-SNAPSHOT
+       image: uyaki-cloud/zuul:0.0.1-SNAPSHOT
    #    ports:
    #      - "8444:8444"
      admin:
-       image: uyaba-cloud/admin:0.0.1-SNAPSHOT
+       image: uyaki-cloud/admin:0.0.1-SNAPSHOT
    #    ports:
    #      - "8333:8333"
      microservices-hello:
-       image: uyaba-cloud/microservices-hello:0.0.1-SNAPSHOT
+       image: uyaki-cloud/microservices-hello:0.0.1-SNAPSHOT
    #    ports:
    #      - "8002:8002"
      microservices-test:
-       image: uyaba-cloud/microservices-test:0.0.1-SNAPSHOT
+       image: uyaki-cloud/microservices-test:0.0.1-SNAPSHOT
    #    ports:
    #      - "8003:8003"
    ```

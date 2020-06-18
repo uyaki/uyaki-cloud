@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uyaki.cloud.auth.mapper.om.OauthApprovalsMapper">
+  <resultMap id="BaseResultMap" type="com.uyaki.cloud.auth.model.om.OauthApprovals">
+    <result column="userId" jdbcType="VARCHAR" property="userid" />
+    <result column="clientId" jdbcType="VARCHAR" property="clientid" />
+    <result column="scope" jdbcType="VARCHAR" property="scope" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="expiresAt" jdbcType="TIMESTAMP" property="expiresat" />
+    <result column="lastModifiedAt" jdbcType="TIMESTAMP" property="lastmodifiedat" />
+  </resultMap>
+  <insert id="insert" parameterType="com.uyaki.cloud.auth.model.om.OauthApprovals">
+    insert into om.oauth_approvals (userId, clientId, scope, 
+      status, expiresAt, lastModifiedAt
+      )
+    values (#{userid,jdbcType=VARCHAR}, #{clientid,jdbcType=VARCHAR}, #{scope,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{expiresat,jdbcType=TIMESTAMP}, #{lastmodifiedat,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.uyaki.cloud.auth.model.om.OauthApprovals">
+    insert into om.oauth_approvals
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="clientid != null">
+        clientId,
+      </if>
+      <if test="scope != null">
+        scope,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="expiresat != null">
+        expiresAt,
+      </if>
+      <if test="lastmodifiedat != null">
+        lastModifiedAt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="clientid != null">
+        #{clientid,jdbcType=VARCHAR},
+      </if>
+      <if test="scope != null">
+        #{scope,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="expiresat != null">
+        #{expiresat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifiedat != null">
+        #{lastmodifiedat,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -67,8 +67,8 @@ java -jar zipkin.jar
 ## 集成
 ### 模块说明
 
-- uyaba-cloud-microservices-hello
-- uyaba-cloud-microservices-test
+- uyaki-cloud-microservices-hello
+- uyaki-cloud-microservices-test
 
 ### 集成sleuth
 
@@ -94,14 +94,14 @@ java -jar zipkin.jar
 3. 用postman访问`localhost:8021/test/1`，查看日志如下
 
 	```bash
-	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
-	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
-	2019-07-29 11:49:05.457 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-	2019-07-29 11:49:05.682 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
-	2019-07-29 11:49:05.683 DEBUG [uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
+	2019-07-29 11:49:05.457 DEBUG [uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : Before send
+	2019-07-29 11:49:05.457 DEBUG [uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.f.LazyTracingFeignClient   : Sending a request via tracing feign client [org.springframework.cloud.sleuth.instrument.web.client.feign.TracingFeignClient@785845fd] and the delegate [feign.Client$Default@d2a0ea1]
+	2019-07-29 11:49:05.457 DEBUG [uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled send of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.682 DEBUG [uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] o.s.c.s.i.w.c.feign.TracingFeignClient   : Handled receive of NoopSpan(0efab49616141a10/02bada8c807e0ef4)
+	2019-07-29 11:49:05.683 DEBUG [uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false] 20103 --- [reka-microservices-2] c.s.i.w.c.f.TraceLoadBalancerFeignClient : After receive
 	```
 
-	其中可以看到日志内容中的`[uyaba-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
+	其中可以看到日志内容中的`[uyaki-cloud-eureka-consumer,0efab49616141a10,afae19d7f7e0f943,false]`，
 	即`[appname,traceId,spanId,exportable]`。
 	含义如下：
 
@@ -178,7 +178,7 @@ spring:
     - 添加自定义的标记
     - 将请求ID添加到响应头
 	```java
-	package com.uyaba.cloud.microservices.filter;
+	package com.uyaki.cloud.microservices.filter;
 
 	import brave.Span;
 	import brave.Tracer;
@@ -199,7 +199,7 @@ spring:
 	 * 自定义Filter，用于
 	 * 1.添加自定义的标记
 	 * 2.将请求ID添加到响应头
-	 * @author uyaba
+	 * @author uyaki
 	 * @date 2019-08-16 09:45
 	 */
 	@Component
@@ -283,7 +283,7 @@ spring:
       type: rabbit
   rabbitmq:
     addresses: amqp://localhost:5672
-    username: uyaba
+    username: uyaki
     password: gk123456
 ```
 

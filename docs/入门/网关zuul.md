@@ -73,7 +73,7 @@
              server-addr: 127.0.0.1:8848
              file-extension: yaml
              namespace: a1566156-8210-488e-9339-1a16d28ca31c
-             group: uyaba-cloud
+             group: uyaki-cloud
      ```
 
    - Nacos config上的zuul.yaml
@@ -122,12 +122,12 @@
            server-addr: 127.0.0.1:8848
            file-extension: yaml
            namespace: a1566156-8210-488e-9339-1a16d28ca31c
-           group: uyaba-cloud
+           group: uyaki-cloud
            # 共享配置
            ext-config:
              # eureka共享配置
              - data-id: app-common-eureka.yaml
-               group: uyaba-cloud
+               group: uyaki-cloud
                namespace: a1566156-8210-488e-9339-1a16d28ca31c
                refresh: true
    ```
@@ -221,12 +221,12 @@
 1. 创建过滤器
 
    ```java
-   package com.uyaba.cloud.zuul.filter;
+   package com.uyaki.cloud.zuul.filter;
 
    import com.alibaba.fastjson.JSON;
    import ResponseCode;
    import ResponseData;
-   import com.uyaba.cloud.common.util.IpUtil;
+   import com.uyaki.cloud.common.util.IpUtil;
    import com.netflix.zuul.ZuulFilter;
    import com.netflix.zuul.context.RequestContext;
    import com.netflix.zuul.exception.ZuulException;
@@ -239,7 +239,7 @@
    /**
     * IP过滤器
     *
-    * @author uyaba
+    * @author uyaki
     * @date 2019-08-21 15:21
     */
    public class IpFilter extends ZuulFilter {
@@ -303,7 +303,7 @@
 2. IP过滤器配置
 
    ```java
-   package com.uyaba.cloud.zuul.config;
+   package com.uyaki.cloud.zuul.config;
 
    import IpFilter;
    import org.springframework.context.annotation.Bean;
@@ -312,7 +312,7 @@
    /**
     * 过滤器配置
     *
-    * @author uyaba
+    * @author uyaki
     * @date 2019-08-21 16:32
     */
    @Configuration
@@ -327,7 +327,7 @@
 3. IP工具类实现
 
    ```java
-   package com.uyaba.cloud.common.util;
+   package com.uyaki.cloud.common.util;
 
    import HttpContants;
    import org.slf4j.Logger;
@@ -338,7 +338,7 @@
    /**
     * IP工具类
     *
-    * @author uyaba
+    * @author uyaki
     * @date 2019-08-21 15:27
     */
    public class IpUtil {
@@ -481,7 +481,7 @@ return null;
 2. 异常拦截器
 
    ```java
-   package com.uyaba.cloud.zuul.filter;
+   package com.uyaki.cloud.zuul.filter;
 
    import com.netflix.zuul.ZuulFilter;
    import com.netflix.zuul.context.RequestContext;
@@ -492,7 +492,7 @@ return null;
    /**
     * 过滤器异常
     *
-    * @author uyaba
+    * @author uyaki
     * @date 2019-08-21 17:45
     */
    public class ErrorFilter extends ZuulFilter {
@@ -529,7 +529,7 @@ return null;
 4. 使用JSON统一返回
 
    ```java
-   package com.uyaba.cloud.zuul.controller;
+   package com.uyaki.cloud.zuul.controller;
 
    import ResponseCode;
    import ResponseData;
@@ -546,7 +546,7 @@ return null;
 
    /**
     * 异常返回统一格式
-    * @author uyaba
+    * @author uyaki
     * @date 2019-08-21 17:56
     */
    @RestController
@@ -622,7 +622,7 @@ return null;
 >  回退需要实现`Fallbackmicroservices`接口
 
 ```java
-package com.uyaba.cloud.zuul.microservices;
+package com.uyaki.cloud.zuul.microservices;
 
 import com.alibaba.fastjson.JSON;
 import ResponseCode;
@@ -645,7 +645,7 @@ import java.nio.charset.Charset;
 /**
  * 回退函数
  *
- * @author uyaba
+ * @author uyaki
  * @date 2019-08-22 08:55
  */
 @Component
@@ -827,7 +827,7 @@ public class ServiceConsumerFallbackmicroservices implements Fallbackmicroservic
 ```java
 /**
  * 请求信息打印
- * @author uyaba
+ * @author uyaki
  * @date 2019-08-22 09:50
  */
 public class ResquestMsgFilter extends ZuulFilter {

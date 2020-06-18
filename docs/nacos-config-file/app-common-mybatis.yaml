@@ -1,7 +1,7 @@
 mybatis:
   mapper-locations: classpath:**/*.xml
-  type-aliases-package: com.uyaba.cloud.model
-  type-handlers-package: com.uyaba.cloud.typehandler
+  type-aliases-package: com.uyaki.cloud.model
+  type-handlers-package: com.uyaki.cloud.typehandler
   configuration:
     log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
     call-setters-on-nulls: true

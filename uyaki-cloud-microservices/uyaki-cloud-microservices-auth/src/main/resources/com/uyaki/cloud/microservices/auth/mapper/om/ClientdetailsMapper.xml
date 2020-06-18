@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uyaki.cloud.microservices.auth.mapper.om.ClientdetailsMapper">
+  <resultMap id="BaseResultMap" type="com.uyaki.cloud.microservices.auth.model.om.Clientdetails">
+    <id column="appId" jdbcType="VARCHAR" property="appid" />
+    <result column="resourceIds" jdbcType="VARCHAR" property="resourceids" />
+    <result column="appSecret" jdbcType="VARCHAR" property="appsecret" />
+    <result column="scope" jdbcType="VARCHAR" property="scope" />
+    <result column="grantTypes" jdbcType="VARCHAR" property="granttypes" />
+    <result column="redirectUrl" jdbcType="VARCHAR" property="redirecturl" />
+    <result column="authorities" jdbcType="VARCHAR" property="authorities" />
+    <result column="access_token_validity" jdbcType="BIGINT" property="accessTokenValidity" />
+    <result column="refresh_token_validity" jdbcType="BIGINT" property="refreshTokenValidity" />
+    <result column="additionalInformation" jdbcType="VARCHAR" property="additionalinformation" />
+    <result column="autoApproveScopes" jdbcType="VARCHAR" property="autoapprovescopes" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    appId, resourceIds, appSecret, scope, grantTypes, redirectUrl, authorities, access_token_validity, 
+    refresh_token_validity, additionalInformation, autoApproveScopes
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from om.clientdetails
+    where appId = #{appid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from om.clientdetails
+    where appId = #{appid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.uyaki.cloud.microservices.auth.model.om.Clientdetails">
+    insert into om.clientdetails (appId, resourceIds, appSecret, 
+      scope, grantTypes, redirectUrl, 
+      authorities, access_token_validity, refresh_token_validity, 
+      additionalInformation, autoApproveScopes
+      )
+    values (#{appid,jdbcType=VARCHAR}, #{resourceids,jdbcType=VARCHAR}, #{appsecret,jdbcType=VARCHAR}, 
+      #{scope,jdbcType=VARCHAR}, #{granttypes,jdbcType=VARCHAR}, #{redirecturl,jdbcType=VARCHAR}, 
+      #{authorities,jdbcType=VARCHAR}, #{accessTokenValidity,jdbcType=BIGINT}, #{refreshTokenValidity,jdbcType=BIGINT}, 
+      #{additionalinformation,jdbcType=VARCHAR}, #{autoapprovescopes,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.uyaki.cloud.microservices.auth.model.om.Clientdetails">
+    insert into om.clientdetails
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="appid != null">
+        appId,
+      </if>
+      <if test="resourceids != null">
+        resourceIds,
+      </if>
+      <if test="appsecret != null">
+        appSecret,
+      </if>
+      <if test="scope != null">
+        scope,
+      </if>
+      <if test="granttypes != null">
+        grantTypes,
+      </if>
+      <if test="redirecturl != null">
+        redirectUrl,
+      </if>
+      <if test="authorities != null">
+        authorities,
+      </if>
+      <if test="accessTokenValidity != null">
+        access_token_validity,
+      </if>
+      <if test="refreshTokenValidity != null">
+        refresh_token_validity,
+      </if>
+      <if test="additionalinformation != null">
+        additionalInformation,
+      </if>
+      <if test="autoapprovescopes != null">
+        autoApproveScopes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="appid != null">
+        #{appid,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceids != null">
+        #{resourceids,jdbcType=VARCHAR},
+      </if>
+      <if test="appsecret != null">
+        #{appsecret,jdbcType=VARCHAR},
+      </if>
+      <if test="scope != null">
+        #{scope,jdbcType=VARCHAR},
+      </if>
+      <if test="granttypes != null">
+        #{granttypes,jdbcType=VARCHAR},
+      </if>
+      <if test="redirecturl != null">
+        #{redirecturl,jdbcType=VARCHAR},
+      </if>
+      <if test="authorities != null">
+        #{authorities,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTokenValidity != null">
+        #{accessTokenValidity,jdbcType=BIGINT},
+      </if>
+      <if test="refreshTokenValidity != null">
+        #{refreshTokenValidity,jdbcType=BIGINT},
+      </if>
+      <if test="additionalinformation != null">
+        #{additionalinformation,jdbcType=VARCHAR},
+      </if>
+      <if test="autoapprovescopes != null">
+        #{autoapprovescopes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uyaki.cloud.microservices.auth.model.om.Clientdetails">
+    update om.clientdetails
+    <set>
+      <if test="resourceids != null">
+        resourceIds = #{resourceids,jdbcType=VARCHAR},
+      </if>
+      <if test="appsecret != null">
+        appSecret = #{appsecret,jdbcType=VARCHAR},
+      </if>
+      <if test="scope != null">
+        scope = #{scope,jdbcType=VARCHAR},
+      </if>
+      <if test="granttypes != null">
+        grantTypes = #{granttypes,jdbcType=VARCHAR},
+      </if>
+      <if test="redirecturl != null">
+        redirectUrl = #{redirecturl,jdbcType=VARCHAR},
+      </if>
+      <if test="authorities != null">
+        authorities = #{authorities,jdbcType=VARCHAR},
+      </if>
+      <if test="accessTokenValidity != null">
+        access_token_validity = #{accessTokenValidity,jdbcType=BIGINT},
+      </if>
+      <if test="refreshTokenValidity != null">
+        refresh_token_validity = #{refreshTokenValidity,jdbcType=BIGINT},
+      </if>
+      <if test="additionalinformation != null">
+        additionalInformation = #{additionalinformation,jdbcType=VARCHAR},
+      </if>
+      <if test="autoapprovescopes != null">
+        autoApproveScopes = #{autoapprovescopes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where appId = #{appid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uyaki.cloud.microservices.auth.model.om.Clientdetails">
+    update om.clientdetails
+    set resourceIds = #{resourceids,jdbcType=VARCHAR},
+      appSecret = #{appsecret,jdbcType=VARCHAR},
+      scope = #{scope,jdbcType=VARCHAR},
+      grantTypes = #{granttypes,jdbcType=VARCHAR},
+      redirectUrl = #{redirecturl,jdbcType=VARCHAR},
+      authorities = #{authorities,jdbcType=VARCHAR},
+      access_token_validity = #{accessTokenValidity,jdbcType=BIGINT},
+      refresh_token_validity = #{refreshTokenValidity,jdbcType=BIGINT},
+      additionalInformation = #{additionalinformation,jdbcType=VARCHAR},
+      autoApproveScopes = #{autoapprovescopes,jdbcType=VARCHAR}
+    where appId = #{appid,jdbcType=VARCHAR}
+  </update>
+</mapper>

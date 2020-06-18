@@ -3,4 +3,4 @@ server:
 
 logging:
   # 配置Admin的日志文件输出位置
-  file: /Users/baweibin/Downloads/uyaba-cloud/log/provider/provider-hello.log
+  file: /Users/baweibin/Downloads/uyaki-cloud/log/provider/provider-hello.log

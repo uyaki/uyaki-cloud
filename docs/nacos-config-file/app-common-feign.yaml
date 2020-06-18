@@ -9,4 +9,4 @@ feign:
 logging:
   level:
     # 配合FeignClient的Configuration自定义的Logger.LEVEL使用
-    com.uyaba.cloud.provider.service: DEBUG
+    com.uyaki.cloud.provider.service: DEBUG

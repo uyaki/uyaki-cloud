@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.uyaba.cloud.db.redis.config.RedisConfig

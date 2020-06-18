@@ -1,0 +1,37 @@
+eureka:
+  server:
+    # 关闭自我保护（开发环境下关闭）
+    enable-self-preservation: false
+    # 清理间隔（开发环境下修改，默认60000毫秒）
+    eviction-interval-timer-in-ms: 5000
+    # 节点间的读数据连接超时时间
+    peer-node-read-timeout-ms: 200
+  client:
+    service-url:
+      defaultZone: http://uyaki:gk123456@peer1:8111/eureka/,http://uyaki:gk123456@peer2:8112/eureka/
+    healthcheck:
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+---
+spring:
+  profiles: peer1
+server:
+  port: 8111
+eureka:
+  instance:
+    hostname: peer1
+---
+spring:
+  profiles: peer2
+server:
+  port: 8112
+eureka:
+  instance:
+    hostname: peer2

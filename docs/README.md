@@ -1,4 +1,4 @@
-# uyaba-cloud
+# uyaki-cloud
 
 - 搭建eureka作为服务注册和发现中心
 - 搭建alibaba nacos作为配置中心

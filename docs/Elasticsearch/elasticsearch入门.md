@@ -5,7 +5,7 @@
 > 文档不能被修改，只能被替换覆盖
 
 ```sh
-PUT /uyaba/employee/1
+PUT /uyaki/employee/1
 {
     "first_name" : "zhang",
     "last_name" : "san",
@@ -22,7 +22,7 @@ PUT /uyaba/employee/1
 
 ```json
 {
-  "_index" : "uyaba",
+  "_index" : "uyaki",
   "_type" : "employee",
   "_id" : "1",
   "_version" : 1,
@@ -42,7 +42,7 @@ PUT /uyaba/employee/1
 > 生成的ID为UUID
 
 ```sh
-POST /uyaba/employee
+POST /uyaki/employee
 {
     "first_name" : "zhang",
     "last_name" : "san",
@@ -60,7 +60,7 @@ POST /uyaba/employee
 ## 查询是否存在
 
 ```sh
-HEAD /uyaba/employee/4
+HEAD /uyaki/employee/4
 ```
 
 结果
@@ -82,14 +82,14 @@ HEAD /uyaba/employee/4
 - 查询单个
 
   ```sh
-  GET /uyaba/employee/4
+  GET /uyaki/employee/4
   ```
 
   结果
 
   ```json
   {
-    "_index" : "uyaba",
+    "_index" : "uyaki",
     "_type" : "employee",
     "_id" : "4",
     "_version" : 1,
@@ -114,7 +114,7 @@ HEAD /uyaba/employee/4
    > 默认返回前10个
 
    ```sh
-   GET /uyaba/employee/_search
+   GET /uyaki/employee/_search
    ```
 
    结果
@@ -134,7 +134,7 @@ HEAD /uyaba/employee/4
        "max_score" : 1.0,
        "hits" : [
          {
-           "_index" : "uyaba",
+           "_index" : "uyaki",
            "_type" : "employee",
            "_id" : "2",
            "_score" : 1.0,
@@ -150,7 +150,7 @@ HEAD /uyaba/employee/4
            }
          },
          {
-           "_index" : "uyaba",
+           "_index" : "uyaki",
            "_type" : "employee",
            "_id" : "4",
            "_score" : 1.0,
@@ -166,7 +166,7 @@ HEAD /uyaba/employee/4
            }
          },
          {
-           "_index" : "uyaba",
+           "_index" : "uyaki",
            "_type" : "employee",
            "_id" : "1",
            "_score" : 1.0,
@@ -182,7 +182,7 @@ HEAD /uyaba/employee/4
            }
          },
          {
-           "_index" : "uyaba",
+           "_index" : "uyaki",
            "_type" : "employee",
            "_id" : "3",
            "_score" : 1.0,
@@ -205,7 +205,7 @@ HEAD /uyaba/employee/4
 3. 条件查询 `GET /_index/_type/_search?q=_field:keyword`
 
    ```sh
-   GET /uyaba/employee/_search?q=first_name:zhang
+   GET /uyaki/employee/_search?q=first_name:zhang
    ```
 
    结果
@@ -225,7 +225,7 @@ HEAD /uyaba/employee/4
        "max_score" : 0.2876821,
        "hits" : [
          {
-           "_index" : "uyaba",
+           "_index" : "uyaki",
            "_type" : "employee",
            "_id" : "1",
            "_score" : 0.2876821,
@@ -252,7 +252,7 @@ HEAD /uyaba/employee/4
 - 示例
 
   ```sh
-  GET /uyaba/employee/_search
+  GET /uyaki/employee/_search
   {
     "query": {
       "match": {
@@ -285,7 +285,7 @@ HEAD /uyaba/employee/4
       "max_score" : 0.5753642,
       "hits" : [
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "1",
           "_score" : 0.5753642,
@@ -311,7 +311,7 @@ HEAD /uyaba/employee/4
 - 语法
 
   ```sh
-  GET /uyaba/employee/_search
+  GET /uyaki/employee/_search
   {
     "query": {
       "match_phrase": {
@@ -343,7 +343,7 @@ HEAD /uyaba/employee/4
       "max_score" : 0.5753642,
       "hits" : [
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "1",
           "_score" : 0.5753642,
@@ -373,7 +373,7 @@ HEAD /uyaba/employee/4
 ### 统计
 
 ```console
-GET /uyaba/employee/_search
+GET /uyaki/employee/_search
 {
   "query": {
     "match": {
@@ -407,7 +407,7 @@ GET /uyaba/employee/_search
       "max_score" : 0.5753642,
       "hits" : [
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "1",
           "_score" : 0.5753642,
@@ -423,7 +423,7 @@ GET /uyaba/employee/_search
           }
         },
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "3",
           "_score" : 0.2876821,
@@ -439,7 +439,7 @@ GET /uyaba/employee/_search
           }
         },
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "2",
           "_score" : 0.18232156,
@@ -455,7 +455,7 @@ GET /uyaba/employee/_search
           }
         },
         {
-          "_index" : "uyaba",
+          "_index" : "uyaki",
           "_type" : "employee",
           "_id" : "4",
           "_score" : 0.18232156,

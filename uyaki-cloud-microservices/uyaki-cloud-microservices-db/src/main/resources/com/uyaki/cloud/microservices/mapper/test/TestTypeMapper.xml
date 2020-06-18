@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uyaki.cloud.microservices.mapper.test.TestTypeMapper">
+  <resultMap id="BaseResultMap" type="com.uyaki.cloud.microservices.model.test.TestType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="OTHER" property="uid" />
+    <result column="j" jdbcType="OTHER" property="j" />
+    <result column="jb" jdbcType="OTHER" property="jb" />
+    <result column="texts" jdbcType="ARRAY" property="texts" />
+    <result column="uids" jdbcType="ARRAY" property="uids" />
+    <result column="longs" jdbcType="ARRAY" property="longs" />
+    <result column="textss" jdbcType="ARRAY" property="textss" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, j, jb, texts, uids, longs, textss
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from test.test_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from test.test_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.uyaki.cloud.microservices.model.test.TestType">
+    insert into test.test_type (id, uid, j, jb, 
+      texts, uids, longs, textss
+      )
+    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=OTHER}, #{j,jdbcType=OTHER}, #{jb,jdbcType=OTHER}, 
+      #{texts,jdbcType=ARRAY}, #{uids,jdbcType=ARRAY}, #{longs,jdbcType=ARRAY}, #{textss,jdbcType=ARRAY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.uyaki.cloud.microservices.model.test.TestType">
+    insert into test.test_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="j != null">
+        j,
+      </if>
+      <if test="jb != null">
+        jb,
+      </if>
+      <if test="texts != null">
+        texts,
+      </if>
+      <if test="uids != null">
+        uids,
+      </if>
+      <if test="longs != null">
+        longs,
+      </if>
+      <if test="textss != null">
+        textss,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="j != null">
+        #{j,jdbcType=OTHER},
+      </if>
+      <if test="jb != null">
+        #{jb,jdbcType=OTHER},
+      </if>
+      <if test="texts != null">
+        #{texts,jdbcType=ARRAY}::text[],
+      </if>
+      <if test="uids != null">
+        #{uids,jdbcType=ARRAY}::uuid[],
+      </if>
+      <if test="longs != null">
+        #{longs,jdbcType=ARRAY}::int8[],
+      </if>
+      <if test="textss != null">
+        #{textss,jdbcType=ARRAY}::text[][],
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.uyaki.cloud.microservices.model.test.TestType">
+    update test.test_type
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=OTHER},
+      </if>
+      <if test="j != null">
+        j = #{j,jdbcType=OTHER},
+      </if>
+      <if test="jb != null">
+        jb = #{jb,jdbcType=OTHER},
+      </if>
+      <if test="texts != null">
+        texts = #{texts,jdbcType=ARRAY},
+      </if>
+      <if test="uids != null">
+        uids = #{uids,jdbcType=ARRAY},
+      </if>
+      <if test="longs != null">
+        longs = #{longs,jdbcType=ARRAY},
+      </if>
+      <if test="textss != null">
+        textss = #{textss,jdbcType=ARRAY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.uyaki.cloud.microservices.model.test.TestType">
+    update test.test_type
+    set uid = #{uid,jdbcType=OTHER},
+      j = #{j,jdbcType=OTHER},
+      jb = #{jb,jdbcType=OTHER},
+      texts = #{texts,jdbcType=ARRAY},
+      uids = #{uids,jdbcType=ARRAY},
+      longs = #{longs,jdbcType=ARRAY},
+      textss = #{textss,jdbcType=ARRAY}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

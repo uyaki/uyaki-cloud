@@ -8,12 +8,12 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.uyaba.cloud</groupId>
-    <artifactId>uyaba-cloud</artifactId>
+    <groupId>com.uyaki.cloud</groupId>
+    <artifactId>uyaki-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>uyaba-cloud</name>
+    <name>uyaki-cloud</name>
     <description>总项目</description>
 
     <properties>
@@ -21,33 +21,33 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <uyaba-cloud.version>0.0.1-SNAPSHOT</uyaba-cloud.version>
+        <uyaki-cloud.version>0.0.1-SNAPSHOT</uyaki-cloud.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <docker.image.prefix>uyaba-cloud</docker.image.prefix>
+        <docker.image.prefix>uyaki-cloud</docker.image.prefix>
     </properties>
     <modules>
         <!-- 服务和注册中心eureka -->
-        <module>uyaba-cloud-eureka</module>
+        <module>uyaki-cloud-eureka</module>
         <!-- 网关：gateway -->
-        <module>uyaba-cloud-gateway</module>
+        <module>uyaki-cloud-gateway</module>
         <!-- 网关：zuul -->
-        <module>uyaba-cloud-zuul</module>
+        <module>uyaki-cloud-zuul</module>
         <!-- 配置中心：apollo（暂未启动，现使用nacos） -->
-        <module>uyaba-cloud-apollo</module>
+        <module>uyaki-cloud-apollo</module>
         <!-- 管理员模块 -->
-        <module>uyaba-cloud-admin</module>
+        <module>uyaki-cloud-admin</module>
         <!-- 鉴权模块 -->
-        <module>uyaba-cloud-auth</module>
+        <module>uyaki-cloud-auth</module>
         <!-- 微服务模块 -->
-        <module>uyaba-cloud-microservices</module>
+        <module>uyaki-cloud-microservices</module>
         <!-- 微服务API模块 -->
-        <module>uyaba-cloud-microservices-api</module>
+        <module>uyaki-cloud-microservices-api</module>
         <!-- 数据库模块 -->
-        <module>uyaba-cloud-db</module>
+        <module>uyaki-cloud-db</module>
         <!-- 底层通用模块 -->
-        <module>uyaba-cloud-common</module>
+        <module>uyaki-cloud-common</module>
     </modules>
     <dependencies>
         <dependency>
