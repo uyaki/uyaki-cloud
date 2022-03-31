@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <boot.version>2.2.2.RELEASE</boot.version>
+        <boot.version>2.5.12</boot.version>
         <jackson.version>2.10.1</jackson.version>
         <swagger.version>2.9.2</swagger.version>
         <querydsl.version>4.2.2</querydsl.version>
