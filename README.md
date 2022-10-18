@@ -1,6 +1,5 @@
 <h1 align="center">Welcome to uyaki-cloud 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-SNAPSHOT-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/uyaki/uyaki-cloud/blob/master/README.md">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
@@ -11,7 +10,9 @@
 
 > spring-cloud的升级配置，项目内容更加实用
  
-访问这里获取更好的阅读体验：[https://uyaki.github.io/uyaki-cloud/](https://uyaki.github.io/uyaki-cloud/)
+访问这里获取更好的阅读体验：
+
+[https://uyaki.github.io/uyaki-cloud/](https://uyaki.github.io/uyaki-cloud/)
 
 ### 🏠 [Homepage](https://github.com/uyaki/uyaki-cloud)
 
