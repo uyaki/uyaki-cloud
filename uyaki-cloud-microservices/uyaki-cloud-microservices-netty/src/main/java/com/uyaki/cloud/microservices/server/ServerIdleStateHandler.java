@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 自定义心跳检测
  * @author uyaki
  * @date 2019-10-15 15:06
  */
@@ -17,6 +18,7 @@ public class ServerIdleStateHandler extends IdleStateHandler {
      * 设置空闲检测时间为 30s
      */
     private static final int READER_IDLE_TIME = 30;
+
     public ServerIdleStateHandler() {
         super(READER_IDLE_TIME, 0, 0, TimeUnit.SECONDS);
     }

@@ -16,7 +16,7 @@ public class NettyServerHandlerInitializer  extends ChannelInitializer<Channel> 
     @Override
     protected void initChannel(Channel channel) throws Exception {
         channel.pipeline()
-                //空闲检测
+                //心跳检测
                 .addLast(new ServerIdleStateHandler())
                 .addLast(new ProtobufVarint32FrameDecoder())
                 .addLast(new ProtobufDecoder(MessageBase.Message.getDefaultInstance()))
